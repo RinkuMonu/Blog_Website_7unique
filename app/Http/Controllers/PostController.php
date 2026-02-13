@@ -10,7 +10,7 @@ class PostController extends Controller
 {
     public function index() {
         $posts = Post::latest()->get();
-        return view('news.index', compact('posts'));
+        return view('home', compact('posts'));
     }
 
     public function create() {
@@ -20,5 +20,9 @@ class PostController extends Controller
     public function store(Request $request) {
         Post::create($request->all());
         return redirect('/posts')->with('success', 'News Uploaded!');
+    }
+     public function englishnews() {
+        $posts = Post::latest()->get();
+        return view('news.englishnews', compact('posts'));
     }
 }
