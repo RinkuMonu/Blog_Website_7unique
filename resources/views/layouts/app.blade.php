@@ -5,120 +5,122 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SevenUnique News Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+
     <style>
         body { display: flex; flex-direction: column; min-height: 100vh; }
         .content { flex: 1; }
         footer { background: #343a40; color: white; padding: 20px 0; margin-top: 40px; }
+      .navbar-nav {
+    gap: 22px;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Merriweather', serif;
+    color: black;
+    padding: 12px 0;
+    font-size: 17px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #c40000 !important;
+}
+
+footer {
+    font-family: 'Merriweather', serif;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #c40000;
+}
+
+
+
     </style>
 </head>
 <body>
 
-   <!-- TOP HEADER -->
-    <div class="bg-white border-bottom py-2">
-        <div class="container d-flex justify-content-between align-items-center">
+   <!-- TOP BAR -->
+<div class="bg-white  py-2">
+    <div class="container d-flex justify-content-between align-items-center">
 
-            <!-- Left: Languages -->
-            <div class="d-flex gap-3 fw-semibold">
-                <a href="#" class="text-dark text-decoration-none">हिन्दी</a>
-                <a href="#" class="text-dark text-decoration-none">English</a>
-                <a href="#" class="text-dark text-decoration-none">ગુજરાતી</a>
-            </div>
+        <!-- Left Side -->
+        <div class="d-flex align-items-center gap-3">
+            <span class="text-muted">February 13, 2026</span>
+            <a href="#" class="text-danger text-decoration-none fw-semibold">e-Paper</a>
+        </div>
 
-            <!-- Center: City/Logo -->
-            <h4 class="m-0 fw-bold">Jaipur</h4>
+        <!-- Center Logo -->
+        <div class="text-center">
+            <h1 class="m-0 fw-bold" style="font-family: 'Times New Roman', serif; font-size: 42px;">
+                SEVENUNIQUE
+            </h1>
+        </div>
 
-            <!-- Right: Social Icons + Signup -->
-            <div class="d-flex align-items-center gap-3">
+        <!-- Right Side -->
+        <div class="d-flex align-items-center gap-3">
+            <a href="#" class="text-dark text-decoration-none">Account</a>
+            <a href="#" class="btn btn-danger btn-sm fw-semibold px-3">SUBSCRIBE</a>
+        </div>
 
-                <!-- Social Icons -->
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" width="22"></a>
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733558.png" width="22"></a>
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733561.png" width="22"></a>
-                <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" width="22"></a>
+    </div>
+</div>
 
-                <!-- Signup Button -->
-                <a href="#" class="btn btn-dark rounded-pill px-4">Sign Up</a>
-            </div>
+
+<!-- MAIN NAVIGATION -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom">
+    <div class="container">
+
+        <!-- Mobile Toggle -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNav">
+
+            <!-- Left Search + Menu -->
+            <ul class="navbar-nav me-5 align-items-center">
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-list"></i></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="bi bi-search"></i> Search</a>
+                </li>
+            </ul>
+
+            <!-- Center Menu -->
+     <ul class="navbar-nav fw-semibold me-4">
+
+                <li class="nav-item"><a class="nav-link" href="#">India</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">World</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Sport</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Data</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Health</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Opinion</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Science</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Entertainment</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Premium</a></li>
+            </ul>
 
         </div>
     </div>
-
-    <!-- TRENDING BAR -->
-    <div class="bg-light py-2 border-bottom">
-        <div class="container">
-            <span class="fw-bold">Trending :</span>
-            <span class="text-danger">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit...
-            </span>
-        </div>
-    </div>
-
-    <!-- MAIN NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background:#1d3c8f;">
-        <div class="container">
-
-            <!-- Mobile Toggle -->
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-
-            <!-- Navbar Links -->
-            <div class="collapse navbar-collapse" id="mainNav">
-                <ul class="navbar-nav mx-auto fw-semibold">
-
-                    <li class="nav-item px-2">
-                        <a class="nav-link active" href="/">Home</a>
-                    </li>
-
-                    <li class="nav-item dropdown px-2">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            State
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Rajasthan</a></li>
-                            <li><a class="dropdown-item" href="#">Delhi</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item dropdown px-2">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Business
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Markets</a></li>
-                            <li><a class="dropdown-item" href="#">Startups</a></li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="#">Entertainment</a>
-                    </li>
-
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="#">Sports</a>
-                    </li>
-
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="#">Lifestyle</a>
-                    </li>
-
-                    <li class="nav-item px-2">
-                        <a class="nav-link" href="#">Technology</a>
-                    </li>
-
-                    <li class="nav-item dropdown px-2">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-                            Election
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">2026 Updates</a></li>
-                        </ul>
-                    </li>
-
-                </ul>
-            </div>
-        </div>
-    </nav>
+</nav>
 
 
     <div class="container content mt-4">
@@ -128,11 +130,91 @@
 
         @yield('content') </div>
 
-    <footer>
-        <div class="container text-center">
-            <p>&copy; {{ date('Y') }} SevenUnique Blogging Website. All Rights Reserved.</p>
+    <footer class="bg-light pt-5 pb-4 border-top  ">
+    <div class="container">
+
+        <!-- Logo Row -->
+        <div class="mb-4">
+            <h2 style="font-family:'Times New Roman',serif; color:#000; font-size:40px;">
+                SEVENUNIQUE
+            </h2>
         </div>
-    </footer>
+
+        <div class="row">
+
+            <div class="col-lg-2 col-md-4 col-6 mb-4">
+                <h6 class="fw-bold border-bottom border-5 border-dark pb-2">Seven Unique</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Editorial Values</a></li>
+                    <li><a href="#">News Archive</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Digital Subscription</a></li>
+                </ul>
+            </div>
+
+           
+            <div class="col-lg-2 col-md-4 col-6 mb-4">
+                <h6 class="fw-bold border-bottom  border-5 border-dark pb-2">Business</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Markets</a></li>
+                    <li><a href="#">Economy</a></li>
+                    <li><a href="#">Industry</a></li>
+                    <li><a href="#">Budget</a></li>
+                </ul>
+            </div>
+
+            <div class="col-lg-2 col-md-4 col-6 mb-4">
+                <h6 class="fw-bold border-bottom border-5 border-dark pb-2">States</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Rajasthan</a></li>
+                    <li><a href="#">Delhi</a></li>
+                    <li><a href="#">Karnataka</a></li>
+                    <li><a href="#">Tamil Nadu</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="col-lg-2 col-md-4 col-6 mb-4">
+                <h6 class="fw-bold border-bottom border-5 border-dark pb-2">Sport</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Cricket</a></li>
+                    <li><a href="#">Football</a></li>
+                    <li><a href="#">Tennis</a></li>
+                    <li><a href="#">Athletics</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 5 -->
+            <div class="col-lg-2 col-md-4 col-6 mb-4">
+                <h6 class="fw-bold border-bottom border-5 border-dark pb-2">Trending</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Latest News</a></li>
+                    <li><a href="#">Elections 2026</a></li>
+                    <li><a href="#">Live Updates</a></li>
+                    <li><a href="#">Technology</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 6 -->
+            <div class="col-lg-2 col-md-4 col-6 mb-4">
+                <h6 class="fw-bold border-bottom border-5 border-dark pb-2">Contact</h6>
+                <ul class="list-unstyled footer-links">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Advertise</a></li>
+                    <li><a href="#">Social Media</a></li>
+                </ul>
+            </div>
+
+        </div>
+
+        <!-- Bottom Line -->
+        <div class="border-top pt-3 mt-3 text-center small text-muted">
+            © 2026 SevenUnique. All Rights Reserved.
+        </div>
+
+    </div>
+</footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
