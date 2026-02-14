@@ -327,14 +327,6 @@
 
 
 
-
-
-
-
-
-
-
-
     .live-dot {
         width: 10px;
         height: 10px;
