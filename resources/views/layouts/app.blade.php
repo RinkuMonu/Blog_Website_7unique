@@ -157,6 +157,105 @@
         text-decoration: none;
     }
 
+    .smll {
+        color: #2B2E34;
+        text-decoration: underline;
+        text-decoration-color: #2B2E34;
+    }
+
+    .smll:hover {
+        text-decoration: none;
+
+    }
+
+    .red:hover {
+        text-decoration: underline;
+        text-decoration-color: #B00020;
+    }
+
+
+    .live-dot {
+        width: 10px;
+        height: 10px;
+        background-color: #B00020;
+        border-radius: 50%;
+        display: inline-block;
+        margin-right: 1 px;
+        animation: pulseDot 1s infinite;
+    }
+
+
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .content {
+        flex: 1;
+    }
+
+    footer {
+        background: #343a40;
+        color: white;
+        padding: 20px 0;
+        margin-top: 40px;
+    }
+
+    .navbar-nav {
+        gap: 22px;
+    }
+
+    body {
+        font-family: 'Merriweather', serif;
+    }
+
+    .navbar-nav .nav-link {
+        font-family: 'Merriweather', serif;
+        color: black;
+        padding: 12px 0;
+        font-size: 17px;
+        transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+        color: #c40000 !important;
+    }
+
+    footer {
+        font-family: 'Merriweather', serif;
+    }
+
+    .footer-links li {
+        margin-bottom: 8px;
+    }
+
+    .footer-links a {
+        text-decoration: none;
+        color: #000;
+        font-size: 14px;
+        transition: color 0.3s ease;
+    }
+
+    .footer-links a:hover {
+        color: #c40000;
+    }
+
+    .txt {
+        color: #000;
+        text-decoration: none;
+    }
+
+    .txt:hover {
+        text-decoration: underline;
+        text-decoration-color: #000;
+    }
+
+    .red {
+        color: #B00020;
+        text-decoration: none;
+    }
+
     .red:hover {
         text-decoration: underline;
         text-decoration-color: #B00020;
@@ -295,40 +394,93 @@
         background: #000;
         color: #fff;
     }
+
+
+.article-content {
+    max-width: 720px;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 20px;
+    line-height: 1.8;
+    color: #222;
+}
+
+.article-content p {
+    margin-bottom: 26px;
+}
+
+.image-caption {
+    font-size: 13px;
+    color: #666;
+    margin-top: 8px;
+    margin-bottom: 18px;
+}
+
+
+
+
     </style>
 </head>
 
 <body>
 
     <!-- TOP BAR -->
-    <div class="bg-white  py-2">
-        <div class="container d-flex justify-content-between align-items-center">
+   <div class="bg-white py-2 ">
+    <div class="container">
 
-            <!-- Left Side -->
-            <div class="d-flex fw-semibold align-items-center gap-3">
-                <span class="text-muted">
+        <!-- TOP ROW -->
+        <div class="row align-items-center">
+
+            <!-- Left: Date + ePaper -->
+            <div class="col-6 col-md-4 d-flex align-items-center gap-3">
+                <span class="text-muted fw-semibold small">
                     {{ \Carbon\Carbon::now()->format('F d, Y') }}
                 </span>
 
-                <a href="#" class="text-danger text-decoration-none fw-semibold">e-Paper</a>
+                <a href="#" class="text-danger text-decoration-none fw-semibold small">
+                    e-Paper
+                </a>
             </div>
 
-            <!-- Center Logo -->
-            <div class="text-center">
-                <h1 class="m-0 fw-bold" style="font-family: 'Times New Roman', serif; font-size: 42px;">
-                    SEVENUNIQUE
+            <!-- Center: Logo -->
+            <div class="col-12 col-md-4 text-center order-3 order-md-2 my-2 my-md-0">
+                <h1 class="m-0 fw-bold" style="font-family: 'Times New Roman', serif; font-size: 38px;">
+                    <a href="{{ url('/') }}" class="text-decoration-none text-dark">
+                        SEVENUNIQUE
+                    </a>
                 </h1>
             </div>
 
-            <!-- Right Side -->
-            <div class="d-flex align-items-center gap-3">
-                <a href="#" class="text-dark text-decoration-none">Account</a>
-                <a href="#" class="btn btn-danger btn-sm fw-semibold px-3">SUBSCRIBE</a>
-            </div>
+            <!-- Right: Account + Subscribe -->
+           <!-- Right Section -->
+<div class="col-6 col-md-4 d-flex flex-column align-items-end order-2 order-md-3">
 
-        </div>
+    <!-- Top: Account -->
+    <a href="#" class="text-dark text-decoration-none small mb-1">
+        Account
+    </a>
+
+    <!-- Bottom Row: e-Paper + Subscribe -->
+    <div class="d-flex align-items-center gap-3">
+        <a href="#" class="text-danger text-decoration-none small fw-semibold">
+            e-books
+        </a>
+
+        <a href="#" class="btn btn-danger btn-sm px-3">
+            SUBSCRIBE
+        </a>
     </div>
 
+</div>
+
+
+
+        </div>
+
+    </div>
+</div>
+
+
+            
 
     <!-- MAIN NAVIGATION -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
