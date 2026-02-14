@@ -234,7 +234,7 @@
                 <!-- Timeline Item -->
                 <div class="position-relative border-start ps-3 mb-4">
                     <span class="position-absolute top-0 start-0 translate-middle 
-                     bg-dark border border-dark rounded-circle" style="width:12px;height:12px;"></span>
+                    bg-dark border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
 
                     <a href="/" class="txt d-block">
@@ -250,7 +250,7 @@
                 <!-- Timeline Item -->
                 <div class="position-relative border-start ps-3 mb-4">
                     <span class="position-absolute top-0 start-0 translate-middle 
-                     bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
+                    bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
                     <div class="small text-muted mb-1" style="font-size:10px;">
                         <a href="/" class="txt d-block"> 18 mins ago – World
@@ -278,7 +278,7 @@
                 <!-- Timeline Item -->
                 <div class="position-relative border-start ps-3 mb-4">
                     <span class="position-absolute top-0 start-0 translate-middle 
-                     bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
+                    bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
                     <div class="small text-muted mb-1" style="font-size:10px;">
                         <a href="/" class="txt d-block"> 32 mins ago – World
@@ -293,7 +293,7 @@
                 <!-- Timeline Item -->
                 <div class="position-relative border-start ps-3 mb-4">
                     <span class="position-absolute top-0 start-0 translate-middle 
-                     bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
+                    bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
                     <div class="small text-muted  mb-1" style="font-size:10px;">
                         <a href="/" class="txt d-block"> 32 mins ago – World
@@ -353,11 +353,12 @@
                         <p class=" txt text-uppercase small fw-semibold mb-2">
                             Read editorials in
                         </p>
-                        <a href="/">
-                            <span class="badge border border-dark text-dark px-3 py-2 rounded-pill ">
+                        <a href="/" data-bs-toggle="tooltip" data-bs-placement="top" title="Hindi">
+                            <span class="badge border border-dark text-dark px-2 py-1 rounded-pill">
                                 हिंदी
                             </span>
                         </a>
+
                     </div>
 
                     <!-- MIDDLE EDITORIAL -->
@@ -391,6 +392,403 @@
         </div>
 
     </div>
+</div>
+
+<!-- Blue Strip -->
+<div class="w-100" style="height:6px; background: linear-gradient(90deg,#35b6c6,#458AD2);">
+</div>
+
+<section class="py-5 position-relative overflow-hidden"
+    style="background: linear-gradient(50deg,#ffffff 0%,rgba(69,138,210,0.27) 70%,#458AD2 100%);">
+
+    <img src="images/rupee.png" class="position-absolute top-50 end-0 translate-middle-y"
+        style="max-width:650px; opacity:0.35; z-index:0;" alt="">
+
+    <div class="container position-relative" style="z-index:2;">
+
+        <h2 class="text-center fw-bold mb-5" style="color:#B00020;">
+            Budget Session of Parliament
+        </h2>
 
 
-    @endsection
+        <div class="row mb-5">
+
+            <!-- LEFT SIDE -->
+            <div class="col-lg-6">
+
+                <!-- BIG IMAGE ARTICLE -->
+                <img src="images/parliament.png" class="img-fluid w-100 mb-3" alt="">
+
+                <p class="fw-bold small red">INDIA</p>
+
+                <h3 class="fw-bold">
+                    Stormy first leg of Budget session over;
+                    Parliament to meet again on March 9
+                </h3>
+
+                <p class="text-muted small">
+                    The three-week recess period will allow standing committees
+                    to examine allocations to various ministries.
+                </p>
+
+                <span class="text-uppercase text-muted small">
+                    The Hindu Bureau
+                </span>
+
+                <hr class="my-4">
+
+                <!-- TWO SMALL ARTICLES BELOW -->
+                <div class="row">
+
+                    <!-- Small Left -->
+                    <div class="col-md-6 border-end">
+
+                        <p class="fw-bold small red">INDIA</p>
+
+                        <h6>
+                            Trinamool presses for enforceable basic income
+                        </h6>
+
+                        <span class="text-muted text-uppercase small">
+                            The Hindu Bureau
+                        </span>
+
+                        <img src="images/sardar.png" class="img-fluid my-3" alt="">
+
+                        <p class="fw-bold small red">INDIA</p>
+
+                        <h6>
+                            Opposition MPs demand Hardeep Puri’s resignation
+                        </h6>
+
+                        <span class="text-muted text-uppercase small">
+                            ANI
+                        </span>
+
+                    </div>
+
+                    <!-- Small Right -->
+                    <div class="col-md-6">
+
+                        <p class="fw-bold small red">INDIA</p>
+
+                        <h6>
+                            Government can file FIR or move Privilege Motion,
+                            I will stand with farmers: Rahul Gandhi
+                        </h6>
+
+                        <span class="text-muted text-uppercase small">
+                            SANDEEP PHUKAN
+                        </span>
+
+                        <img src="images/sardar2.png" class="img-fluid my-3" alt="">
+
+                        <p class="fw-bold small red">INDIA</p>
+
+                        <h6>
+                            Congress demands Petroleum Minister’s resignation
+                        </h6>
+
+                        <span class="text-muted text-uppercase small">
+                            The Hindu Bureau
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE VIDEO -->
+            <div class="col-lg-6">
+
+                <!-- VIDEO -->
+                <div class="bg-dark text-white p-3 mb-4">
+
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/gI1Z4UHg9o0" title="YouTube video player"
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+
+
+                    <p class="small text-uppercase">VIDEOS</p>
+
+                    <h5 class="fw-bold">
+                        Watch: Govt. not to bring motion against Rahul Gandhi
+                    </h5>
+
+                    <p class="small">
+                        Union Parliamentary Affairs Minister Kiran Rijiju...
+                    </p>
+
+                </div>
+
+
+                <!-- TWO ARTICLES BELOW VIDEO -->
+                <div class="row">
+
+                    <!-- LEFT ARTICLE -->
+                    <div class="col-md-6 border-end">
+
+                        <img src="images/abhishek.png" class="img-fluid mb-2" alt="">
+
+                        <p class="fw-bold small red">INDIA</p>
+
+                        <h6>
+                            Abhishek Banerjee rebuts FM Sitharaman,
+                            points to everyday GST burdens on poor
+                        </h6>
+
+                        <span class="text-muted text-uppercase small">
+                            THE HINDU BUREAU
+                        </span>
+
+                        <hr>
+
+                        <p class="fw-bold small red">INDIA</p>
+
+                        <h6>
+                            Not intimidated by Substantive Motion,
+                            says K.C. Venugopal
+                        </h6>
+
+                        <span class="text-muted text-uppercase small">
+                            THE HINDU BUREAU
+                        </span>
+
+                    </div>
+
+
+                    <!-- RIGHT ARTICLE -->
+                    <div class="col-md-6">
+
+                        <img src="images/vandematram.png" class="img-fluid mb-2" alt="">
+
+                        <div class="d-flex align-items-center mb-2">
+                            <img src="images/h-circle-yellow-new.svg" style="width:20px;height:20px;" class="me-2"
+                                alt="">
+                            <span class="fw-bold small text-warning">PREMIUM</span>
+                        </div>
+
+                        <h6>
+                            Vande Mataram, its six stanzas
+                            and a settled question
+                        </h6>
+
+                        <span class="text-muted text-uppercase small">
+                            SANJAY HEGDE
+                        </span>
+
+                        <hr>
+
+                        <p class="fw-bold small red">INDIA</p>
+
+                        <h6>
+                            Lok Sabha passes Industrial Relations
+                            Code (Amendment) Bill, 2026
+                        </h6>
+
+                        <span class="text-muted text-uppercase small">
+                            THE HINDU BUREAU
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+    <div class="see-more-wrapper text-center">
+        <a href="#" class="see-more fw-bold text-uppercase">
+            SEE MORE
+        </a>→
+    </div>
+</section>
+<!-- New section -->
+<section class="bg-dark text-white py-5">
+
+    <div class="container" style="max-width:1200px;">
+
+        <!-- HEADER -->
+        <div class="d-flex align-items-center mb-4">
+            <img src="images/h-circle-red.svg" width="22" class="me-2">
+            <h4 class="fw-bold mb-0">Budget Videos</h4>
+        </div>
+
+
+        <div class="row g-5">
+
+            <!-- LEFT VIDEO AREA -->
+            <div class="col-lg-8">
+
+                <div class="tab-content">
+
+                    <!-- TAB 1 (ACTIVE) -->
+                    <div class="tab-pane fade show active" id="video1">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.youtube.com/embed/BTMjD7_evjE" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h5 class="fw-bold">
+                            Watch: Union Budget 2026 | Key takeaways
+                        </h5>
+                    </div>
+
+                    <!-- TAB 2 -->
+                    <div class="tab-pane fade" id="video2">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.youtube.com/embed/BTMjD7_evjE" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h5 class="fw-bold">
+                            Decoding Budget 2026–27
+                        </h5>
+                    </div>
+
+                    <!-- TAB 3 -->
+                    <div class="tab-pane fade" id="video3">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.youtube.com/embed/BTMjD7_evjE" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h5 class="fw-bold">
+                            Big economic priorities explained
+                        </h5>
+                    </div>
+
+                    <div class="tab-pane fade" id="video4">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.youtube.com/embed/BTMjD7_evjE" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h5 class="fw-bold">
+                            Decoding Budget 2026–27
+                        </h5>
+                    </div>
+
+                    <div class="tab-pane fade" id="video5">
+                        <div class="ratio ratio-16x9 mb-3">
+                            <iframe src="https://www.youtube.com/embed/BTMjD7_evjE" allowfullscreen>
+                            </iframe>
+                        </div>
+                        <h5 class="fw-bold">
+                            Decoding Budget 2026–27
+                        </h5>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE TABS -->
+            <div class="col-lg-4">
+
+                <div class="custom-scroll" style="max-height:480px; overflow-y:auto; overflow-x:hidden;">
+
+
+                    <div class="nav flex-column nav-pills">
+                        <button class="nav-link active text-white text-start mb-3" data-bs-toggle="pill"
+                            data-bs-target="#video1" type="button">
+
+                            <div class="d-flex">
+                                <img src="images/mountain.png" width="98" class="me-3">
+                                <p class="fw-bold small mb-0">
+                                    Watch: Union Budget 2026 | Key takeaways
+                                </p>
+                            </div>
+
+                        </button>
+
+                        
+                        <button class="nav-link text-white text-start mb-3" data-bs-toggle="pill"
+                            data-bs-target="#video2" type="button">
+
+                            <div class="d-flex">
+                                <img src="images/mountain.png" width="98" class="me-3">
+                                <p class="fw-bold small mb-0">
+                                    Decoding Budget 2026–27
+                                </p>
+                            </div>
+
+                        </button>
+
+
+                        <button class="nav-link text-white text-start mb-3" data-bs-toggle="pill"
+                            data-bs-target="#video3" type="button">
+
+                            <div class="d-flex">
+                                <img src="images/mountain.png" width="98" class="me-3">
+                                <p class="fw-bold small mb-0">
+                                    Big economic priorities explained
+                                </p>
+                            </div>
+
+                        </button>
+
+                        <button class="nav-link text-white text-start mb-3" data-bs-toggle="pill"
+                            data-bs-target="#video4" type="button">
+
+                            <div class="d-flex">
+                                <img src="images/mountain.png" width="98" class="me-3">
+                                <p class="fw-bold small mb-0">
+
+                                    Watch: No specific giveaways for poll-bound states in Budget 2026 — The Hindu
+                                    Reporters
+                                    Explain
+                                </p>
+                            </div>
+
+                        </button>
+
+                        <button class="nav-link text-white text-start mb-3" data-bs-toggle="pill"
+                            data-bs-target="#video5" type="button">
+
+                            <div class="d-flex">
+                                <img src="images/mountain.png" width="98" class="me-3">
+                                <p class="fw-bold small mb-0">
+                                    Watch: Union Budget 2026: what’s in it for textile and MSME?
+                                </p>
+                            </div>
+
+                        </button>
+
+                    </div>
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- VIEW ALL -->
+        <div class="text-center mt-4">
+            <a href="#" class="text-white text-uppercase fw-bold">
+                VIEW ALL VIDEOS →
+            </a>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@endsection
