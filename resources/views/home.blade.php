@@ -7,7 +7,9 @@
     <div class="text-center mb-5">
 
         <a href="/">
-            <img src="{{ asset('images/add1.png') }}" alt="Advertisement" class="img-fluid mx-auto d-block">
+            <img src="{{ asset('images/add1.png') }}" alt="Advertisement" class="img-fluid mx-auto d-block"
+                style="max-width:600px;">
+
         </a>
         <p class="text-uppercase small text-muted mt-3 mb-4">
             Advertisement
@@ -19,7 +21,9 @@
     <div class="text-center mt-5">
 
         <a href="/">
-            <img src="{{ asset('images/add2.png') }}" alt="Advertisement" class="img-fluid mx-auto d-block">
+            <img src="{{ asset('images/add2.png') }}" alt="Advertisement" class="img-fluid mx-auto d-block"
+                style="max-width:100%;">
+
         </a>
         <p class="text-uppercase small text-muted mb-5 mt-5">
             Advertisement
@@ -49,8 +53,10 @@
                     </span>
 
                     <!-- Author Image -->
-                    <img src="{{ asset('images/writer.png') }}" alt="Author" class="rounded-circle" width="50"
-                        height="50">
+                    <a href="/">
+                        <img src="{{ asset('images/writer.png') }}" alt="Author" class="rounded-circle" width="50"
+                            height="50">
+                    </a>
 
                 </div>
 
@@ -78,8 +84,10 @@
                     </span>
 
                     <!-- Author Image -->
-                    <img src="{{ asset('images/writer2.png') }}" alt="Author" class="rounded-circle" width="50"
-                        height="50">
+                    <a href="/">
+                        <img src="{{ asset('images/writer2.png') }}" alt="Author" class="rounded-circle" width="50"
+                            height="50">
+                    </a>
 
                 </div>
 
@@ -99,9 +107,10 @@
                     </span>
 
                     <!-- Author Image -->
-                    <img src="{{ asset('images/writer3.png') }}" alt="Author" class="rounded-circle" width="50"
-                        height="50">
-
+                    <a href="/">
+                        <img src="{{ asset('images/writer3.png') }}" alt="Author" class="rounded-circle" width="50"
+                            height="50">
+                    </a>
                 </div>
 
 
@@ -120,8 +129,10 @@
                     </span>
 
                     <!-- Author Image -->
-                    <img src="{{ asset('images/writer1.png') }}" alt="Author" class="rounded-circle" width="50"
-                        height="50">
+                    <a href="/">
+                        <img src="{{ asset('images/writer1.png') }}" alt="Author" class="rounded-circle" width="50"
+                            height="50">
+                    </a>
 
                 </div>
 
@@ -204,7 +215,9 @@
                         </a>
 
                         <span class="text-muted fw-semibold text-uppercase" style="font-size: 9px;">
-                            The Hindu Bureau
+                            <a href="/" class="smll">
+                                The Hindu Bureau
+                            </a>
                         </span>
 
                         <hr>
@@ -252,12 +265,12 @@
                     <span class="position-absolute top-0 start-0 translate-middle 
                     bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
-                    <div class="small text-muted mb-1" style="font-size:10px;">
-                        <a href="/" class="txt d-block"> 18 mins ago – World
-                    </div>
-
-
-                    Chittoor: Container falls from lorry, crushes car; software engineer killed
+                  
+                    <a href="/" class="txt d-block">
+                        <div class="small text-muted mb-1" style="font-size:10px;">
+                            18 mins ago – Kerala
+                        </div>
+                        Chittoor: Container falls from lorry, crushes car; software engineer killed
                     </a>
                     <hr>
                 </div>
@@ -266,12 +279,12 @@
                     <span class="position-absolute top-0 start-0 translate-middle 
                     bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
-                    <div class="small text-muted mb-1" style="font-size:10px;">
-                        <a href="/" class="txt d-block"> 32 mins ago – World
-                    </div>
-
+                   
                     <a href="/" class="txt d-block">
-                        Supreme Court grants interim bail to filmmaker Vikram Bhatt’s wife in fraud case
+                        <div class="small text-muted mb-1" style="font-size:10px;">
+                            32 mins ago – Kerala
+                        </div>
+                        Chittoor: Container falls from lorry, crushes car; software engineer killed
                     </a>
                     <hr>
                 </div>
@@ -280,13 +293,12 @@
                     <span class="position-absolute top-0 start-0 translate-middle 
                     bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
-                    <div class="small text-muted mb-1" style="font-size:10px;">
-                        <a href="/" class="txt d-block"> 32 mins ago – World
-                    </div>
-
+                  
                     <a href="/" class="txt d-block">
-                        Asian shares mostly lower after sharp Wall Street losses on AI-related worries
-
+                        <div class="small text-muted mb-1" style="font-size:10px;">
+                            3 mins ago – Kerala
+                        </div>
+                        Chittoor: Container falls from lorry, crushes car; software engineer killed
                     </a>
                     <hr>
                 </div>
@@ -295,13 +307,11 @@
                     <span class="position-absolute top-0 start-0 translate-middle 
                     bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
-                    <div class="small text-muted  mb-1" style="font-size:10px;">
-                        <a href="/" class="txt d-block"> 32 mins ago – World
-                    </div>
-
                     <a href="/" class="txt d-block">
-                        Copa del Rey: Atletico hits Barcelona for four to take giant step toward final
-
+                        <div class="small text-muted mb-1" style="font-size:10px;">
+                            40 mins ago – Kerala
+                        </div>
+                        Chittoor: Container falls from lorry, crushes car; software engineer killed
                     </a>
                     <a href="/">
                         <span class="smll" style="font-size:10px">READ MORE STORIES</span> </a>
@@ -417,22 +427,33 @@
             <div class="col-lg-6">
 
                 <!-- BIG IMAGE ARTICLE -->
-                <img src="images/parliament.png" class="img-fluid w-100 mb-3" alt="">
-
-                <p class="fw-bold small red">INDIA</p>
+                <a href="/">
+                    <img src="images/parliament.png" class="img-fluid w-100 mb-3" alt="">
+                </a>
+                <p class="fw-bold small">
+                    <a href="/" class="red">
+                        INDIA
+                    </a>
+                </p>
 
                 <h3 class="fw-bold">
-                    Stormy first leg of Budget session over;
-                    Parliament to meet again on March 9
+                    <a href="/" class="text-dark txt">
+                        Stormy first leg of Budget session over;
+                        Parliament to meet again on March 9
+                    </a>
                 </h3>
 
                 <p class="text-muted small">
-                    The three-week recess period will allow standing committees
-                    to examine allocations to various ministries.
+                    <a href="/" class="text-dark txt">
+                        The three-week recess period will allow standing committees
+                        to examine allocations to various ministries.
+                    </a>
                 </p>
 
                 <span class="text-uppercase text-muted small">
-                    The Hindu Bureau
+                    <a href="/" class="smll" style="font-size: 9px;">
+                        The Hindu Bureau
+                    </a>
                 </span>
 
                 <hr class="my-4">
@@ -443,22 +464,37 @@
                     <!-- Small Left -->
                     <div class="col-md-6 border-end">
 
-                        <p class="fw-bold small red">INDIA</p>
+                        <p class="fw-bold small">
+                            <a href="/" class="red">
+                                INDIA
+                            </a>
+                        </p>
 
                         <h6>
-                            Trinamool presses for enforceable basic income
+                            <a href="/" class="text-dark txt">
+                                Trinamool presses for enforceable basic income
+                            </a>
                         </h6>
 
                         <span class="text-muted text-uppercase small">
-                            The Hindu Bureau
+                            <a href="/" class="smll" style="font-size: 9px;">
+                                The Hindu Bureau
+                            </a>
                         </span>
+                        <a href="/">
 
-                        <img src="images/sardar.png" class="img-fluid my-3" alt="">
-
-                        <p class="fw-bold small red">INDIA</p>
+                            <img src="images/sardar.png" class="img-fluid my-3" alt="">
+                        </a>
+                        <p class="fw-bold small">
+                            <a href="/" class="red">
+                                INDIA
+                            </a>
+                        </p>
 
                         <h6>
-                            Opposition MPs demand Hardeep Puri’s resignation
+                            <a href="/" class="text-dark txt">
+                                Opposition MPs demand Hardeep Puri’s resignation
+                            </a>
                         </h6>
 
                         <span class="text-muted text-uppercase small">
@@ -470,27 +506,44 @@
                     <!-- Small Right -->
                     <div class="col-md-6">
 
-                        <p class="fw-bold small red">INDIA</p>
+                        <p class="fw-bold small">
+                            <a href="/" class="red">
+                                INDIA
+                            </a>
+                        </p>
+
 
                         <h6>
-                            Government can file FIR or move Privilege Motion,
-                            I will stand with farmers: Rahul Gandhi
+                            <a href="/" class="text-dark txt">
+                                Government can file FIR or move Privilege Motion,
+                                I will stand with farmers: Rahul Gandhi
+                            </a>
                         </h6>
 
-                        <span class="text-muted text-uppercase small">
-                            SANDEEP PHUKAN
+                        <span class="text-muted text-uppercase" style="font-size: 9px;">
+                            <a href="/" class="smll">
+                                SANDEEP PHUKAN
+                            </a>
                         </span>
-
-                        <img src="images/sardar2.png" class="img-fluid my-3" alt="">
-
-                        <p class="fw-bold small red">INDIA</p>
+                        <a href="/">
+                            <img src="images/sardar2.png" class="img-fluid my-3" alt="">
+                        </a>
+                        <p class="fw-bold small">
+                            <a href="/" class="red">
+                                INDIA
+                            </a>
+                        </p>
 
                         <h6>
-                            Congress demands Petroleum Minister’s resignation
+                            <a href="/" class="text-dark txt">
+                                Congress demands Petroleum Minister’s resignation
+                            </a>
                         </h6>
 
                         <span class="text-muted text-uppercase small">
-                            The Hindu Bureau
+                            <a href="/" class="smll" style="font-size: 9px;">
+                                The Hindu Bureau
+                            </a>
                         </span>
 
                     </div>
@@ -513,14 +566,22 @@
                     </div>
 
 
-                    <p class="small text-uppercase">VIDEOS</p>
+                    <p class="small text-uppercase">
+                        <a href="/" class="video">
+                            VIDEOS
+                        </a>
+                    </p>
 
                     <h5 class="fw-bold">
-                        Watch: Govt. not to bring motion against Rahul Gandhi
+                        <a href="/" class=" video">
+                            Watch: Govt. not to bring motion against Rahul Gandhi
+                        </a>
                     </h5>
 
                     <p class="small">
-                        Union Parliamentary Affairs Minister Kiran Rijiju...
+                        <a href="/" class="video">
+                            Union Parliamentary Affairs Minister Kiran Rijiju...
+                        </a>
                     </p>
 
                 </div>
@@ -531,31 +592,47 @@
 
                     <!-- LEFT ARTICLE -->
                     <div class="col-md-6 border-end">
-
-                        <img src="images/abhishek.png" class="img-fluid mb-2" alt="">
-
-                        <p class="fw-bold small red">INDIA</p>
+                        <a href="/">
+                            <img src="images/abhishek.png" class="img-fluid mb-2" alt="">
+                        </a>
+                        <p class="fw-bold small">
+                            <a href="/" class="red">
+                                INDIA
+                            </a>
+                        </p>
 
                         <h6>
-                            Abhishek Banerjee rebuts FM Sitharaman,
-                            points to everyday GST burdens on poor
+                            <a href="/" class="text-dark txt">
+                                Abhishek Banerjee rebuts FM Sitharaman,
+                                points to everyday GST burdens on poor
+                            </a>
                         </h6>
 
                         <span class="text-muted text-uppercase small">
-                            THE HINDU BUREAU
+                            <a href="/" class="smll" style="font-size: 9px;">
+                                THE HINDU BUREAU
+                            </a>
                         </span>
 
                         <hr>
 
-                        <p class="fw-bold small red">INDIA</p>
+                        <p class="fw-bold small">
+                            <a href="/" class="red">
+                                INDIA
+                            </a>
+                        </p>
 
                         <h6>
-                            Not intimidated by Substantive Motion,
-                            says K.C. Venugopal
+                            <a href="/" class="text-dark txt">
+                                Not intimidated by Substantive Motion,
+                                says K.C. Venugopal
+                            </a>
                         </h6>
 
                         <span class="text-muted text-uppercase small">
-                            THE HINDU BUREAU
+                            <a href="/" class="smll" style="font-size: 9px;">
+                                THE HINDU BUREAU
+                            </a>
                         </span>
 
                     </div>
@@ -563,35 +640,51 @@
 
                     <!-- RIGHT ARTICLE -->
                     <div class="col-md-6">
-
-                        <img src="images/vandematram.png" class="img-fluid mb-2" alt="">
-
+                        <a href="/">
+                            <img src="images/vandematram.png" class="img-fluid mb-2" alt="">
+                        </a>
                         <div class="d-flex align-items-center mb-2">
                             <img src="images/h-circle-yellow-new.svg" style="width:20px;height:20px;" class="me-2"
                                 alt="">
-                            <span class="fw-bold small text-warning">PREMIUM</span>
+                            <span class="fw-bold small text-warning">
+                                <a href="/" class="red">
+                                    PREMIUM
+                                </a>
+                            </span>
                         </div>
 
                         <h6>
-                            Vande Mataram, its six stanzas
-                            and a settled question
+                            <a href="/" class="text-dark txt">
+                                Vande Mataram, its six stanzas
+                                and a settled question
+                            </a>
                         </h6>
 
-                        <span class="text-muted text-uppercase small">
-                            SANJAY HEGDE
+                        <span class="text-muted text-uppercase small" style="font-size:9px">
+                            <a href="/" class="smll">
+                                SANJAY HEGDE
+                            </a>
                         </span>
 
                         <hr>
 
-                        <p class="fw-bold small red">INDIA</p>
+                        <p class="fw-bold small">
+                            <a href="/" class="red">
+                                INDIA
+                            </a>
+                        </p>
 
                         <h6>
-                            Lok Sabha passes Industrial Relations
-                            Code (Amendment) Bill, 2026
+                            <a href="/" class="text-dark txt">
+                                Lok Sabha passes Industrial Relations
+                                Code (Amendment) Bill, 2026
+                            </a>
                         </h6>
 
                         <span class="text-muted text-uppercase small">
-                            THE HINDU BUREAU
+                            <a href="/" class="smll" style="font-size: 9px;">
+                                THE HINDU BUREAU
+                            </a>
                         </span>
 
                     </div>
@@ -706,7 +799,7 @@
 
                         </button>
 
-                        
+
                         <button class="nav-link text-white text-start mb-3" data-bs-toggle="pill"
                             data-bs-target="#video2" type="button">
 
