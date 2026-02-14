@@ -1,5 +1,6 @@
 @extends('layouts.app')
 
+
 @section('content')
 
 @include('partials.hero')
@@ -821,4 +822,6 @@
     </div>
 
 </div>
+@include('partials.footer')
+
 @endsection

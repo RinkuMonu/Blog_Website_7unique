@@ -385,7 +385,7 @@
 
     <!-- TOP BAR -->
     
-@include('partials.header')
+
     <div class="container-fluid content mt-4">
         @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -393,7 +393,6 @@
 
         @yield('content')
     </div>
-    @include('partials.footer')
 
     
 
