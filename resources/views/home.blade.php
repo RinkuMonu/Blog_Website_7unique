@@ -871,7 +871,7 @@
     </div>
 </section>
 
-
+@include('partials.toppicks')
 
 
 
