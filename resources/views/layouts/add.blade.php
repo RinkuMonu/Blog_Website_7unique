@@ -10,11 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
- 
-
 
 
     <style>
+   
+
     body {
         display: flex;
         flex-direction: column;
@@ -51,7 +51,7 @@
         margin-top: 40px;
     }
 
-
+   
     .navbar-nav .nav-link:hover {
         color: #c40000 !important;
     }
@@ -184,7 +184,7 @@
         margin-top: 40px;
     }
 
-
+    
 
     footer {
         font-family: 'Merriweather', serif;
@@ -290,13 +290,7 @@
         border-radius: 10px;
     }
 
-    .overlay {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0));
-    }
+
 
     .live-dot {
         width: 10px;
@@ -387,12 +381,11 @@
     }
     </style>
 </head>
-
 <body>
 
     <!-- TOP BAR -->
+    
 
-    @include('partials.header')
     <div class="container-fluid content mt-4">
         @if(session('success'))
         <div class="alert alert-success">{{ session('success') }}</div>
@@ -400,9 +393,8 @@
 
         @yield('content')
     </div>
-    @include('partials.footer')
 
-
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
@@ -411,7 +403,6 @@
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>
 
