@@ -10,3 +10,6 @@ Route::get('/english-news', function () {
 })->name('english.news');
 
 
+Route::get('/', function () {
+    return view('home');
+});
