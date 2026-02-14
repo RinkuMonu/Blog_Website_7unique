@@ -171,7 +171,7 @@
                 </span>
 
                 <h1 style="font-size: 34px; font-weight: 900;">
-                    <a href="/" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         Bangladesh election results LIVE: BNP thanks India, hopes for stronger bilateral ties
                     </a>
                 </h1>
