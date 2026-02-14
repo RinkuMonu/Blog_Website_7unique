@@ -7,7 +7,7 @@
     <title>SevenUnique News Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
 
@@ -59,6 +59,89 @@
         font-size: 14px;
         transition: color 0.3s ease;
     }
+        body { display: flex; flex-direction: column; min-height: 100vh; }
+        .content { flex: 1; }
+        footer { background: #343a40; color: white; padding: 20px 0; margin-top: 40px; }
+      .navbar-nav {
+    gap: 22px;
+}
+body {
+    font-family: 'Merriweather', serif;
+}
+
+.navbar-nav .nav-link {
+    font-family: 'Merriweather', serif;
+    color: black;
+    padding: 12px 0;
+    font-size: 17px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #c40000 !important;
+}
+
+footer {
+    font-family: 'Merriweather', serif;
+}
+
+.footer-links li {
+    margin-bottom: 8px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #c40000;
+}
+.txt {
+    color: #000;
+    text-decoration: none;
+}
+.txt:hover {
+    text-decoration: underline;
+    text-decoration-color: #000;
+}
+.red {
+    color: #B00020;
+    text-decoration:none;
+}
+.smll {
+    color: #2B2E34;
+    text-decoration: underline; 
+    text-decoration-color: #2B2E34;
+}
+.smll:hover {
+    text-decoration: none;
+    
+}
+.red:hover {
+    text-decoration:underline;
+    text-decoration-color: #B00020;
+}
+
+
+.live-dot {
+    width: 10px;
+    height: 10px;
+    background-color: #B00020;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 1 px;
+    animation: pulseDot 1s infinite;
+}
+
+@keyframes pulseDot {
+    0%   { opacity: 1; }
+    50%  { opacity: 0.3; }
+    100% { opacity: 1; }
+}
+
 
     .footer-links a:hover {
         color: #c40000;
