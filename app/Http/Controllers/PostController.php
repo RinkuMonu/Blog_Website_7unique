@@ -37,4 +37,21 @@ class PostController extends Controller
         return view('news.movies', compact('posts'));
     }
 
+
+     public function sports() {
+        $posts = Post::latest()->get();
+        return view('news.sports', compact('posts'));
+    }
+
+    
+     public function premium() {
+        $posts = Post::latest()->get();
+        return view('news.premium', compact('posts'));
+     }
+
+      
+     public function opinion() {
+        $posts = Post::latest()->get();
+        return view('news.opinion', compact('posts'));
+     }
 }

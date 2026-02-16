@@ -25,9 +25,25 @@ Route::get('/india-news', function () {
 Route::get('/movies-news', function () {
     return view('news.movies');
 })->name('movies.news');
+
+
 Route::get('/world', function () {
     return view('news.world');
 })->name('world');
+
+
+Route::get('/sports-news', function () {
+    return view('news.sports');
+})->name('sports.news');
+
+
+Route::get('/premium-news', function () {
+    return view('news.premium');
+})->name('premium.news');
+
+Route::get('/opinion-news', function () {
+    return view('news.opinion');
+})->name('opinion.news');
 
 Route::get('/data', function () {
     return view('news.data');
