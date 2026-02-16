@@ -58,9 +58,12 @@
             <div class="d-flex justify-content-between align-items-center mb-4">
 
                 <!-- Left: Logo -->
-                <h2 class="m-0 text-dark" style="font-family:Merriweather',serif; color:#000; font-size:40px;">
-                    SEVENUNIQUE
-                </h2>
+                <a href="{{ url('/') }}" 
+   class="text-decoration-none text-dark" 
+   style="font-family:'Merriweather', serif; font-size:40px;">
+    SEVENUNIQUE
+</a>
+
 
                 <!-- Right: Two Images -->
                 <div class="d-flex gap-3">
