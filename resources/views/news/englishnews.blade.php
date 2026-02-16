@@ -1,9 +1,11 @@
-@extends('layouts.app')
+
+@extends('layouts.add')
 
 
 @section('content')
-
+@include('partials.header')
 @include('partials.hero')
+
 
 <div class="container my-4">
 

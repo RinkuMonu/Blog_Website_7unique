@@ -25,4 +25,16 @@ class PostController extends Controller
         $posts = Post::latest()->get();
         return view('news.englishnews', compact('posts'));
     }
+
+   public function india() {
+   $posts = Post::latest()->paginate(5); 
+
+    return view('news.india', compact('posts'));
+}
+
+ public function movies() {
+        $posts = Post::latest()->get();
+        return view('news.movies', compact('posts'));
+    }
+
 }

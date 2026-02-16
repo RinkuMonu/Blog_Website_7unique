@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center mb-4">
         <div class="flex-grow-1 border-top border-2"></div>
 
-        <h3 class="mx-3 fw-bold text-danger" style="font-family: 'Playfair Display', serif;">
+        <h3 class="mx-3 fw-bold red" style="font-family: 'Playfair Display', serif;">
             In Case You Missed It
         </h3>
 
@@ -53,7 +53,7 @@
         <!-- 7 -->
         <div class="col-lg-3 col-md-6">
             <img src="{{ asset('img/anthropic3.png') }}" class="img-fluid mb-2" alt="">
-            <h5 class="fw-semibold">Rupee falls 3 paise to close at 90.64 against U.S. dollar</a>
+            <a href="{{ route('english.news') }}" class="txt">Rupee falls 3 paise to close at 90.64 against U.S. dollar</a>
         </div>
 
         <!-- 8 -->
