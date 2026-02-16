@@ -4,7 +4,7 @@
     <div class="d-flex align-items-center mb-4">
         <div class="flex-grow-1 border-top border-2"></div>
 
-        <h3 class="mx-3 fw-bold text-danger" style="font-family: 'Playfair Display', serif;">
+        <h3 class="mx-3 fw-bold red" style="font-family: 'Playfair Display', serif;">
             In Case You Missed It
         </h3>
 
