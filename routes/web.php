@@ -28,3 +28,15 @@ Route::get('/movies-news', function () {
 Route::get('/world', function () {
     return view('news.world');
 })->name('world');
+
+Route::get('/data', function () {
+    return view('news.data');
+})->name('data');
+
+Route::get('/health', function () {
+    return view('news.health');
+})->name('health');
+
+Route::get('/science', function () {
+    return view('news.science');
+})->name('science');
