@@ -13,3 +13,7 @@ Route::get('/english-news', function () {
 Route::get('/', function () {
     return view('home');
 });
+
+Route::get('/world', function () {
+    return view('news.world');
+})->name('world');

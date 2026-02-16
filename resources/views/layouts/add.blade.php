@@ -13,8 +13,6 @@
 
 
     <style>
-   
-
     body {
         display: flex;
         flex-direction: column;
@@ -51,7 +49,7 @@
         margin-top: 40px;
     }
 
-   
+
     .navbar-nav .nav-link:hover {
         color: #c40000 !important;
     }
@@ -184,7 +182,7 @@
         margin-top: 40px;
     }
 
-    
+
 
     footer {
         font-family: 'Merriweather', serif;
@@ -381,10 +379,11 @@
     }
     </style>
 </head>
+
 <body>
 
     <!-- TOP BAR -->
-    
+
 
     <div class="container-fluid content mt-4">
         @if(session('success'))
@@ -394,7 +393,7 @@
         @yield('content')
     </div>
 
-    
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>

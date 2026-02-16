@@ -7,15 +7,21 @@
     <title>SevenUnique News Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
-        rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
- 
+
 
 
 
     <style>
+    :root {
+        --bs-body-font-family: 'Merriweather', serif;
+    }
+
     body {
+
+        font-family: 'Merriweather', serif;
         display: flex;
         flex-direction: column;
         min-height: 100vh;
@@ -36,46 +42,6 @@
         gap: 22px;
     }
 
-    body {
-        font-family: 'Merriweather', serif;
-    }
-
-    .content {
-        flex: 1;
-    }
-
-    footer {
-        background: #343a40;
-        color: white;
-        padding: 20px 0;
-        margin-top: 40px;
-    }
-
-
-    .navbar-nav .nav-link:hover {
-        color: #c40000 !important;
-    }
-
-    footer {
-        font-family: 'Merriweather', serif;
-    }
-
-    .footer-links li {
-        margin-bottom: 8px;
-    }
-
-    .footer-links a {
-        text-decoration: none;
-        color: #000;
-        font-size: 14px;
-        transition: color 0.3s ease;
-    }
-
-    body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
 
     .content {
         flex: 1;
@@ -92,9 +58,6 @@
         gap: 22px;
     }
 
-    body {
-        font-family: 'Merriweather', serif;
-    }
 
     .navbar-nav .nav-link {
         font-family: 'Merriweather', serif;
@@ -167,11 +130,7 @@
     }
 
 
-    body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
+
 
     .content {
         flex: 1;
@@ -369,7 +328,7 @@
 
     .article-content {
         max-width: 720px;
-        font-family: Georgia, "Times New Roman", serif;
+
         font-size: 20px;
         line-height: 1.8;
         color: #222;
