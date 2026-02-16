@@ -235,14 +235,14 @@
             <div class="card border-0">
                 <img src="{{ asset('images/toro.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                     <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         eToro Just Landed in Singapore and It’s...
-</a>
+                    </a>
                     <div class="d-flex justify-content-between align-items-center">
 
                         <a href="{{ route('english.news') }}" class="txt  small text-muted mb-0">
                             eToro Market Updates | Sponsored
-</a>
+                        </a>
 
                         <a href="#" class="btn btn-outline-dark btn-sm rounded-pill">
                             Learn More
@@ -259,14 +259,14 @@
             <div class="card border-0">
                 <img src="{{ asset('images/earpods.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                   <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         AI-powered hearing aid at surprising cost.
-</a>
+                    </a>
                     <div class="d-flex justify-content-between align-items-center">
 
                         <a href="{{ route('english.news') }}" class="txt  small text-muted mb-0">
                             Hearing Aids | Sponsored
-                       </a>
+                        </a>
 
                         <a href="#" class="btn btn-outline-dark btn-sm rounded-pill">
                             Learn More
@@ -283,14 +283,14 @@
             <div class="card border-0">
                 <img src="{{ asset('images/india.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                   <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         Start Forex Trading. Get a 100% Welcome...
-                 </a>
+                    </a>
                     <div class="d-flex justify-content-between align-items-center">
 
-                      <a href="{{ route('english.news') }}" class="txt  small text-muted mb-0">
+                        <a href="{{ route('english.news') }}" class="txt  small text-muted mb-0">
                             iFOREX | Sponsored
-                       </a>
+                        </a>
 
                         <a href="#" class="btn btn-outline-dark btn-sm rounded-pill">
                             Sign Up
@@ -310,12 +310,12 @@
     <div class="col-lg-6">
         <img src="{{ asset('images/copper.png') }}" class="img-fluid rounded">
         <div class="mt-2">
-          <a href="{{ route('english.news') }}" class="txt">
+            <a href="{{ route('english.news') }}" class="txt">
                 Copper Stem Water Enhancer – The secret to Indians' health
             </a>
 
             <div class="d-flex justify-content-between align-items-center">
-               <a href="{{ route('english.news') }}" class="txt  small text-muted mb-0">
+                <a href="{{ route('english.news') }}" class="txt  small text-muted mb-0">
                     NS | Sponsored
                 </a>
 
@@ -330,12 +330,12 @@
     <div class="col-lg-6">
         <img src="{{ asset('images/pova.png') }}" class="img-fluid rounded">
         <div class="mt-2">
-           <a href="{{ route('english.news') }}" class="txt">
+            <a href="{{ route('english.news') }}" class="txt">
                 Pova Curve 2: Built for Motion. Built for Power.
             </a>
 
             <div class="d-flex justify-content-between align-items-center">
-              <a href="{{ route('english.news') }}" class="txt  small text-muted mb-0">
+                <a href="{{ route('english.news') }}" class="txt  small text-muted mb-0">
                     TECNO Mobile | Sponsored
                 </a>
 
@@ -362,7 +362,7 @@
                     </a>
                     <div class="d-flex justify-content-between align-items-center">
 
-                      <p class="small text-muted mb-0">
+                        <p class="small text-muted mb-0">
                             eToro Market Updates | Sponsored
                         </p>
 
@@ -381,7 +381,7 @@
                 <div class="mt-2">
                     <a href="{{ route('english.news') }}" class="txt">
                         AI-powered hearing aid at surprising cost.
-                   </a>
+                    </a>
                     <div class="d-flex justify-content-between align-items-center">
 
                         <p class="small text-muted mb-0">
@@ -428,9 +428,9 @@
         <div class="col-lg-6">
             <img src="{{ asset('images/smartwatch.png') }}" class="img-fluid rounded">
             <div class="mt-2">
-               <a href="{{ route('english.news') }}" class="txt">
+                <a href="{{ route('english.news') }}" class="txt">
                     Copper Stem Water Enhancer – The secret to Indians' health
-               </a>
+                </a>
 
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="small text-muted mb-0">
@@ -448,7 +448,7 @@
         <div class="col-lg-6">
             <img src="{{ asset('images/earbuds.png') }}" class="img-fluid rounded">
             <div class="mt-2">
-               <a href="{{ route('english.news') }}" class="txt">
+                <a href="{{ route('english.news') }}" class="txt">
                     Pova Curve 2: Built for Motion. Built for Power.
                 </a>
 
@@ -480,7 +480,7 @@
             <div class="card border-0">
                 <img src="{{ asset('images/health.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                   <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         eToro Just Landed in Singapore and It’s...
                     </a>
                     <div class="d-flex justify-content-between align-items-center">
@@ -504,7 +504,7 @@
             <div class="card border-0">
                 <img src="{{ asset('images/monitor.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                   <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         AI-powered hearing aid at surprising cost.
                     </a>
                     <div class="d-flex justify-content-between align-items-center">
@@ -528,7 +528,7 @@
             <div class="card border-0">
                 <img src="{{ asset('images/honda.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                   <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         Start Forex Trading. Get a 100% Welcome...
                     </a>
                     <div class="d-flex justify-content-between align-items-center">
@@ -556,9 +556,9 @@
     <div class="col-lg-6">
         <img src="{{ asset('images/bjpleader.png') }}" class="img-fluid rounded">
         <div class="mt-2">
-          <a href="{{ route('english.news') }}" class="txt">
+            <a href="{{ route('english.news') }}" class="txt">
                 Copper Stem Water Enhancer – The secret to Indians' health
-           </a>
+            </a>
 
             <div class="d-flex justify-content-between align-items-center">
                 <p class="small text-muted mb-0">
@@ -574,9 +574,9 @@
     <div class="col-lg-6">
         <img src="{{ asset('images/rajthackrey.png') }}" class="img-fluid rounded">
         <div class="mt-2">
-           <a href="{{ route('english.news') }}" class="txt">
+            <a href="{{ route('english.news') }}" class="txt">
                 Pova Curve 2: Built for Motion. Built for Power.
-           </a>
+            </a>
 
             <div class="d-flex justify-content-between align-items-center">
                 <p class="small text-muted mb-0">
@@ -602,7 +602,7 @@
             <div class="card border-0">
                 <img src="{{ asset('images/honda2.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                   <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         eToro Just Landed in Singapore and It’s...
                     </a>
                     <div class="d-flex justify-content-between align-items-center">
@@ -626,9 +626,9 @@
             <div class="card border-0">
                 <img src="{{ asset('images/dubai.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                   <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         AI-powered hearing aid at surprising cost.
-                </a>
+                    </a>
                     <div class="d-flex justify-content-between align-items-center">
 
                         <p class="small text-muted mb-0">
@@ -650,7 +650,7 @@
             <div class="card border-0">
                 <img src="{{ asset('images/KN.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                  <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         Start Forex Trading. Get a 100% Welcome...
                     </a>
                     <div class="d-flex justify-content-between align-items-center">
@@ -678,7 +678,7 @@
             <div class="mt-2">
                 <a href="{{ route('english.news') }}" class="txt">
                     Copper Stem Water Enhancer – The secret to Indians' health
-               </a>
+                </a>
 
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="small text-muted mb-0">
@@ -694,7 +694,7 @@
         <div class="col-lg-6">
             <img src="{{ asset('images/bigbull.png') }}" class="img-fluid rounded">
             <div class="mt-2">
-               <a href="{{ route('english.news') }}" class="txt">
+                <a href="{{ route('english.news') }}" class="txt">
                     Pova Curve 2: Built for Motion. Built for Power.
                 </a>
 
@@ -719,7 +719,7 @@
             <div class="mt-2">
                 <a href="{{ route('english.news') }}" class="txt">
                     Copper Stem Water Enhancer – The secret to Indians' health
-              </a>
+                </a>
 
                 <div class="d-flex justify-content-between align-items-center">
                     <p class="small text-muted mb-0">
@@ -753,7 +753,7 @@
             <div class="card border-0">
                 <img src="{{ asset('images/playwar.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                  <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         eToro Just Landed in Singapore and It’s...
                     </a>
                     <div class="d-flex justify-content-between align-items-center">
@@ -777,7 +777,7 @@
             <div class="card border-0">
                 <img src="{{ asset('images/icecream.png') }}" class="img-fluid rounded">
                 <div class="mt-2">
-                  <a href="{{ route('english.news') }}" class="txt">
+                    <a href="{{ route('english.news') }}" class="txt">
                         AI-powered hearing aid at surprising cost.
                     </a>
                     <div class="d-flex justify-content-between align-items-center">
@@ -803,7 +803,7 @@
                 <div class="mt-2">
                     <a href="{{ route('english.news') }}" class="txt">
                         Start Forex Trading. Get a 100% Welcome...
-</a>
+                    </a>
                     <div class="d-flex justify-content-between align-items-center">
 
                         <p class="small text-muted mb-0">
