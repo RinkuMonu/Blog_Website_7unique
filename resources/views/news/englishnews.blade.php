@@ -822,6 +822,7 @@
     </div>
 
 </div>
+@include('partials.missed')
 @include('partials.footer')
 
 @endsection
