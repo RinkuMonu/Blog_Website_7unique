@@ -45,3 +45,14 @@ Route::get('/opinion-news', function () {
     return view('news.opinion');
 })->name('opinion.news');
 
+Route::get('/data', function () {
+    return view('news.data');
+})->name('data');
+
+Route::get('/health', function () {
+    return view('news.health');
+})->name('health');
+
+Route::get('/science', function () {
+    return view('news.science');
+})->name('science');

@@ -3,7 +3,7 @@
         <a href="/">
             <img src="{{ asset('images/add1.png') }}" alt="Advertisement" class="img-fluid">
         </a>
-        <p class="text-center mb-3" style="font-size:10px;">
+        <p class="text-uppercase small text-muted mt-3 mb-4">
             Advertisement
         </p>
     </div>
@@ -16,7 +16,7 @@
     <a href="/">
         <img src="{{ asset('images/add2.png') }}" alt="Advertisement" class="img-fluid mx-auto d-block">
     </a>
-   
-       <p class="text-center  mt-5 mb-5" style="font-size:10px;"> Advertisement
+    <p class="text-uppercase small text-muted mb-5 mt-5">
+        Advertisement
     </p>
 </div>
