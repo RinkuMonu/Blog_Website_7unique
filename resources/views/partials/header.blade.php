@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,7 +31,8 @@
     .navbar-nav .nav-link:hover {
         color: #c40000 !important;
     }
-     .nav-pills .nav-link.active {
+
+    .nav-pills .nav-link.active {
         background-color: #3a3a3a !important;
     }
 
@@ -40,10 +42,11 @@
     }
     </style>
 </head>
-<body>
-    
 
-<div class="bg-white py-2 ">
+<body>
+
+
+    <div class="bg-white py-2 ">
         <div class="container">
 
             <!-- TOP ROW -->
@@ -132,6 +135,9 @@
                     <li class="nav-item"><a href="{{ route('india.news') }}" class="nav-link">India</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">World</a></li>
                     <li class="nav-item"><a href="{{ route('movies.news') }}" class="nav-link">Movies</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">India</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{ route('world') }}">World</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Movies</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Sport</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Data</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Health</a></li>
@@ -750,4 +756,5 @@
     </div>
 
 </body>
+
 </html>

@@ -25,3 +25,6 @@ Route::get('/india-news', function () {
 Route::get('/movies-news', function () {
     return view('news.movies');
 })->name('movies.news');
+Route::get('/world', function () {
+    return view('news.world');
+})->name('world');

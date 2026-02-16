@@ -167,7 +167,7 @@
 
                 <!-- MAIN NEWS -->
                 <span class="fw-bold red" style="font-size: 14px;">
-                    <span class="live-dot"></span> LIVE
+                <a href="/" class="red"> <span class="live-dot"></span> LIVE </a>
                 </span>
 
                 <h1 style="font-size: 34px; font-weight: 900;">
@@ -349,7 +349,7 @@
 
                 <!-- DATE -->
                 <div class="text-muted small mb-3">
-                    Friday, February 13
+                    Monday, February 16
                 </div>
 
                 <div class="row align-items-center">
@@ -411,8 +411,7 @@
 <section class="py-5 position-relative overflow-hidden"
     style="background: linear-gradient(50deg,#ffffff 0%,rgba(69,138,210,0.27) 70%,#458AD2 100%);">
 
-    <img src="images/rupee.png" class="position-absolute top-50 end-0 translate-middle-y"
-        style="max-width:650px; opacity:0.35; z-index:0;" alt="">
+ 
 
     <div class="container position-relative" style="z-index:2;">
 
@@ -871,8 +870,9 @@
     </div>
 </section>
 
+@include('partials.toppicks')
 
-
+@include('partials.opinion')
 
 
 
