@@ -379,6 +379,87 @@
         margin-top: 8px;
         margin-bottom: 18px;
     }
+    h2 {
+    font-family: 'Merriweather', serif;
+    font-weight: 700;
+}
+
+p {
+    font-family: Georgia, serif;
+}
+
+hr {
+    border-top: 1px solid #ccc;
+}
+.section-title {
+    color: #c40000;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.news-headline {
+    font-family: 'Merriweather', serif;
+    font-size: 19px;
+    font-weight: 700;
+
+    margin-top: 5px;
+}
+
+.author-name {
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-top: 8px;
+ 
+    padding-top: 8px;
+}
+
+.latest-news {
+    position: relative;
+    padding-left: 25px;
+}
+
+/* Vertical Line */
+.latest-news::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ccc;
+}
+
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+
+.timeline-dot {
+    position: absolute;
+    left: -22px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background: #fff;
+}
+
+
+.timeline-item.active .timeline-dot {
+    background: #000;
+}
+
+
+.timeline-content {
+    padding-left: 10px;
+}
+
+
     </style>
 </head>
 <body>

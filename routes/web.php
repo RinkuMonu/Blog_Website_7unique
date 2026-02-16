@@ -13,3 +13,15 @@ Route::get('/english-news', function () {
 Route::get('/', function () {
     return view('home');
 });
+
+
+
+Route::get('/india-news', function () {
+    return view('news.india');
+})->name('india.news');
+
+
+
+Route::get('/movies-news', function () {
+    return view('news.movies');
+})->name('movies.news');

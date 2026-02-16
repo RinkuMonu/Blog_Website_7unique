@@ -53,7 +53,7 @@
         <!-- 7 -->
         <div class="col-lg-3 col-md-6">
             <img src="{{ asset('img/anthropic3.png') }}" class="img-fluid mb-2" alt="">
-            <h5 class="fw-semibold">Rupee falls 3 paise to close at 90.64 against U.S. dollar</a>
+            <a href="{{ route('english.news') }}" class="txt">Rupee falls 3 paise to close at 90.64 against U.S. dollar</a>
         </div>
 
         <!-- 8 -->
