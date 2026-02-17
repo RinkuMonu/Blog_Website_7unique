@@ -7,7 +7,7 @@
     <title>SevenUnique News Portal</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
@@ -36,27 +36,9 @@
         color: white;
         padding: 20px 0;
         margin-top: 40px;
+        font-family: 'Merriweather', serif;
     }
 
-    .navbar-nav {
-        gap: 22px;
-    }
-
-
-    .content {
-        flex: 1;
-    }
-
-    footer {
-        background: #343a40;
-        color: white;
-        padding: 20px 0;
-        margin-top: 40px;
-    }
-
-    .navbar-nav {
-        gap: 22px;
-    }
 
 
     .navbar-nav .nav-link {
@@ -68,9 +50,6 @@
     }
 
 
-    footer {
-        font-family: 'Merriweather', serif;
-    }
 
     .footer-links li {
         margin-bottom: 8px;
@@ -84,7 +63,7 @@
     }
 
     .footer-links a:hover {
-        color: #c40000;
+        color: #b00200;
     }
 
     .txt {
@@ -131,48 +110,6 @@
 
 
 
-
-    .content {
-        flex: 1;
-    }
-
-    footer {
-        background: #343a40;
-        color: white;
-        padding: 20px 0;
-        margin-top: 40px;
-    }
-
-
-
-    footer {
-        font-family: 'Merriweather', serif;
-    }
-
-    .footer-links li {
-        margin-bottom: 8px;
-    }
-
-    .footer-links a {
-        text-decoration: none;
-        color: #000;
-        font-size: 14px;
-        transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-        color: #c40000;
-    }
-
-    .txt {
-        color: #000;
-        text-decoration: none;
-    }
-
-    .txt:hover {
-        text-decoration: underline;
-        text-decoration-color: #000;
-    }
 
     .red {
         color: #B00020;
@@ -282,20 +219,8 @@
     }
 
 
-    .footer-links li {
-        margin-bottom: 8px;
-    }
 
-    .footer-links a {
-        text-decoration: none;
-        color: #000;
-        font-size: 14px;
-        transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-        color: #c40000;
-    }
+ 
 
     #fullMenu {
         font-family: 'Merriweather', serif;
@@ -345,67 +270,49 @@
         margin-bottom: 18px;
     }
 
-.timeline {
-    position: relative;
-    padding-left: 25px;
-}
+    .timeline {
+        position: relative;
+        padding-left: 25px;
+    }
 
-.timeline::before {
-    content: "";
-    position: absolute;
-    left: 12px;
-    top: 7px;
-    width: 1px;
-    height: 86%;
-    background: #000;
-}
+    .timeline::before {
+        content: "";
+        position: absolute;
+        left: 12px;
+        top: 7px;
+        width: 1px;
+        height: 86%;
+        background: #000;
+    }
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 28px;
-}
+    .timeline-item {
+        position: relative;
+        margin-bottom: 28px;
+    }
 
-.timeline-item::before {
-    content: "";
-    position: absolute;
-    left: -18px;
-    top: 6px;
-    width: 12px;
-    height: 12px;
-    border: 2px solid #000;
-    border-radius: 50%;
-    background: #fff;
-}
+    .timeline-item::before {
+        content: "";
+        position: absolute;
+        left: -18px;
+        top: 6px;
+        width: 12px;
+        height: 12px;
+        border: 2px solid #000;
+        border-radius: 50%;
+        background: #fff;
+    }
 
-/* First dot filled */
-.timeline-item.active::before {
-    background: #000;
-}
+    /* First dot filled */
+    .timeline-item.active::before {
+        background: #000;
+    }
 
-.time {
-    display: block;
-    font-size: 13px;
-    color: #666;
-    margin-bottom: 6px;
-}
-
-.news-title {
-    font-weight: 700;
-    font-size: 16px;
-    margin-bottom: 0;
-}
-
-.read-more {
-    font-weight: 700;
-    font-size: 13px;
-    text-decoration: none;
-    color: #000;
-}
-
-
-
-
-    
+    .time {
+        display: block;
+        font-size: 12px;
+        color: #666;
+        margin-bottom: 6px;
+    }
     </style>
 </head>
 

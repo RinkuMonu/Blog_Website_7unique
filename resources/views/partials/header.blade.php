@@ -1,117 +1,123 @@
+<style>
+.navbar-nav {
+    gap: 22px;
+}
 
+body {
+    font-family: 'Merriweather', serif;
+}
 
-    <style>
-    .navbar-nav {
-        gap: 22px;
+.navbar-nav .nav-link {
+    font-family: 'Merriweather', serif;
+    color: black;
+    padding: 12px 0;
+    font-size: 17px;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #b00200 !important;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #3a3a3a !important;
+}
+
+.nav-pills .nav-link:hover {
+    background-color: #3a3a3a !important;
+    color: #fff !important;
+}
+
+/* Mobile Menu Styles */
+@media (max-width: 991.98px) {
+    #mainNav.show {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: #fff;
+        overflow-y: auto;
+        z-index: 1050;
+        padding: 20px;
+        -webkit-overflow-scrolling: touch;
     }
 
-    body {
-        font-family: 'Merriweather', serif;
+    #mainNav .navbar-nav {
+        gap: 10px;
     }
 
-    .navbar-nav .nav-link {
-        font-family: 'Merriweather', serif;
-        color: black;
-        padding: 12px 0;
-        font-size: 17px;
-        transition: color 0.3s ease;
+    body.menu-open {
+        overflow: hidden;
     }
 
-    .navbar-nav .nav-link:hover {
-        color: #c40000 !important;
+    /* Mega Menu Mobile Styles */
+    #fullMenu.show {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        overflow-y: auto;
+        z-index: 1051;
+        background: #fff;
+        -webkit-overflow-scrolling: touch;
     }
 
-    .nav-pills .nav-link.active {
-        background-color: #3a3a3a !important;
+    #fullMenu .bg-light {
+        min-height: 100vh;
     }
 
-    .nav-pills .nav-link:hover {
-        background-color: #3a3a3a !important;
-        color: #fff !important;
+    /* Close button for mega menu on mobile */
+    #fullMenu .close-mega-menu {
+        display: block;
+        position: sticky;
+        top: 0;
+        background: #fff;
+        z-index: 10;
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+}
+
+/* Desktop mega menu - make it sticky */
+@media (min-width: 992px) {
+    #fullMenu {
+        position: sticky;
+        top: 0;
+        z-index: 1040;
     }
 
-    /* Mobile Menu Styles */
-    @media (max-width: 991.98px) {
-        #mainNav.show {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            background: #fff;
-            overflow-y: auto;
-            z-index: 1050;
-            padding: 20px;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        #mainNav .navbar-nav {
-            gap: 10px;
-        }
-
-        body.menu-open {
-            overflow: hidden;
-        }
-
-        /* Mega Menu Mobile Styles */
-        #fullMenu.show {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100vh;
-            overflow-y: auto;
-            z-index: 1051;
-            background: #fff;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        #fullMenu .bg-light {
-            min-height: 100vh;
-        }
-
-        /* Close button for mega menu on mobile */
-        #fullMenu .close-mega-menu {
-            display: block;
-            position: sticky;
-            top: 0;
-            background: #fff;
-            z-index: 10;
-            padding: 15px;
-            border-bottom: 1px solid #ddd;
-        }
+    #fullMenu.show {
+        position: sticky;
+        top: 0;
     }
+}
 
-    /* Desktop mega menu - make it sticky */
-    @media (min-width: 992px) {
-        #fullMenu {
-            position: sticky;
-            top: 0;
-            z-index: 1040;
-        }
-
-            #fullMenu.show {
-                position: sticky;
-                top: 0;
-            }
-        }
-
-        @media (min-width: 992px) {
-            #fullMenu .close-mega-menu {
-                display: none;
-            }
-        }
-
-    .footer-icon {
-        color: #000;
-        text-decoration: none;
-        font-size: 1.2rem;
+@media (min-width: 992px) {
+    #fullMenu .close-mega-menu {
+        display: none;
     }
+}
 
-    .footer-icon:hover {
-        color: #c40000;
-    }
-    </style>
+.footer-icon {
+    color: #000;
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+.footer-icon:hover {
+    color: #B00200;
+}
+.modal-backdrop {
+    background-color: #000 !important;
+}
+
+.modal-backdrop.show {
+    opacity: 1 !important;
+}
+
+</style>
 </head>
 
 <body>
@@ -125,11 +131,11 @@
 
 
                 <div class="col-6 col-md-4 d-flex align-items-center gap-3">
-                   <span class="text-muted fw-semibold small">
-                    {{ \Carbon\Carbon::now()->format('F d, Y') }}
-                </span>
+                    <span class="text-muted fw-semibold small">
+                        {{ \Carbon\Carbon::now()->format('F d, Y') }}
+                    </span>
 
-                    <a href="#" class="text-danger text-decoration-none fw-semibold small">
+                    <a href="#" class="text-decoration-none fw-semibold small" style="color:#B00200;">
                         e-Paper
                     </a>
                 </div>
@@ -147,9 +153,11 @@
                 <div class="col-6 col-md-4 d-flex flex-column align-items-end order-2 order-md-3">
 
 
-                    <a href="#" class="text-dark text-decoration-none small mb-1">
-                        Account
+                    <a href="#" class="text-dark text-decoration-none small mb-1" data-bs-toggle="modal"
+                        data-bs-target="#loginModal">
+                        LOGIN <i class="bi bi-person"></i>
                     </a>
+
 
                     <!-- Bottom Row: e-Paper + Subscribe -->
                     <div class="d-flex align-items-center gap-3">
@@ -157,7 +165,7 @@
                             e-books
                         </a>
 
-                        <a href="#" class="btn btn-danger btn-sm px-3">
+                        <a href="#" class="btn text-white btn-sm px-3" style="background-color: #B00200;">
                             SUBSCRIBE
                         </a>
                     </div>
@@ -863,6 +871,69 @@
         </div>
 
     </div>
+    <!-- LOGIN MODAL -->
+    <div class="modal fade" id="loginModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
+
+                <!-- Close Button -->
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
+                    data-bs-dismiss="modal"></button>
+
+                <!-- Logo -->
+                <div class="text-center mb-3">
+                    <h2 class="fw-bold">SEVENUNIQUE</h2>
+                </div>
+
+                <h5 class="text-center fw-bold mb-3">
+                    Login to your account
+                </h5>
+
+                <p class="text-center small">
+                    Don’t have an account?
+                    <a href="#" class="fw-bold text-dark">Sign up</a>
+                </p>
+
+                <!-- Social Buttons -->
+                <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+
+                    <span class="text-dark mb-0">
+                        Continue with
+                    </span>
+
+                    <button class="btn btn-light border d-flex align-items-center justify-content-center">
+                        <i class="bi bi-apple"></i>
+                    </button>
+
+                    <button class="btn btn-light border d-flex align-items-center justify-content-center">
+                        <i class="bi bi-google"></i>
+                    </button>
+
+                </div>
+
+
+                <div class="text-center my-2">or</div>
+
+                <!-- Email Field -->
+                <div class="mb-3">
+                    <input type="email" class="form-control" placeholder="Email">
+                </div>
+
+                <!-- Next Button -->
+                <button class="btn btn-dark w-100">
+                    NEXT
+                </button>
+
+                <p class="small text-muted text-center mt-3">
+                    If you have an account with The Hindu Businessline,
+                    The Hindu e-Paper, Frontline, or Sportstar,
+                    you can use the same account to login here.
+                </p>
+
+            </div>
+        </div>
+    </div>
+
 
 
     <script>

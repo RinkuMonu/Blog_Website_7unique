@@ -40,7 +40,7 @@
     background: #B00020;
 }
 
-/* Custom Arrows */
+
 .custom-prev,
 .custom-next {
     width: 40px;
@@ -90,7 +90,7 @@
                                         <a href="/">
                                             <img src="img/biffes.png" class="img-fluid w-100">
                                         </a>
-                                        
+
                                     </div>
                                 </div>
 
@@ -138,7 +138,7 @@
                                     </div>
                                 </div>
 
-                              <div class="col-md-3">
+                                <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
                                         <a href="/">
                                             <img src="images/text.png" class="img-fluid w-100">
@@ -180,7 +180,7 @@
                                     </div>
                                 </div>
 
-                               <div class="col-md-3">
+                                <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
                                         <a href="/">
                                             <img src="images/text.png" class="img-fluid w-100">
