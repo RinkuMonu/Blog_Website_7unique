@@ -210,8 +210,11 @@ body {
                     </li>
 
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="bi bi-search"></i> Search</a>
-                    </li>
+    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
+        <i class="bi bi-search"></i> Search
+    </a>
+</li>
+
                 </ul>
 
                 <!-- Center Menu -->
@@ -933,6 +936,40 @@ body {
             </div>
         </div>
     </div>
+
+
+<div class="modal fade" id="searchModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content p-4">
+
+            <!-- Close Button -->
+            <div class="d-flex justify-content-end">
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <!-- Search Title -->
+            <h4 class="fw-bold text-center mb-4">
+                Search Articles
+            </h4>
+
+            <!-- Search Form -->
+            <form action="/india-news" method="GET">
+                <div class="input-group">
+                    <input type="text"
+                           name="query"
+                           class="form-control"
+                           placeholder="Type what you want to search..."
+                           required>
+
+                    <button class="btn btn-dark" type="submit">
+                        Search
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
 
 
 
