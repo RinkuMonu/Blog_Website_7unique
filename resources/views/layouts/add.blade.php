@@ -415,7 +415,6 @@ hr {
     padding-left: 25px;
 }
 
-/* Vertical Line */
 .latest-news::before {
     content: "";
     position: absolute;
@@ -435,8 +434,8 @@ hr {
 
 .timeline-dot {
     position: absolute;
-    left: -22px;
-    top: 5px;
+    left: -21px;
+    top: 0px;
     width: 12px;
     height: 12px;
     border-radius: 50%;

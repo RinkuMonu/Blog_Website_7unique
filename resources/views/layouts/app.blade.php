@@ -356,7 +356,7 @@
     position: absolute;
     left: 23px;
     top: 60px;   
-    bottom: 0;
+    bottom: 48px;
     width: 2px;
     background: #000;
 }
@@ -369,21 +369,48 @@
 }
 
 
-.timeline-stop {
-    border-left: none !important;
-    padding-left: 0 !important;
+.latest-news {
     position: relative;
+    padding-left: 25px;
+}
+
+/* Vertical Line */
+.latest-news::before {
+    content: "";
+    position: absolute;
+    left: 9px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #ccc;
 }
 
 
-.timeline-stop::before {
-    content: "";
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+
+.timeline-dot {
     position: absolute;
-    left: -2px;
-    top: 0;
-    bottom: 0;
-    width: 4px;
-    background: #fff; 
+    left: -21px;
+    top: 0px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid #000;
+    background: #fff;
+}
+
+
+.timeline-item.active .timeline-dot {
+    background: #000;
+}
+
+
+.timeline-content {
+    padding-left: 10px;
 }
 
 

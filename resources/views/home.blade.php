@@ -327,7 +327,7 @@
                             Sponsored
                         </span>
 
-                        <a href="/" class="txt d-block mb-5 mt-2">
+                        <a href="/" class="txt d-block mb-5 ms-1 mt-2">
                             Transcending cloud finops to get value in the AI age
                         </a>
 
