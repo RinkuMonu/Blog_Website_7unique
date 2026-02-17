@@ -150,7 +150,7 @@
                     <li class="nav-item"><a class="nav-link" href="{{ route('science') }}">Science</a></li>
                      <li class="nav-item"><a href="{{ route('entertainment') }}" class="nav-link">Entertainment</a></li>
                     <li class="nav-item"><a href="{{ route('premium.news') }}" class="nav-link">Premium</a></li>
-                </ul>   
+                </ul>
 
             </div>
         </div>
