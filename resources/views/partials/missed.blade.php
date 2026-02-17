@@ -14,54 +14,86 @@
     <!-- Grid -->
     <div class="row g-4">
 
-        <!-- 1 -->
-        <div class="col-lg-3 col-md-6">
+    <!-- 1 -->
+    <div class="col-lg-3 col-md-6">
+        <a href="{{ route('english.news') }}" class="text-decoration-none text-dark d-block">
             <img src="{{ asset('img/oil.png') }}" class="img-fluid mb-2" alt="">
-            <a href="{{ route('english.news') }}" class="txt">Consumers get a raw deal as global oil price fall benefit remains ‘frozen’</a>
-        </div>
-
-        <!-- 2 -->
-        <div class="col-lg-3 col-md-6">
-            <img src="{{ asset('img/anthropic1.png') }}" class="img-fluid mb-2" alt="">
-            <a href="{{ route('english.news') }}" class="txt">U.S. used Anthropic's Claude during the Venezuela raid: report</a>
-        </div>
-
-        <!-- 3 -->
-        <div class="col-lg-3 col-md-6">
-            <img src="{{ asset('img/byrathi.png') }}" class="img-fluid mb-2" alt="">
-            <a href="{{ route('english.news') }}" class="txt">K.R. Puram MLA Byrathi Basavaraj arrested after SC rejects bail plea</a>
-        </div>
-
-        <!-- 4 -->
-        <div class="col-lg-3 col-md-6">
-            <img src="{{ asset('img/shanti.png') }}" class="img-fluid mb-2" alt="">
-            <a href="{{ route('english.news') }}" class="txt">A case against the SHANTI Act | Explained</a>
-        </div>
-
-        <!-- 5 -->
-        <div class="col-lg-3 col-md-6">
-            <img src="{{ asset('img/bridge.png') }}" class="img-fluid mb-2" alt="">
-            <a href="{{ route('english.news') }}" class="txt">PM Modi inaugurates ₹3,030 crore bridge on Brahmaputra</a>
-        </div>
-
-        <!-- 6 -->
-        <div class="col-lg-3 col-md-6">
-            <img src="{{ asset('img/anthropic2.png') }}" class="img-fluid mb-2" alt="">
-           <a href="{{ route('english.news') }}" class="txt">Anthropic clinches $380 billion valuation after $30 billion funding round</a>
-        </div>
-
-        <!-- 7 -->
-        <div class="col-lg-3 col-md-6">
-            <img src="{{ asset('img/anthropic3.png') }}" class="img-fluid mb-2" alt="">
-            <a href="{{ route('english.news') }}" class="txt">Rupee falls 3 paise to close at 90.64 against U.S. dollar</a>
-        </div>
-
-        <!-- 8 -->
-        <div class="col-lg-3 col-md-6">
-            <img src="{{ asset('img/immunity.png') }}" class="img-fluid mb-2" alt="">
-            <a href="{{ route('english.news') }}" class="txt">What is immunity, and how do we make our immunity better?</a>
-        </div>
-
+            <span class="txt">
+                Consumers get a raw deal as global oil price fall benefit remains ‘frozen’
+            </span>
+        </a>
     </div>
+
+    <!-- 2 -->
+    <div class="col-lg-3 col-md-6">
+        <a href="{{ route('english.news') }}" class="text-decoration-none text-dark d-block">
+            <img src="{{ asset('img/anthropic1.png') }}" class="img-fluid mb-2" alt="">
+            <span class="txt">
+                U.S. used Anthropic's Claude during the Venezuela raid: report
+            </span>
+        </a>
+    </div>
+
+    <!-- 3 -->
+    <div class="col-lg-3 col-md-6">
+        <a href="{{ route('english.news') }}" class="text-decoration-none text-dark d-block">
+            <img src="{{ asset('img/byrathi.png') }}" class="img-fluid mb-2" alt="">
+            <span class="txt">
+                K.R. Puram MLA Byrathi Basavaraj arrested after SC rejects bail plea
+            </span>
+        </a>
+    </div>
+
+    <!-- 4 -->
+    <div class="col-lg-3 col-md-6">
+        <a href="{{ route('english.news') }}" class="text-decoration-none text-dark d-block">
+            <img src="{{ asset('img/shanti.png') }}" class="img-fluid mb-2" alt="">
+            <span class="txt">
+                A case against the SHANTI Act | Explained
+            </span>
+        </a>
+    </div>
+
+    <!-- 5 -->
+    <div class="col-lg-3 col-md-6">
+        <a href="{{ route('english.news') }}" class="text-decoration-none text-dark d-block">
+            <img src="{{ asset('img/bridge.png') }}" class="img-fluid mb-2" alt="">
+            <span class="txt">
+                PM Modi inaugurates ₹3,030 crore bridge on Brahmaputra
+            </span>
+        </a>
+    </div>
+
+    <!-- 6 -->
+    <div class="col-lg-3 col-md-6">
+        <a href="{{ route('english.news') }}" class="text-decoration-none text-dark d-block">
+            <img src="{{ asset('img/anthropic2.png') }}" class="img-fluid mb-2" alt="">
+            <span class="txt">
+                Anthropic clinches $380 billion valuation after $30 billion funding round
+            </span>
+        </a>
+    </div>
+
+    <!-- 7 -->
+    <div class="col-lg-3 col-md-6">
+        <a href="{{ route('english.news') }}" class="text-decoration-none text-dark d-block">
+            <img src="{{ asset('img/anthropic3.png') }}" class="img-fluid mb-2" alt="">
+            <span class="txt">
+                Rupee falls 3 paise to close at 90.64 against U.S. dollar
+            </span>
+        </a>
+    </div>
+
+    <!-- 8 -->
+    <div class="col-lg-3 col-md-6">
+        <a href="{{ route('english.news') }}" class="text-decoration-none text-dark d-block">
+            <img src="{{ asset('img/immunity.png') }}" class="img-fluid mb-2" alt="">
+            <span class="txt">
+                What is immunity, and how do we make our immunity better?
+            </span>
+        </a>
+    </div>
+
+</div>
 
 </div>

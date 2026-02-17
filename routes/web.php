@@ -56,3 +56,8 @@ Route::get('/health', function () {
 Route::get('/science', function () {
     return view('news.science');
 })->name('science');
+
+
+Route::get('/entertainment', function () {
+    return view('news.entertainment');
+})->name('entertainment');

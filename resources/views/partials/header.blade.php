@@ -133,14 +133,22 @@
                 <ul class="navbar-nav fw-semibold me-4">
 
                     <li class="nav-item"><a href="{{ route('india.news') }}" class="nav-link">India</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('world') }}">World</a></li>
+                             <li class="nav-item"><a class="nav-link" href="{{ route('world') }}">World</a></li>
                     <li class="nav-item"><a href="{{ route('movies.news') }}" class="nav-link">Movies</a></li>
-                    <li class="nav-item"><a href="{{ route('sports.news') }}" class="nav-link">Sport</a></li>
-                    <li class="nav-item"><a href="{{ route('opinion.news') }}" class="nav-link">Opinion</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('data') }}">Data</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('health') }}">Health</a></li>
+                
+          
+                
+                  <li class="nav-item"><a href="{{ route('sports.news') }}" class="nav-link">Sport</a></li>
+                   <li class="nav-item"><a class="nav-link" href="{{ route('data') }}">Data</a></li>
+                                       <li class="nav-item"><a class="nav-link" href="{{ route('health') }}">Health</a></li>
+
+                   <li class="nav-item"><a href="{{ route('opinion.news') }}" class="nav-link">Opinion</a></li>
+                   
+                 
+                   
+                 
                     <li class="nav-item"><a class="nav-link" href="{{ route('science') }}">Science</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Entertainment</a></li>
+                     <li class="nav-item"><a href="{{ route('entertainment') }}" class="nav-link">Entertainment</a></li>
                     <li class="nav-item"><a href="{{ route('premium.news') }}" class="nav-link">Premium</a></li>
                 </ul>
 

@@ -115,8 +115,9 @@
 
                 <!-- LEFT CREST COLUMN -->
                 <div class="col-md-4 text-center border-end">
+                    <a href="/" class="txt">
                     <img src="{{ asset('img/hindi.png') }}" class="img-fluid mb-3" style="max-height:80px;">
-                    <p class="small text-uppercase mb-2">Read our editorials in</p>
+                    <p class="small text-uppercase mb-2">Read our editorials in</p></a>
                     <button class="btn btn-outline-secondary btn-sm rounded-pill">
                         हिंदी
                     </button>
@@ -126,21 +127,23 @@
                 <div class="col-md-8">
 
                     <div class="mb-4 border-bottom pb-3">
+                        <a href="/" class="txt">
                         <h3 class="fw-bold" style="font-family:'Merriweather', serif;">
                             Poll sop: On Tamil Nadu and cash benefits
                         </h3>
                         <p class="mb-0">
                             The Election Commission of India’s proven bias on model code seems to have forced Tamil Nadu’s hand
-                        </p>
+                        </p></a>
                     </div>
 
                     <div>
+                        <a href="/" class="txt">
                         <h2 class="fw-bold" style="font-family:'Merriweather', serif;">
                             Hot air: On Donald Trump and environmental issues
                         </h2>
                         <p class="mb-0">
                             Donald Trump is trying to turn back the clock on environmental issues
-                        </p>
+                        </p></a>
                     </div>
 
                 </div>
