@@ -90,7 +90,7 @@
                                         <a href="/">
                                             <img src="img/biffes.png" class="img-fluid w-100">
                                         </a>
-                                        >
+                                        
                                     </div>
                                 </div>
 
@@ -138,13 +138,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <div class="bg-danger text-white d-flex align-items-end p-4" style="height:434px;">
-                                        <div>
-                                            <small class="fw-bold"><a href="/" class="video">LIFE & STYLE</a></small>
-                                            <h4 class="fw-bold mt-3"><a href="/" class="video">Valentine’s day:
-                                                    redefining romance</a></h4>
-                                        </div>
+                              <div class="col-md-3">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="/">
+                                            <img src="images/text.png" class="img-fluid w-100">
+                                        </a>
+
                                     </div>
                                 </div>
 
@@ -181,14 +180,12 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
+                               <div class="col-md-3">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="/">
+                                            <img src="images/text.png" class="img-fluid w-100">
+                                        </a>
 
-                                    <div class="bg-danger text-white d-flex align-items-end p-4" style="height:434px;">
-                                        <div>
-                                            <small class="fw-bold"><a href="/" class="video">LIFE & STYLE</a></small>
-                                            <h4 class="fw-bold mt-3"><a href="/" class="video">Valentine’s day:
-                                                    redefining romance</a></h4>
-                                        </div>
                                     </div>
                                 </div>
 

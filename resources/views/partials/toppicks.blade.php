@@ -97,11 +97,8 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <div class="bg-danger text-white d-flex align-items-end p-4" style="height:434px;">
-                                        <div>
-                                            <small class="fw-bold">LIFE & STYLE</small>
-                                            <h3 class="fw-bold mt-3">Valentine’s day: redefining romance</h3>
-                                        </div>
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="images/text.png" class="img-fluid w-100">
                                     </div>
                                 </div>
 
@@ -142,12 +139,10 @@
                                     </div>
                                 </div>
 
-                                <div class="col-md-3">
-                                    <div class="bg-danger text-white d-flex align-items-end p-4" style="height:434px;">
-                                        <div>
-                                            <small class="fw-bold">LIFE & STYLE</small>
-                                            <h4 class="fw-bold mt-3">Valentine’s day: redefining romance</h4>
-                                        </div>
+                                  <div class="col-md-3">
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="images/text.png" class="img-fluid w-100">
+
                                     </div>
                                 </div>
 
@@ -189,11 +184,8 @@
                                 </div>
 
                                 <div class="col-md-3">
-                                    <div class="bg-danger text-white d-flex align-items-end p-4" style="height:434px;">
-                                        <div>
-                                            <small class="fw-bold">LIFE & STYLE</small>
-                                            <h4 class="fw-bold mt-3">Valentine’s day: redefining romance</h4>
-                                        </div>
+                                    <div class="position-relative overflow-hidden">
+                                        <img src="images/text.png" class="img-fluid w-100">
                                     </div>
                                 </div>
 
