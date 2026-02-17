@@ -31,384 +31,290 @@
         </p>
     </div>
     <div class="row mt-4">
-        <div class="row">
 
-            <!-- LEFT COLUMN -->
-            <div class="col-lg-3 border-end">
-                <a href="/" class="text-decoration-none">
-                    <h3 class="fw-bold mb-4 red" style="font-size: 30px; color: #B00020">Premium</h3>
-                </a>
+        <!-- LEFT COLUMN -->
+        <div class="col-lg-3 border-end">
+            <a href="/" class="text-decoration-none">
+                <h3 class="fw-bold mb-4 red" style="font-size: 30px; color: #B00020">Premium</h3>
+            </a>
 
 
-                <a href="/" class="txt d-block">
-                    Vanished lives: Kerala sees a surge in missing person cases
-                </a>
+            <a href="/" class="txt d-block">
+                Vanished lives: Kerala sees a surge in missing person cases
+            </a>
 
-                <div class="d-flex align-items-center justify-content-between mt-2">
+            <div class="d-flex align-items-center justify-content-between mt-2">
 
-                    <!-- Author Name -->
-                    <span class="text-muted fw-semibold text-uppercase " style="font-size: 9px;">
-                        <a href="/" class="smll">
-                            Kallol Bhattacherjee
-                        </a>
-                    </span>
-
-                    <!-- Author Image -->
-                    <a href="/">
-                        <img src="{{ asset('images/writer.png') }}" alt="Author" class="rounded-circle" width="50"
-                            height="50">
+                <!-- Author Name -->
+                <span class="text-muted fw-semibold text-uppercase " style="font-size: 9px;">
+                    <a href="/" class="smll">
+                        Kallol Bhattacherjee
                     </a>
-
-                </div>
-
-
-                <hr>
-
-                <a href="/" class="txt">
-                    <p>Midday meal cooks protest in Chhattisgarh</p>
-                </a>
-                <span class="text-muted fw-semibold d-block text-uppercase" style="font-size: 9px;"><a href="/"
-                        class="smll">A. Mithosh Joseph</a></span>
-
-                <hr>
-                <a href="/" class="txt d-block">
-                    How Indira Canteens lost flavour among patrons in Bengaluru
-                </a>
-
-                <div class="d-flex align-items-center justify-content-between mt-2">
-
-                    <!-- Author Name -->
-                    <span class="text-muted fw-semibold text-uppercase " style="font-size: 9px;">
-                        <a href="/" class="smll ">
-                            P. Sujatha Varma
-                        </a>
-                    </span>
-
-                    <!-- Author Image -->
-                    <a href="/">
-                        <img src="{{ asset('images/writer2.png') }}" alt="Author" class="rounded-circle" width="50"
-                            height="50">
-                    </a>
-
-                </div>
-
-
-                <hr>
-                <a href="/" class="txt d-block">
-                    VB-G RAM G: when a policy shift meets rural realities
-                </a>
-
-                <div class="d-flex align-items-center justify-content-between mt-2">
-
-                    <!-- Author Name -->
-                    <span class="text-muted fw-semibold text-uppercase " style="font-size: 9px;">
-                        <a href="/" class="smll">
-                            Sanjay Hegde
-                        </a>
-                    </span>
-
-                    <!-- Author Image -->
-                    <a href="/">
-                        <img src="{{ asset('images/writer3.png') }}" alt="Author" class="rounded-circle" width="50"
-                            height="50">
-                    </a>
-                </div>
-
-
-                <hr>
-                <a href="/" class="txt d-block">
-                    Vande Mataram, its six stanzas and a settled question
-                </a>
-
-                <div class="d-flex align-items-center justify-content-between mt-2">
-
-                    <!-- Author Name -->
-                    <span class="text-muted fw-semibold text-uppercase " style="font-size: 9px;">
-                        <a href="/" class="smll">
-                            Rishita Khanna
-                        </a>
-                    </span>
-
-                    <!-- Author Image -->
-                    <a href="/">
-                        <img src="{{ asset('images/writer1.png') }}" alt="Author" class="rounded-circle" width="50"
-                            height="50">
-                    </a>
-
-                </div>
-
-                <hr class="my-1">
-                <hr class="my-1">
-                <hr class="my-1">
-                <span class="fw-bold red mt-5 " style="font-size: 14px;">
-                    <a href="/" class="red"> <span class="live-dot"></span> LIVE </a>
-                </span>
-                <a href="/" class="txt d-block mt-2">
-                    Telangana Municipal Polls 2026 LIVE: Congress takes leader as results trickle in
-
-                </a>
-                <hr>
-                <a href="/" class="text-decoration-none">
-                    <h3 class="fw-bold  red" style="font-size: 16px; color: #B00020">Kerala</h3>
-                </a>
-                <a href="/" class="txt d-block">
-                    Kerala motivational speaker and former police officer Philip Mampad detained in POCSO case
-                </a>
-                <hr>
-                <a href="/" class="text-decoration-none">
-                    <h3 class="fw-bold  red" style="font-size: 16px; color: #B00020">Industry</h3>
-                </a>
-                <a href="/" class="txt d-block">
-                    Passenger vehicles up 12.6% with sale of 4.5 lakh vehicles: SIAM
-                </a>
-
-            </div>
-            <!-- Center col -->
-            <div class="col-lg-6 px-4">
-
-                <!-- MAIN NEWS -->
-                <span class="fw-bold red" style="font-size: 14px;">
-                    <a href="/" class="red"> <span class="live-dot"></span> LIVE </a>
                 </span>
 
-                <h1 style="font-size: 34px; font-weight: 900;">
-                    <a href="{{ route('english.news') }}" class="txt">
-                        Bangladesh election results LIVE: BNP thanks India, hopes for stronger bilateral ties
-                    </a>
-                </h1>
-
-                <p class="text-muted" style="font-size: 14px;">
-                    <a href="/" class="txt">
-                        The Election Commission put the BNP at 181 seats, the Jamaat-e-Islami at 61 and others at 7,
-                        with full official results not expected before noon (0600 GMT)
-                    </a>
-                </p>
-
+                <!-- Author Image -->
                 <a href="/">
-                    <img src="{{ asset('images/man.png') }}" class="img-fluid my-3" alt="News Image">
+                    <img src="{{ asset('images/writer.png') }}" alt="Author" class="rounded-circle" width="50"
+                        height="50">
                 </a>
 
-                <!-- SECOND ROW -->
-                <div class="row mt-4">
-
-                    <!-- LEFT SMALL NEWS -->
-                    <div class="col-md-6">
-                        <a href="/" class="text-decoration-none">
-                            <h6 class="fw-bold txt" style="font-size: 20px;">
-                                T20 World Cup: Zimbabwe stuns Australia in Colombo
-                            </h6>
-                            <img src="{{ asset('images/match.png') }}" class="img-fluid mb-2" alt="News">
-                        </a>
-                    </div>
-
-                    <!-- RIGHT SMALL NEWS -->
-                    <div class="col-md-6">
-
-                        <!-- LIVE TAG -->
-                        <span class="fw-bold red" style="font-size: 14px;">
-                            <span class="live-dot"></span> LIVE
-                        </span>
-
-                        <a href="/" class="text-decoration-none">
-                            <h6 class="fw-bold txt" style="font-size: 20px;">
-                                Bangladesh election results LIVE: BNP thanks India, hopes for stronger bilateral ties
-                            </h6>
-                        </a>
-
-                        <span class="text-muted fw-semibold text-uppercase" style="font-size: 9px;">
-                            <a href="/" class="smll">
-                                The Hindu Bureau
-                            </a>
-                        </span>
-
-                        <hr>
-
-                        <a href="/" class="text-decoration-none">
-                            <h6 class="fw-bold txt" style="font-size: 20px;">
-                                T.N. CM Stalin’s surprise bonanza for women: ₹5,000 credited in bank accounts of 1.31
-                                crore women today
-                            </h6>
-                        </a>
-
-                    </div>
-
-                </div>
-
             </div>
 
 
+            <hr>
 
+            <a href="/" class="txt">
+                <p>Midday meal cooks protest in Chhattisgarh</p>
+            </a>
+            <span class="text-muted fw-semibold d-block text-uppercase" style="font-size: 9px;"><a href="/"
+                    class="smll">A. Mithosh Joseph</a></span>
 
-            <!-- RIGHT COLUMN -->
-            <div class="col-lg-3 border-start ps-4 latest-timeline">
+            <hr>
+            <a href="/" class="txt d-block">
+                How Indira Canteens lost flavour among patrons in Bengaluru
+            </a>
 
-                <h4 class="fw-bold mb-4 red" style="font-size: 30px; color: #B00020">
-                    <a href="/" class="red">Latest News</a>
-                </h4>
+            <div class="d-flex align-items-center justify-content-between mt-2">
 
-                <!-- Timeline Item -->
-                <div class="position-relative border-start ps-3 mb-4">
-                    <span class="position-absolute top-0 start-0 translate-middle 
-                    bg-dark border border-dark rounded-circle" style="width:12px;height:12px;"></span>
-
-
-                    <a href="/" class="txt d-block">
-                        <div class="small text-muted mb-1" style="font-size:10px;">
-                            3 mins ago – Kerala
-                        </div>
-                        Chittoor: Container falls from lorry, crushes car; software engineer killed
+                <!-- Author Name -->
+                <span class="text-muted fw-semibold text-uppercase " style="font-size: 9px;">
+                    <a href="/" class="smll ">
+                        P. Sujatha Varma
                     </a>
-
-                    <hr>
-                </div>
-
-                <!-- Timeline Item -->
-                <div class="position-relative border-start ps-3 mb-4">
-                    <span class="position-absolute top-0 start-0 translate-middle 
-                    bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
-
-
-                    <a href="/" class="txt d-block">
-                        <div class="small text-muted mb-1" style="font-size:10px;">
-                            18 mins ago – Kerala
-                        </div>
-                        Chittoor: Container falls from lorry, crushes car; software engineer killed
-                    </a>
-                    <hr>
-                </div>
-                <!-- Timeline Item -->
-                <div class="position-relative border-start ps-3 mb-4">
-                    <span class="position-absolute top-0 start-0 translate-middle 
-                    bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
-
-
-                    <a href="/" class="txt d-block">
-                        <div class="small text-muted mb-1" style="font-size:10px;">
-                            32 mins ago – Kerala
-                        </div>
-                        Chittoor: Container falls from lorry, crushes car; software engineer killed
-                    </a>
-                    <hr>
-                </div>
-                <!-- Timeline Item -->
-                <div class="position-relative border-start ps-3 mb-4">
-                    <span class="position-absolute top-0 start-0 translate-middle 
-                    bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
-
-
-                    <a href="/" class="txt d-block">
-                        <div class="small text-muted mb-1" style="font-size:10px;">
-                            3 mins ago – Kerala
-                        </div>
-                        Chittoor: Container falls from lorry, crushes car; software engineer killed
-                    </a>
-                    <hr>
-                </div>
-                <!-- Timeline Item -->
-                <div class="position-relative border-start ps-3 mb-4">
-                    <span class="position-absolute top-0 start-0 translate-middle 
-                    bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
-
-                    <a href="/" class="txt d-block">
-                        <div class="small text-muted mb-1" style="font-size:10px;">
-                            40 mins ago – Kerala
-                        </div>
-                        Chittoor: Container falls from lorry, crushes car; software engineer killed
-                    </a>
-                    <a href="/">
-                        <span class="smll" style="font-size:10px">READ MORE STORIES</span> </a>
-                    
-
-                </div>
-                <div class="timeline-stop">
-
-                        <hr class="my-1">
-                        <hr class="my-1">
-                        <hr class="my-1 mb-4">
-
-                        <span class="badge bg-secondary px-2 py-1 text-uppercase rounded-0 small mb-2">
-                            Sponsored
-                        </span>
-
-                        <a href="/" class="txt d-block mb-5 mt-2 ms-1">
-                            Transcending cloud finops to get value in the AI age
-                        </a>
-
-                        <hr>
-
-                        <span class="badge bg-secondary px-2 py-1 text-uppercase rounded-0 small mb-2 mt-4">
-                            Sponsored
-                        </span>
-
-                        <a href="/" class="txt d-block mb-5 mt-2 ms-1">
-                            Steering intelligence: Building governance foundations for the agentic AI age
-                        </a>
-
-                    </div>
-
-            </div>
-
-        </div>
-        <!-- EDITORIAL SECTION -->
-        <div class="container-fluid bg-light py-4 border-top border-bottom mb-4 mx-auto">
-
-            <div class="container">
-
-                <!-- DATE -->
-                <span class="text-muted fw-semibold small">
-                    {{ \Carbon\Carbon::now()->format('F d, Y') }}
                 </span>
 
-                <div class="row align-items-center">
+                <!-- Author Image -->
+                <a href="/">
+                    <img src="{{ asset('images/writer2.png') }}" alt="Author" class="rounded-circle" width="50"
+                        height="50">
+                </a>
 
-                    <!-- LEFT LOGO -->
-                    <div class="col-lg-3 border-end text-center text-lg-center">
-                        <a href="/">
-                            <img src="{{ asset('images/elephant.png') }}" alt="The Hindu Logo" class="img-fluid mb-2"
-                                style="max-height:70px;">
+            </div>
+
+
+            <hr>
+            <a href="/" class="txt d-block">
+                VB-G RAM G: when a policy shift meets rural realities
+            </a>
+
+            <div class="d-flex align-items-center justify-content-between mt-2">
+
+                <!-- Author Name -->
+                <span class="text-muted fw-semibold text-uppercase " style="font-size: 9px;">
+                    <a href="/" class="smll">
+                        Sanjay Hegde
+                    </a>
+                </span>
+
+                <!-- Author Image -->
+                <a href="/">
+                    <img src="{{ asset('images/writer3.png') }}" alt="Author" class="rounded-circle" width="50"
+                        height="50">
+                </a>
+            </div>
+
+
+            <hr>
+            <a href="/" class="txt d-block">
+                Vande Mataram, its six stanzas and a settled question
+            </a>
+
+            <div class="d-flex align-items-center justify-content-between mt-2">
+
+                <!-- Author Name -->
+                <span class="text-muted fw-semibold text-uppercase " style="font-size: 9px;">
+                    <a href="/" class="smll">
+                        Rishita Khanna
+                    </a>
+                </span>
+
+                <!-- Author Image -->
+                <a href="/">
+                    <img src="{{ asset('images/writer1.png') }}" alt="Author" class="rounded-circle" width="50"
+                        height="50">
+                </a>
+
+            </div>
+
+            <hr class="my-1">
+            <hr class="my-1">
+            <hr class="my-1">
+            <span class="fw-bold red mt-5 " style="font-size: 14px;">
+                <a href="/" class="red"> <span class="live-dot"></span> LIVE </a>
+            </span>
+            <a href="/" class="txt d-block mt-2">
+                Telangana Municipal Polls 2026 LIVE: Congress takes leader as results trickle in
+
+            </a>
+            <hr>
+            <a href="/" class="text-decoration-none">
+                <h3 class="fw-bold red" style="font-size: 16px; color: #B00020">Kerala</h3>
+            </a>
+            <a href="/" class="txt d-block">
+                Kerala motivational speaker and former police officer Philip Mampad detained in POCSO case
+            </a>
+            <hr>
+            <a href="/" class="text-decoration-none">
+                <h3 class="fw-bold red" style="font-size: 16px; color: #B00020">Industry</h3>
+            </a>
+            <a href="/" class="txt d-block">
+                Passenger vehicles up 12.6% with sale of 4.5 lakh vehicles: SIAM
+            </a>
+
+        </div>
+
+
+        <!-- CENTER COLUMN -->
+        <div class="col-lg-6 px-4">
+
+            <!-- MAIN NEWS -->
+            <span class="fw-bold red" style="font-size: 14px;">
+                <a href="/" class="red"> <span class="live-dot"></span> LIVE </a>
+            </span>
+
+            <h1 style="font-size: 34px; font-weight: 900;">
+                <a href="{{ route('english.news') }}" class="txt">
+                    Bangladesh election results LIVE: BNP thanks India, hopes for stronger bilateral ties
+                </a>
+            </h1>
+
+            <p class="text-muted" style="font-size: 14px;">
+                <a href="/" class="txt">
+                    The Election Commission put the BNP at 181 seats, the Jamaat-e-Islami at 61 and others at 7,
+                    with full official results not expected before noon (0600 GMT)
+                </a>
+            </p>
+
+            <a href="/">
+                <img src="{{ asset('images/man.png') }}" class="img-fluid my-3" alt="News Image">
+            </a>
+
+            <!-- SECOND ROW -->
+            <div class="row mt-4">
+
+                <!-- LEFT SMALL NEWS -->
+                <div class="col-md-6">
+                    <a href="/" class="text-decoration-none">
+                        <h6 class="fw-bold txt" style="font-size: 20px;">
+                            T20 World Cup: Zimbabwe stuns Australia in Colombo
+                        </h6>
+                        <img src="{{ asset('images/match.png') }}" class="img-fluid mb-2" alt="News">
+                    </a>
+                </div>
+
+                <!-- RIGHT SMALL NEWS -->
+                <div class="col-md-6">
+
+                    <!-- LIVE TAG -->
+                    <span class="fw-bold red" style="font-size: 14px;">
+                        <span class="live-dot"></span> LIVE
+                    </span>
+
+                    <a href="/" class="text-decoration-none">
+                        <h6 class="fw-bold txt" style="font-size: 20px;">
+                            Bangladesh election results LIVE: BNP thanks India, hopes for stronger bilateral ties
+                        </h6>
+                    </a>
+
+                    <span class="text-muted fw-semibold text-uppercase" style="font-size: 9px;">
+                        <a href="/" class="smll">
+                            The Hindu Bureau
                         </a>
-                        <p class=" txt text-uppercase small fw-semibold mb-2">
-                            Read editorials in
-                        </p>
-                        <a href="/" data-bs-toggle="tooltip" data-bs-placement="top" title="Hindi">
-                            <span class="badge border border-dark text-dark px-2 py-1 rounded-pill">
-                                हिंदी
-                            </span>
-                        </a>
+                    </span>
 
-                    </div>
+                    <hr>
 
-                    <!-- MIDDLE EDITORIAL -->
-                    <div class="col-lg-4 border-end px-4">
-                        <h5 class="fw-bold">
-                            <a href="/" class="text-dark txt">
-                                Farmers’ pulse: On India and its demand for pulses
-                            </a>
-                        </h5>
-                        <p class="txt small"><a href="/" class="txt">
-                                Only structural reforms in agriculture sector can ensure food security </a>
-                        </p>
-                    </div>
-
-                    <!-- RIGHT EDITORIAL -->
-                    <div class="col-lg-5 px-4">
-                        <h5 class="fw-bold">
-                            <a href="/" class="text-dark txt">
-                                Too fake to be good: On AI-generated imagery, labelling
-                            </a>
-                        </h5>
-                        <p class="txt small">
-                            <a href="/" class="txt">
-                                Labelling of synthetically generated content on social media is a must </a>
-                        </p>
-                    </div>
+                    <a href="/" class="text-decoration-none">
+                        <h6 class="fw-bold txt" style="font-size: 20px;">
+                            T.N. CM Stalin’s surprise bonanza for women: ₹5,000 credited in bank accounts of 1.31
+                            crore women today
+                        </h6>
+                    </a>
 
                 </div>
 
             </div>
+
         </div>
+
+
+
+
+        <!-- RIGHT COLUMN -->
+        <div class="col-lg-3 border-start ps-4">
+
+            <h5 class="fw-bold red mb-4">Latest News</h5>
+
+            <div class="timeline">
+
+                <!-- 1 (Filled Dot) -->
+                <div class="timeline-item active">
+                    <a href="/" class="txt">
+                        <small class="time">13 mins ago - Technology</small>
+                        <p class="news-title">
+                            India's AI Summit opening in New Delhi marred by long queues, confusion
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 2 -->
+                <div class="timeline-item">
+                    <a href="/" class="txt">
+                        <small class="time">21 mins ago - India</small>
+                        <p class="news-title">
+                            India's permanent contribution to world community’s agenda is of enormous importance
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 3 -->
+                <div class="timeline-item">
+                    <a href="/" class="txt">
+                        <small class="time">47 mins ago - Karnataka</small>
+                        <p class="news-title">
+                            Karnataka High Court quashes BJP’s defamation case
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 4 -->
+                <div class="timeline-item">
+                    <a href="/" class="txt">
+                        <small class="time">52 mins ago - Kerala</small>
+                        <p class="news-title">
+                            Kerala actor appears before ED for questioning in gold case
+                        </p>
+                    </a>
+                </div>
+
+                <!-- 5 -->
+                <div class="timeline-item">
+                    <a href="/" class="txt">
+                        <small class="time">1 hour ago - World</small>
+                        <p class="news-title">
+                            Global markets steady after U.S. inflation data surprises investors
+                        </p>
+                    </a>
+                </div>
+
+            </div>
+
+            <a href="#" class="smll fw-semibold" style="font-size:10px;">
+                READ MORE STORIES
+            </a>
+            <hr class="my-1">
+            <hr class="my-1">
+            <hr class="my-1">
+            <a href="/">
+                <img src="images/sugam.png" class="img-fluid w-100 mb-3 mt-5" alt="">
+            </a>
+        </div>
+
+
+
 
     </div>
+
 </div>
 
 <!-- Blue Strip -->
