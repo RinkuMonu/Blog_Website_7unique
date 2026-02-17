@@ -12,34 +12,116 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <style>
-    .navbar-nav {
-        gap: 22px;
-    }
+        .navbar-nav {
+            gap: 22px;
+        }
 
-    body {
-        font-family: 'Merriweather', serif;
-    }
+        body {
+            font-family: 'Merriweather', serif;
+        }
 
-    .navbar-nav .nav-link {
-        font-family: 'Merriweather', serif;
-        color: black;
-        padding: 12px 0;
-        font-size: 17px;
-        transition: color 0.3s ease;
-    }
+        .navbar-nav .nav-link {
+            font-family: 'Merriweather', serif;
+            color: black;
+            padding: 12px 0;
+            font-size: 17px;
+            transition: color 0.3s ease;
+        }
 
-    .navbar-nav .nav-link:hover {
-        color: #c40000 !important;
-    }
+        .navbar-nav .nav-link:hover {
+            color: #c40000 !important;
+        }
 
-    .nav-pills .nav-link.active {
-        background-color: #3a3a3a !important;
-    }
+        .nav-pills .nav-link.active {
+            background-color: #3a3a3a !important;
+        }
 
-    .nav-pills .nav-link:hover {
-        background-color: #3a3a3a !important;
-        color: #fff !important;
-    }
+        .nav-pills .nav-link:hover {
+            background-color: #3a3a3a !important;
+            color: #fff !important;
+        }
+
+        /* Mobile Menu Styles */
+        @media (max-width: 991.98px) {
+            #mainNav.show {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: #fff;
+                overflow-y: auto;
+                z-index: 1050;
+                padding: 20px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            #mainNav .navbar-nav {
+                gap: 10px;
+            }
+
+            body.menu-open {
+                overflow: hidden;
+            }
+
+            /* Mega Menu Mobile Styles */
+            #fullMenu.show {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                overflow-y: auto;
+                z-index: 1051;
+                background: #fff;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            #fullMenu .bg-light {
+                min-height: 100vh;
+            }
+
+            /* Close button for mega menu on mobile */
+            #fullMenu .close-mega-menu {
+                display: block;
+                position: sticky;
+                top: 0;
+                background: #fff;
+                z-index: 10;
+                padding: 15px;
+                border-bottom: 1px solid #ddd;
+            }
+        }
+
+        /* Desktop mega menu - make it sticky */
+        @media (min-width: 992px) {
+            #fullMenu {
+                position: sticky;
+                top: 0;
+                z-index: 1040;
+            }
+
+            #fullMenu.show {
+                position: sticky;
+                top: 0;
+            }
+        }
+
+        @media (min-width: 992px) {
+            #fullMenu .close-mega-menu {
+                display: none;
+            }
+        }
+
+        .footer-icon {
+            color: #000;
+            text-decoration: none;
+            font-size: 1.2rem;
+        }
+
+        .footer-icon:hover {
+            color: #c40000;
+        }
     </style>
 </head>
 
@@ -49,34 +131,33 @@
     <div class="bg-white py-2 ">
         <div class="container">
 
-            <!-- TOP ROW -->
+
             <div class="row align-items-center">
 
-                <!-- Left: Date + ePaper -->
+
                 <div class="col-6 col-md-4 d-flex align-items-center gap-3">
-                    <span class="text-muted fw-semibold small">
-                        {{ \Carbon\Carbon::now()->format('F d, Y') }}
-                    </span>
+                   <span class="text-muted fw-semibold small">
+                    {{ \Carbon\Carbon::now()->format('F d, Y') }}
+                </span>
 
                     <a href="#" class="text-danger text-decoration-none fw-semibold small">
                         e-Paper
                     </a>
                 </div>
 
-                <!-- Center: Logo -->
+          
                 <div class="col-12 col-md-4 text-center order-3 order-md-2 my-2 my-md-0">
                     <h1 class="m-0 fw-bold" style="font-family: 'Times New Roman', serif; font-size: 38px;">
-                        <a href="{{ url('/') }}" class="text-decoration-none text-dark">
+                        <a href="/" class="text-decoration-none text-dark">
                             SEVENUNIQUE
                         </a>
                     </h1>
                 </div>
 
-                <!-- Right: Account + Subscribe -->
-                <!-- Right Section -->
+
                 <div class="col-6 col-md-4 d-flex flex-column align-items-end order-2 order-md-3">
 
-                    <!-- Top: Account -->
+    
                     <a href="#" class="text-dark text-decoration-none small mb-1">
                         Account
                     </a>
@@ -116,6 +197,13 @@
 
             <div class="collapse navbar-collapse" id="mainNav">
 
+                <!-- Close Button for Mobile Main Menu -->
+                <div class="d-lg-none w-100 d-flex justify-content-end mb-3">
+                    <button class="btn btn-link text-dark" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                        <i class="bi bi-x-lg fs-4"></i>
+                    </button>
+                </div>
+
                 <!-- Left Search + Menu -->
                 <ul class="navbar-nav me-5 align-items-center">
                     <li class="nav-item">
@@ -132,30 +220,30 @@
                 <!-- Center Menu -->
                 <ul class="navbar-nav fw-semibold me-4">
 
-                    <li class="nav-item"><a href="{{ route('india.news') }}" class="nav-link">India</a></li>
-                             <li class="nav-item"><a class="nav-link" href="{{ route('world') }}">World</a></li>
-                    <li class="nav-item"><a href="{{ route('movies.news') }}" class="nav-link">Movies</a></li>
-                
-          
-                
-                  <li class="nav-item"><a href="{{ route('sports.news') }}" class="nav-link">Sport</a></li>
-                   <li class="nav-item"><a class="nav-link" href="{{ route('data') }}">Data</a></li>
-                                       <li class="nav-item"><a class="nav-link" href="{{ route('health') }}">Health</a></li>
-
-                   <li class="nav-item"><a href="{{ route('opinion.news') }}" class="nav-link">Opinion</a></li>
-                   
-                 
-                   
-                 
-                    <li class="nav-item"><a class="nav-link" href="{{ route('science') }}">Science</a></li>
-                     <li class="nav-item"><a href="{{ route('entertainment') }}" class="nav-link">Entertainment</a></li>
-                    <li class="nav-item"><a href="{{ route('premium.news') }}" class="nav-link">Premium</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">India</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">World</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Movies</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Sport</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Data</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Health</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Opinion</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Science</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Entertainment</a></li>
+                    <li class="nav-item"><a href="#" class="nav-link">Premium</a></li>
                 </ul>
 
             </div>
         </div>
     </nav>
+    
     <div class="collapse w-100 bg-white border-top " id="fullMenu">
+
+        <!-- Close Button for Mobile -->
+        <div class="close-mega-menu">
+            <button class="btn btn-link text-dark" data-bs-toggle="collapse" data-bs-target="#fullMenu">
+                <i class="bi bi-x-lg"></i> Close Menu
+            </button>
+        </div>
 
         <div class="bg-light ">
             <div class="container py-4">
@@ -704,20 +792,11 @@
 
                             <div class="col-6">
                                 <ul class="list-unstyled">
-                                    <li class="mb-2 border-bottom pb-2"><img
-                                            src="{{ asset('images/ebook-section-icon.svg') }}" alt="">
-                                        eBooks</li>
-                                    <li class="mb-2 border-bottom pb-2"><img src="{{ asset('images/crossword.svg') }}"
-                                            alt=""> TH Games
-                                    </li>
-                                    <li class="mb-2 border-bottom pb-2"><img src="{{ asset('images/newspaper.svg') }}"
-                                            alt=""> Newsletter
-                                    </li>
-                                    <li class="mb-2 border-bottom pb-2"><img src="{{ asset('images/litfest.svg') }}"
-                                            alt=""> Lit For Life
-                                    </li>
-                                    <li class="mb-2 border-bottom pb-2"><img src="{{ asset('images/huddle.svg') }}"
-                                            alt=""> The Huddle</li>
+                                    <li class="mb-2 border-bottom pb-2">eBooks</li>
+                                    <li class="mb-2 border-bottom pb-2">TH Games</li>
+                                    <li class="mb-2 border-bottom pb-2">Newsletter</li>
+                                    <li class="mb-2 border-bottom pb-2">Lit For Life</li>
+                                    <li class="mb-2 border-bottom pb-2">The Huddle</li>
                                 </ul>
                             </div>
 
@@ -751,14 +830,38 @@
 
                     </div>
 
-
-
                 </div>
 
             </div>
         </div>
 
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        const menu = document.getElementById('mainNav');
+        const megaMenu = document.getElementById('fullMenu');
+        const toggler = document.querySelector('.navbar-toggler');
+
+        // Handle main nav menu
+        menu.addEventListener('show.bs.collapse', function () {
+            document.body.classList.add('menu-open');
+        });
+
+        menu.addEventListener('hidden.bs.collapse', function () {
+            document.body.classList.remove('menu-open');
+        });
+
+        // Handle mega menu - also add menu-open to prevent background scroll
+        megaMenu.addEventListener('show.bs.collapse', function () {
+            document.body.classList.add('menu-open');
+        });
+
+        megaMenu.addEventListener('hidden.bs.collapse', function () {
+            document.body.classList.remove('menu-open');
+        });
+    </script>
+
 
 </body>
 

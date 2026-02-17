@@ -167,7 +167,7 @@
 
                 <!-- MAIN NEWS -->
                 <span class="fw-bold red" style="font-size: 14px;">
-                <a href="/" class="red"> <span class="live-dot"></span> LIVE </a>
+                    <a href="/" class="red"> <span class="live-dot"></span> LIVE </a>
                 </span>
 
                 <h1 style="font-size: 34px; font-weight: 900;">
@@ -239,7 +239,8 @@
 
 
             <!-- RIGHT COLUMN -->
-            <div class="col-lg-3 border-start ps-4">
+            <div class="col-lg-3 border-start ps-4 latest-timeline">
+
                 <h4 class="fw-bold mb-4 red" style="font-size: 30px; color: #B00020">
                     <a href="/" class="red">Latest News</a>
                 </h4>
@@ -265,7 +266,7 @@
                     <span class="position-absolute top-0 start-0 translate-middle 
                     bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
-                  
+
                     <a href="/" class="txt d-block">
                         <div class="small text-muted mb-1" style="font-size:10px;">
                             18 mins ago – Kerala
@@ -279,7 +280,7 @@
                     <span class="position-absolute top-0 start-0 translate-middle 
                     bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
-                   
+
                     <a href="/" class="txt d-block">
                         <div class="small text-muted mb-1" style="font-size:10px;">
                             32 mins ago – Kerala
@@ -293,7 +294,7 @@
                     <span class="position-absolute top-0 start-0 translate-middle 
                     bg-white border border-dark rounded-circle" style="width:12px;height:12px;"></span>
 
-                  
+
                     <a href="/" class="txt d-block">
                         <div class="small text-muted mb-1" style="font-size:10px;">
                             3 mins ago – Kerala
@@ -315,32 +316,36 @@
                     </a>
                     <a href="/">
                         <span class="smll" style="font-size:10px">READ MORE STORIES</span> </a>
-                    <hr class="my-1">
-                    <hr class="my-1">
-                    <hr class="my-1 mb-4">
+                    <div class="timeline-stop">
 
-                    <span class="badge bg-secondary px-2 py-1 text-uppercase rounded-0 small mb-2 ">
-                        Sponsored
-                    </span>
+                        <hr class="my-1">
+                        <hr class="my-1">
+                        <hr class="my-1 mb-4">
 
-                    <a href="/" class="txt d-block mb-5 mt-2">
-                        Transcending cloud finops to get value in the AI age
-                    </a>
-                    <hr>
-                    <span class="badge bg-secondary px-2 py-1 text-uppercase rounded-0 small mb-2 mt-4">
-                        Sponsored
-                    </span>
+                        <span class="badge bg-secondary px-2 py-1 text-uppercase rounded-0 small mb-2">
+                            Sponsored
+                        </span>
 
-                    <a href="/" class="txt d-block mb-5 mt-2">
-                        Steering intelligence: Building governance foundations for the agentic AI age
-                    </a>
+                        <a href="/" class="txt d-block mb-5 mt-2">
+                            Transcending cloud finops to get value in the AI age
+                        </a>
+
+                        <hr>
+
+                        <span class="badge bg-secondary px-2 py-1 text-uppercase rounded-0 small mb-2 mt-4">
+                            Sponsored
+                        </span>
+
+                        <a href="/" class="txt d-block mb-5 mt-2">
+                            Steering intelligence: Building governance foundations for the agentic AI age
+                        </a>
+
+                    </div>
 
                 </div>
 
             </div>
-            <hr class="my-1">
-            <hr class="my-1">
-            <hr class="my-1">
+
         </div>
         <!-- EDITORIAL SECTION -->
         <div class="container-fluid bg-light py-4 border-top border-bottom mb-4 mx-auto">
@@ -348,9 +353,9 @@
             <div class="container">
 
                 <!-- DATE -->
-                <div class="text-muted small mb-3">
-                    Monday, February 16
-                </div>
+                <span class="text-muted fw-semibold small">
+                    {{ \Carbon\Carbon::now()->format('F d, Y') }}
+                </span>
 
                 <div class="row align-items-center">
 
@@ -411,7 +416,7 @@
 <section class="py-5 position-relative overflow-hidden"
     style="background: linear-gradient(50deg,#ffffff 0%,rgba(69,138,210,0.27) 70%,#458AD2 100%);">
 
- 
+
 
     <div class="container position-relative" style="z-index:2;">
 
