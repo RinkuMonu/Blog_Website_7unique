@@ -17,24 +17,6 @@
         display: flex;
         flex-direction: column;
         min-height: 100vh;
-    }
-
-    .content {
-        flex: 1;
-    }
-
-    footer {
-        background: #343a40;
-        color: white;
-        padding: 20px 0;
-        margin-top: 40px;
-    }
-
-    .navbar-nav {
-        gap: 22px;
-    }
-
-    body {
         font-family: 'Merriweather', serif;
     }
 
@@ -47,6 +29,11 @@
         color: white;
         padding: 20px 0;
         margin-top: 40px;
+        font-family: 'Merriweather', serif;
+    }
+
+    .navbar-nav {
+        gap: 22px;
     }
 
 
@@ -54,9 +41,6 @@
         color: #c40000 !important;
     }
 
-    footer {
-        font-family: 'Merriweather', serif;
-    }
 
     .footer-links li {
         margin-bottom: 8px;
@@ -69,30 +53,8 @@
         transition: color 0.3s ease;
     }
 
-    body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
 
-    .content {
-        flex: 1;
-    }
 
-    footer {
-        background: #343a40;
-        color: white;
-        padding: 20px 0;
-        margin-top: 40px;
-    }
-
-    .navbar-nav {
-        gap: 22px;
-    }
-
-    body {
-        font-family: 'Merriweather', serif;
-    }
 
     .navbar-nav .nav-link {
         font-family: 'Merriweather', serif;
@@ -103,23 +65,8 @@
     }
 
 
-    footer {
-        font-family: 'Merriweather', serif;
-    }
-
-    .footer-links li {
-        margin-bottom: 8px;
-    }
-
-    .footer-links a {
-        text-decoration: none;
-        color: #000;
-        font-size: 14px;
-        transition: color 0.3s ease;
-    }
-
     .footer-links a:hover {
-        color: #c40000;
+        color: #B00200;
     }
 
     .txt {
@@ -162,76 +109,6 @@
         display: inline-block;
         margin-right: 1 px;
         animation: pulseDot 1s infinite;
-    }
-
-
-    body {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
-
-    .content {
-        flex: 1;
-    }
-
-    footer {
-        background: #343a40;
-        color: white;
-        padding: 20px 0;
-        margin-top: 40px;
-    }
-
-
-
-    footer {
-        font-family: 'Merriweather', serif;
-    }
-
-    .footer-links li {
-        margin-bottom: 8px;
-    }
-
-    .footer-links a {
-        text-decoration: none;
-        color: #000;
-        font-size: 14px;
-        transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-        color: #c40000;
-    }
-
-    .txt {
-        color: #000;
-        text-decoration: none;
-    }
-
-    .txt:hover {
-        text-decoration: underline;
-        text-decoration-color: #000;
-    }
-
-    .red {
-        color: #B00020;
-        text-decoration: none;
-    }
-
-    .red:hover {
-        text-decoration: underline;
-        text-decoration-color: #B00020;
-    }
-
-    .smll {
-        color: #2B2E34;
-        text-decoration: underline;
-        text-decoration-color: #2B2E34;
-    }
-
-    .smll:hover {
-        text-decoration: none;
-
     }
 
     .video {
@@ -289,17 +166,6 @@
     }
 
 
-
-    .live-dot {
-        width: 10px;
-        height: 10px;
-        background-color: #B00020;
-        border-radius: 50%;
-        display: inline-block;
-        margin-right: 1 px;
-        animation: pulseDot 1s infinite;
-    }
-
     @keyframes pulseDot {
         0% {
             opacity: 1;
@@ -314,21 +180,6 @@
         }
     }
 
-
-    .footer-links li {
-        margin-bottom: 8px;
-    }
-
-    .footer-links a {
-        text-decoration: none;
-        color: #000;
-        font-size: 14px;
-        transition: color 0.3s ease;
-    }
-
-    .footer-links a:hover {
-        color: #c40000;
-    }
 
     #fullMenu {
         font-family: 'Merriweather', serif;
@@ -377,83 +228,83 @@
         margin-top: 8px;
         margin-bottom: 18px;
     }
+
     h2 {
-    font-family: 'Merriweather', serif;
-    font-weight: 700;
-}
+        font-family: 'Merriweather', serif;
+        font-weight: 700;
+    }
 
 
-hr {
-    border-top: 1px solid #ccc;
-}
-.section-title {
-    color: #c40000;
-    font-weight: 700;
-    font-size: 14px;
-    letter-spacing: 0.5px;
-}
+    hr {
+        border-top: 1px solid #ccc;
+    }
 
-.news-headline {
-    font-family: 'Merriweather', serif;
-    font-size: 19px;
-    font-weight: 700;
+    .section-title {
+        color: #c40000;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
 
-    margin-top: 5px;
-}
+    .news-headline {
+        font-family: 'Merriweather', serif;
+        font-size: 19px;
+        font-weight: 700;
 
-.author-name {
-    font-size: 12px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    margin-top: 8px;
- 
-    padding-top: 8px;
-}
+        margin-top: 5px;
+    }
 
-.latest-news {
-    position: relative;
-    padding-left: 25px;
-}
+    .author-name {
+        font-size: 12px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        margin-top: 8px;
 
-.latest-news::before {
-    content: "";
-    position: absolute;
-    left: 9px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #ccc;
-}
+        padding-top: 8px;
+    }
 
+    .latest-news {
+        position: relative;
+        padding-left: 25px;
+    }
 
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-}
+    .latest-news::before {
+        content: "";
+        position: absolute;
+        left: 9px;
+        top: 0;
+        bottom: 0;
+        width: 2px;
+        background: #ccc;
+    }
 
 
-.timeline-dot {
-    position: absolute;
-    left: -21px;
-    top: 0px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid #000;
-    background: #fff;
-}
+    .timeline-item {
+        position: relative;
+        margin-bottom: 30px;
+    }
 
 
-.timeline-item.active .timeline-dot {
-    background: #000;
-}
+    .timeline-dot {
+        position: absolute;
+        left: -21px;
+        top: 0px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        border: 2px solid #000;
+        background: #fff;
+    }
 
 
-.timeline-content {
-    padding-left: 10px;
-}
+    .timeline-item.active .timeline-dot {
+        background: #000;
+    }
 
 
+    .timeline-content {
+        padding-left: 10px;
+    }
     </style>
 </head>
 
