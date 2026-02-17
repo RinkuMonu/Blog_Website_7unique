@@ -243,7 +243,7 @@
         <!-- RIGHT COLUMN -->
         <div class="col-lg-3 border-start ps-4">
 
-            <h5 class="fw-bold red mb-4">Latest News</h5>
+            <h5 class="fw-bold mb-4"><a herf="/" class="red">Latest News</a></h5>
 
             <div class="timeline">
 
