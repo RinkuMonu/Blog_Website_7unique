@@ -1,15 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>sevenunique</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700;900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 
     <style>
     .navbar-nav {
@@ -101,17 +90,17 @@
             z-index: 1040;
         }
 
-        #fullMenu.show {
-            position: sticky;
-            top: 0;
+            #fullMenu.show {
+                position: sticky;
+                top: 0;
+            }
         }
-    }
 
-    @media (min-width: 992px) {
-        #fullMenu .close-mega-menu {
-            display: none;
+        @media (min-width: 992px) {
+            #fullMenu .close-mega-menu {
+                display: none;
+            }
         }
-    }
 
     .footer-icon {
         color: #000;
@@ -136,9 +125,9 @@
 
 
                 <div class="col-6 col-md-4 d-flex align-items-center gap-3">
-                    <span class="text-muted fw-semibold small">
-                        {{ \Carbon\Carbon::now()->format('F d, Y') }}
-                    </span>
+                   <span class="text-muted fw-semibold small">
+                    {{ \Carbon\Carbon::now()->format('F d, Y') }}
+                </span>
 
                     <a href="#" class="text-danger text-decoration-none fw-semibold small">
                         e-Paper
@@ -270,9 +259,16 @@
     <div class="collapse w-100 bg-white border-top " id="fullMenu">
 
         <!-- Close Button for Mobile -->
-        <div class="close-mega-menu">
+        <div class="close-mega-menu d-lg-none">
             <button class="btn btn-link text-dark" data-bs-toggle="collapse" data-bs-target="#fullMenu">
                 <i class="bi bi-x-lg"></i> Close Menu
+            </button>
+        </div>
+
+        <!-- Close Button for Desktop -->
+        <div class="d-none d-lg-block text-end pt-2 pe-3">
+            <button class="btn btn-link text-dark" data-bs-toggle="collapse" data-bs-target="#fullMenu">
+                <i class="bi bi-x-lg fs-5"></i>
             </button>
         </div>
 
@@ -868,7 +864,7 @@
 
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
     <script>
     const menu = document.getElementById('mainNav');
     const megaMenu = document.getElementById('fullMenu');
