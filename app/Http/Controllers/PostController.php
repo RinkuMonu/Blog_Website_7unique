@@ -54,4 +54,9 @@ class PostController extends Controller
         $posts = Post::latest()->get();
         return view('news.opinion', compact('posts'));
      }
+
+     public function entertainment() {
+        $posts = Post::latest()->get();
+        return view('news.entertainment', compact('posts'));
+     }
 }
