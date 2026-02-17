@@ -141,8 +141,8 @@
                     </p>
                     <p style="font-size:10px;">
                         <a href="/" class="smll">
-                        MINI ANTHIKAD CHHIBBER
-</a>
+                            MINI ANTHIKAD CHHIBBER
+                        </a>
                     </p>
                 </div>
 
@@ -601,9 +601,9 @@
                         </div>
 
 
-                       <a href="#" class="smll fw-semibold" style="font-size:10px;">
-                                READ MORE STORIES
-                            </a>
+                        <a href="#" class="smll fw-semibold" style="font-size:10px;">
+                            READ MORE STORIES
+                        </a>
 
                         <!-- TODAY'S PAPER -->
                         <div class="p-4 mt-5" style="background-color:#f3f3f3;">

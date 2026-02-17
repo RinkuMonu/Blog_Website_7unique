@@ -345,72 +345,61 @@
         margin-bottom: 18px;
     }
 
-
-.latest-timeline {
-    position: relative;
-}
-
-
-.latest-timeline::before {
-    content: "";
-    position: absolute;
-    left: 23px;
-    top: 60px;   
-    bottom: 48px;
-    width: 2px;
-    background: #000;
-}
-
-
-.latest-timeline .position-relative {
-    padding-left: 20px !important;
-    border-left: none !important;
-    margin-bottom: 35px !important;
-}
-
-
-.latest-news {
+.timeline {
     position: relative;
     padding-left: 25px;
 }
 
-/* Vertical Line */
-.latest-news::before {
+.timeline::before {
     content: "";
     position: absolute;
-    left: 9px;
-    top: 0;
-    bottom: 0;
-    width: 2px;
-    background: #ccc;
-}
-
-
-.timeline-item {
-    position: relative;
-    margin-bottom: 30px;
-}
-
-
-.timeline-dot {
-    position: absolute;
-    left: -21px;
-    top: 0px;
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    border: 2px solid #000;
-    background: #fff;
-}
-
-
-.timeline-item.active .timeline-dot {
+    left: 12px;
+    top: 7px;
+    width: 1px;
+    height: 86%;
     background: #000;
 }
 
+.timeline-item {
+    position: relative;
+    margin-bottom: 28px;
+}
 
-.timeline-content {
-    padding-left: 10px;
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -18px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border: 2px solid #000;
+    border-radius: 50%;
+    background: #fff;
+}
+
+/* First dot filled */
+.timeline-item.active::before {
+    background: #000;
+}
+
+.time {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 6px;
+}
+
+.news-title {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 0;
+}
+
+.read-more {
+    font-weight: 700;
+    font-size: 13px;
+    text-decoration: none;
+    color: #000;
 }
 
 
