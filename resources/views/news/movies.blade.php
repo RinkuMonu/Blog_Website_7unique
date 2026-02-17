@@ -43,7 +43,7 @@
             </div>
 
             <!-- Center Title -->
-            <h2 class="mx-4 text-danger fw-bold mb-0">
+            <h2 class="mx-4 red fw-bold mb-0">
                 Movies
             </h2>
 
@@ -123,7 +123,7 @@
                             Susanna Fogel and David Iseron on ‘Ponies’: ‘We have an open marriage creatively’
                         </a>
                     </p>
-                    <p class="txt mb-0" style="font-size:10px;">
+                    <p style="font-size:10px;">
                         <a href="/" class="smll">
                             MINI ANTHIKAD CHHIBBER
                         </a>
@@ -139,8 +139,10 @@
                             ‘Scarlet’ movie review: Mamoru Hosoda gives ‘Hamlet’ a stunning twist
                         </a>
                     </p>
-                    <p class="txt mb-0" style="font-size:10px;">
+                    <p style="font-size:10px;">
+                        <a href="/" class="smll">
                         MINI ANTHIKAD CHHIBBER
+</a>
                     </p>
                 </div>
 
@@ -151,7 +153,7 @@
                             ‘Fallout’ Season 2 review: Ella Purnell and Walton Goggins shine
                         </a>
                     </p>
-                    <p class="txt mb-0" style="font-size:10px;">
+                    <p style="font-size:10px;">
                         <a href="/" class="smll">
                             MINI ANTHIKAD CHHIBBER
                         </a>
@@ -167,7 +169,7 @@
                             ‘Fallout’ Season 2 review: Ella Purnell and Walton Goggins shine
                         </a>
                     </p>
-                    <p class="txt mb-0" style="font-size:10px;">
+                    <p style="font-size:10px;">
                         <a href="/" class="smll">
                             MINI ANTHIKAD CHHIBBER
                         </a>
@@ -260,7 +262,7 @@
                                 class="me-3 object-fit-cover">
                         </a>
                         <a href="/">
-                            <a href="{{ route('english.news') }}" class="txt small fw-semibold">
+                            <a href="{{ route('english.news') }}" class="txt fw-semibold">
 
                                 T20 World Cup: India vs Pakistan match highlights
                             </a>
@@ -275,7 +277,7 @@
                                 class="me-3 object-fit-cover">
                         </a>
 
-                        <a href="{{ route('english.news') }}" class="txt small fw-semibold">
+                        <a href="{{ route('english.news') }}" class="txt  fw-semibold">
                             Iran open to compromises to reach nuclear deal
                         </a>
                     </div>
@@ -284,9 +286,10 @@
                     <!-- News Item 3 -->
                     <div class="d-flex py-3 border-bottom">
                         <a href="/">
-                        <img src="{{ asset('img/thumb3.png') }}" width="95" height="70" class="me-3 object-fit-cover">
-</a>
-                        <a href="{{ route('english.news') }}" class="txt small fw-semibold">
+                            <img src="{{ asset('img/thumb3.png') }}" width="95" height="70"
+                                class="me-3 object-fit-cover">
+                        </a>
+                        <a href="{{ route('english.news') }}" class="txt fw-semibold">
                             PM Modi declines invitation to ceremony
                         </a>
                     </div>
@@ -305,8 +308,8 @@
                 <!-- LEFT ADVERTISEMENT -->
                 <div class="col-lg-4">
                     <a href="/">
-                    <img src="{{ asset('images/sugam.png') }}" class="img-fluid" alt="Advertisement">
-</a>
+                        <img src="{{ asset('images/sugam.png') }}" class="img-fluid" alt="Advertisement">
+                    </a>
                 </div>
 
 
@@ -320,13 +323,13 @@
                     <!-- Story 1 -->
                     <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
                         <a href="/">
-                        <img src="{{ asset('img/modi.png') }}" width="110" height="85" class="me-3">
-</a>
+                            <img src="{{ asset('img/modi.png') }}" width="110" height="85" class="me-3">
+                        </a>
                         <div>
                             <p class=" fs-5 mb-1">
                                 <a href="/" class="txt">
-                                India stands at forefront of AI transformation: PM Modi
-</a>
+                                    India stands at forefront of AI transformation: PM Modi
+                                </a>
                             </p>
                             <p style="font-size: 9px;"><a href="/" class="smll">PTI</a></p>
                         </div>
@@ -335,29 +338,29 @@
                     <!-- Story 2 -->
                     <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
                         <a href="/">
-                        <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
-</a>
+                            <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
+                        </a>
                         <div>
                             <p class=" fs-5 mb-1 ">
                                 <a href="/" class="txt">
-                                Centre approves road projects worth over ₹11,000 crore
-</a>
+                                    Centre approves road projects worth over ₹11,000 crore
+                                </a>
                             </p>
-                           <p style="font-size: 9px;"><a href="/" class="smll">PTI</a></p>
+                            <p style="font-size: 9px;"><a href="/" class="smll">PTI</a></p>
                         </div>
                     </div>
 
                     <!-- Story 3 -->
                     <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
                         <a href="/">
-                        <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
-</a>
+                            <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
+                        </a>
 
                         <div>
                             <p class="fs-5  mb-1">
                                 <a href="/" class="txt">
-                                Centre approves road projects worth over ₹11,000 crore
-</a>
+                                    Centre approves road projects worth over ₹11,000 crore
+                                </a>
                             </p>
                             <p style="font-size: 9px;"><a href="/" class="smll">PTI</a></p>
                         </div>
@@ -367,14 +370,14 @@
                     <!-- Story 4 -->
                     <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
                         <a href="/">
-                        <img src="{{ asset('img/modi.png') }}" width="110" height="85" class="me-3">
-</a>
+                            <img src="{{ asset('img/modi.png') }}" width="110" height="85" class="me-3">
+                        </a>
 
                         <div>
                             <p class="fs-5  mb-1 ">
                                 <a href="/" class="txt">
-                                India stands at forefront of AI transformation: PM Modi
-</a>
+                                    India stands at forefront of AI transformation: PM Modi
+                                </a>
                             </p>
                             <p style="font-size: 9px;"><a href="/" class="smll">PTI</a></p>
                         </div>
@@ -383,14 +386,14 @@
                     <!-- Story 5 -->
                     <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
                         <a href="/">
-                        <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
-</a>
+                            <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
+                        </a>
 
                         <div>
                             <p class="fs-5  mb-1 lh-sm">
                                 <a href="/" class="txt">
-                                Centre approves road projects worth over ₹11,000 crore
-</a>
+                                    Centre approves road projects worth over ₹11,000 crore
+                                </a>
                             </p>
                             <p style="font-size: 9px;"><a href="/" class="smll">PTI</a></p>
                         </div>
@@ -399,16 +402,16 @@
                     <!-- Story 6 -->
                     <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
                         <a href="/">
-                        <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
-</a>
+                            <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
+                        </a>
 
                         <div>
                             <p class="fs-5  mb-1 lh-sm">
                                 <a href="/" class="txt">
-                                Centre approves road projects worth over ₹11,000 crore
-</a>
+                                    Centre approves road projects worth over ₹11,000 crore
+                                </a>
                             </p>
-                           <p style="font-size: 9px;"><a href="/" class="smll">PTI</a></p>
+                            <p style="font-size: 9px;"><a href="/" class="smll">PTI</a></p>
                         </div>
                     </div>
 
@@ -416,14 +419,14 @@
                     <!-- Story 7 -->
                     <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
                         <a href="/">
-                        <img src="{{ asset('img/modi.png') }}" width="110" height="85" class="me-3">
-</a>
+                            <img src="{{ asset('img/modi.png') }}" width="110" height="85" class="me-3">
+                        </a>
 
                         <div>
                             <p class="fs-5  mb-1 lh-sm">
                                 <a href="/" class="txt">
-                                India stands at forefront of AI transformation: PM Modi
-</a>
+                                    India stands at forefront of AI transformation: PM Modi
+                                </a>
                             </p>
                             <p style="font-size: 9px;"><a href="/" class="smll">PTI</a></p>
                         </div>
@@ -432,14 +435,14 @@
                     <!-- Story 8 -->
                     <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
                         <a href="/">
-                        <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
-</a>
+                            <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
+                        </a>
 
                         <div>
                             <p class="fs-5  mb-1 lh-sm">
                                 <a href="/" class="txt">
-                                Centre approves road projects worth over ₹11,000 crore
-</a>
+                                    Centre approves road projects worth over ₹11,000 crore
+                                </a>
                             </p>
                             <p style="font-size: 9px;"><a href="/" class="smll">PTI</a></p>
                         </div>
@@ -448,14 +451,14 @@
                     <!-- Story 9 -->
                     <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
                         <a href="/">
-                        <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
-</a>
+                            <img src="{{ asset('img/road2.png') }}" width="110" height="85" class="me-3 ">
+                        </a>
 
                         <div>
                             <p class="fs-5 mb-1 lh-sm">
                                 <a href="/" class="txt">
-                                Centre approves road projects worth over ₹11,000 crore
-</a>
+                                    Centre approves road projects worth over ₹11,000 crore
+                                </a>
                             </p>
                             <p class="small mb-0">PTI</p>
                         </div>
@@ -531,10 +534,10 @@
                         <div class="text-center my-4">
 
                             <!-- Ad Image -->
-                             <a href="/"> 
-                            <img src="{{ asset('img/sugam2.png') }}" class="img-fluid mx-auto d-block"
-                                alt="Advertisement">
-</a>
+                            <a href="/">
+                                <img src="{{ asset('img/sugam2.png') }}" class="img-fluid mx-auto d-block"
+                                    alt="Advertisement">
+                            </a>
 
                             <!-- Advertisement Label -->
                             <p class="text-uppercase text-muted mt-2 mb-0" style="font-size:11px; letter-spacing:1px;">
@@ -558,10 +561,10 @@
                                     <p class="small text-muted mb-1"><a href="/" class="txt">7 mins ago - Kerala</a></p>
                                     <p class="mb-0">
                                         <a href="/" class="txt">
-                                        Sabarimala women entry: Supreme Court’s 9-judge Constitution Bench to begin
-                                        review
-                                        hearing from April 7
-</a>
+                                            Sabarimala women entry: Supreme Court’s 9-judge Constitution Bench to begin
+                                            review
+                                            hearing from April 7
+                                        </a>
                                     </p>
                                 </div>
                             </div>
@@ -570,12 +573,14 @@
                             <div class="timeline-item">
                                 <div class="timeline-dot"></div>
                                 <div class="timeline-content">
-                                    <p class="small text-muted mb-1"><a href="/" class="txt">10 mins ago - Environment</a></p>
+                                    <p class="small text-muted mb-1"><a href="/" class="txt">10 mins ago -
+                                            Environment</a></p>
                                     <p class="mb-0">
                                         <a href="/" class="txt">
-                                        NGT clears Great Nicobar Island mega-infrastructure project, cites ‘strategic
-                                        importance’
-</a>
+                                            NGT clears Great Nicobar Island mega-infrastructure project, cites
+                                            ‘strategic
+                                            importance’
+                                        </a>
                                     </p>
                                 </div>
                             </div>
@@ -586,8 +591,9 @@
                                 <div class="timeline-content">
                                     <p class="small text-muted mb-1"><a href="/" class="txt">15 mins ago - India</a></p>
                                     <p class="mb-0">
-                                     <a href="/" class="txt">   Rahul Gandhi uninterested in Parliament; ‘tutored by NGOs’ on revival of
-                                        Congress </a>
+                                        <a href="/" class="txt"> Rahul Gandhi uninterested in Parliament; ‘tutored by
+                                            NGOs’ on revival of
+                                            Congress </a>
                                     </p>
                                 </div>
                             </div>
@@ -595,9 +601,9 @@
                         </div>
 
 
-                        <a href="#" class=" txt small ">
-                            READ MORE STORIES
-                        </a>
+                       <a href="#" class="smll fw-semibold" style="font-size:10px;">
+                                READ MORE STORIES
+                            </a>
 
                         <!-- TODAY'S PAPER -->
                         <div class="p-4 mt-5" style="background-color:#f3f3f3;">
@@ -607,17 +613,17 @@
                             </h4>
 
                             <!-- Newspaper Image -->
-                             <a href="/" >
-                            <img src="{{ asset('img/thhindu.png') }}" class="img-fluid mb-4" alt="Today's Paper">
-</a>
+                            <a href="/">
+                                <img src="{{ asset('img/thhindu.png') }}" class="img-fluid mb-4" alt="Today's Paper">
+                            </a>
 
                             <!-- Story 1 -->
                             <div class="border-bottom pb-3 mb-3">
                                 <p class="small text-muted mb-1">Page No. 1</p>
                                 <p class="mb-0">
                                     <a href="/" class="txt">
-                                    Trade deals made from a ‘position of strength’, says Modi
-</a>
+                                        Trade deals made from a ‘position of strength’, says Modi
+                                    </a>
                                 </p>
                             </div>
 
@@ -626,8 +632,8 @@
                                 <p class="small text-muted mb-1">Page No. 1</p>
                                 <p class="mb-0">
                                     <a href="/" class="txt">
-                                    Going berserk
-</a>
+                                        Going berserk
+                                    </a>
                                 </p>
                             </div>
 
@@ -635,13 +641,13 @@
                             <div class="border-bottom pb-3 mb-3">
                                 <p class="small text-muted mb-1">Page No. 1</p>
                                 <p class="mb-0">
-                                     <a href="/" class="txt">
-                                    AI Impact Summit begins today
-</a>
+                                    <a href="/" class="txt">
+                                        AI Impact Summit begins today
+                                    </a>
                                 </p>
                             </div>
 
-                            <a href="#" class="txt small">
+                            <a href="#" class="smll fw-semibold" style="font-size:10px;">
                                 READ MORE STORIES
                             </a>
 
