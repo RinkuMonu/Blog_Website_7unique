@@ -38,9 +38,6 @@
         margin-top: 40px;
         font-family: 'Merriweather', serif;
     }
-
-
-
     .navbar-nav .nav-link {
         font-family: 'Merriweather', serif;
         color: black;
@@ -48,8 +45,6 @@
         font-size: 17px;
         transition: color 0.3s ease;
     }
-
-
 
     .footer-links li {
         margin-bottom: 8px;
@@ -97,7 +92,6 @@
         text-decoration-color: #B00020;
     }
 
-
     .live-dot {
         width: 10px;
         height: 10px;
@@ -107,31 +101,6 @@
         margin-right: 1 px;
         animation: pulseDot 1s infinite;
     }
-
-
-
-
-    .red {
-        color: #B00020;
-        text-decoration: none;
-    }
-
-    .red:hover {
-        text-decoration: underline;
-        text-decoration-color: #B00020;
-    }
-
-    .smll {
-        color: #2B2E34;
-        text-decoration: underline;
-        text-decoration-color: #2B2E34;
-    }
-
-    .smll:hover {
-        text-decoration: none;
-
-    }
-
     .video {
         color: #eee;
         text-decoration: none;
@@ -217,10 +186,6 @@
             opacity: 1;
         }
     }
-
-
-
- 
 
     #fullMenu {
         font-family: 'Merriweather', serif;
