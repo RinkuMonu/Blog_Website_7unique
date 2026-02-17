@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-
-         .footer-links li {
+    .footer-links li {
         margin-bottom: 8px;
     }
 
@@ -50,28 +50,40 @@
     }
     </style>
 </head>
+
 <body>
     <footer class="bg-light pt-5 pb-4 border-top  ">
         <div class="container">
 
             <!-- Logo Row -->
-            <div class="d-flex justify-content-between align-items-center mb-4">
+            <div class="row align-items-center mb-4 text-center text-md-start">
 
-                <!-- Left: Logo -->
-                <a href="{{ url('/') }}" 
-   class="text-decoration-none text-dark" 
-   style="font-family:'Merriweather', serif; font-size:40px;">
-    SEVENUNIQUE
-</a>
-
-
-                <!-- Right: Two Images -->
-                <div class="d-flex gap-3">
-                    <img src="{{ asset('images/playstore.png') }}" alt="App Store" height="40">
-                    <img src="{{ asset('images/appstore.png') }}" alt="Google Play" height="40">
+                <!-- Logo -->
+                <div class="col-12 col-md-6 mb-3 mb-md-0">
+                    <a href="{{ url('/') }}" class="text-decoration-none text-dark"
+                        style="font-family:'Merriweather', serif; font-size:40px;">
+                        SEVENUNIQUE
+                    </a>
                 </div>
 
+                <!-- Store Images -->
+                <div class="col-12 col-md-6 d-flex justify-content-center justify-content-md-end gap-3">
+
+                    <a href="https://play.google.com" target="_blank">
+                        <img src="{{ asset('images/playstore.png') }}" alt="Play Store" class="img-fluid"
+                            style="max-height:40px;">
+                    </a>
+
+                    <a href="https://www.apple.com/app-store/" target="_blank">
+                        <img src="{{ asset('images/appstore.png') }}" alt="App Store" class="img-fluid"
+                            style="max-height:40px;">
+                    </a>
+
+                </div>
+
+
             </div>
+
 
 
             <div class="row">
@@ -324,4 +336,5 @@
             </div>
     </footer>
 </body>
+
 </html>
