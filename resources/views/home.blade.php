@@ -317,7 +317,10 @@
                     </a>
                     <a href="/">
                         <span class="smll" style="font-size:10px">READ MORE STORIES</span> </a>
-                    <div class="timeline-stop">
+                    
+
+                </div>
+                <div class="timeline-stop">
 
                         <hr class="my-1">
                         <hr class="my-1">
@@ -327,7 +330,7 @@
                             Sponsored
                         </span>
 
-                        <a href="/" class="txt d-block mb-5 ms-1 mt-2">
+                        <a href="/" class="txt d-block mb-5 mt-2 ms-1">
                             Transcending cloud finops to get value in the AI age
                         </a>
 
@@ -337,13 +340,11 @@
                             Sponsored
                         </span>
 
-                        <a href="/" class="txt d-block mb-5 mt-2">
+                        <a href="/" class="txt d-block mb-5 mt-2 ms-1">
                             Steering intelligence: Building governance foundations for the agentic AI age
                         </a>
 
                     </div>
-
-                </div>
 
             </div>
 
