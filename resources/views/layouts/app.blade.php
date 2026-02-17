@@ -356,7 +356,7 @@
     position: absolute;
     left: 23px;
     top: 60px;   
-    bottom: 0;
+    bottom: 48px;
     width: 2px;
     background: #000;
 }
