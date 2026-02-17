@@ -344,6 +344,51 @@
         margin-top: 8px;
         margin-bottom: 18px;
     }
+    /* ===== Latest News Timeline ===== */
+
+.latest-timeline {
+    position: relative;
+}
+
+
+.latest-timeline::before {
+    content: "";
+    position: absolute;
+    left: 23px;
+    top: 60px;   
+    bottom: 0;
+    width: 2px;
+    background: #000;
+}
+
+
+.latest-timeline .position-relative {
+    padding-left: 20px !important;
+    border-left: none !important;
+    margin-bottom: 35px !important;
+}
+
+/* STOP timeline line for sponsored area */
+.timeline-stop {
+    border-left: none !important;
+    padding-left: 0 !important;
+    position: relative;
+}
+
+/* Cover the existing vertical line */
+.timeline-stop::before {
+    content: "";
+    position: absolute;
+    left: -2px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #fff; /* same as background */
+}
+
+
+
+
     
     </style>
 </head>
