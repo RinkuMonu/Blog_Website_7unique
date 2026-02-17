@@ -344,7 +344,7 @@
         margin-top: 8px;
         margin-bottom: 18px;
     }
-    /* ===== Latest News Timeline ===== */
+
 
 .latest-timeline {
     position: relative;
@@ -368,14 +368,14 @@
     margin-bottom: 35px !important;
 }
 
-/* STOP timeline line for sponsored area */
+
 .timeline-stop {
     border-left: none !important;
     padding-left: 0 !important;
     position: relative;
 }
 
-/* Cover the existing vertical line */
+
 .timeline-stop::before {
     content: "";
     position: absolute;
@@ -383,7 +383,7 @@
     top: 0;
     bottom: 0;
     width: 4px;
-    background: #fff; /* same as background */
+    background: #fff; 
 }
 
 
@@ -416,6 +416,10 @@
         return new bootstrap.Tooltip(tooltipTriggerEl)
     })
     </script>
+
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 </body>

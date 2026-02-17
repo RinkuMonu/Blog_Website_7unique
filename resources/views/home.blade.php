@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container my-4">
 
     <!-- Top Advertisement -->
