@@ -382,9 +382,6 @@
     font-weight: 700;
 }
 
-p {
-    font-family: Georgia, serif;
-}
 
 hr {
     border-top: 1px solid #ccc;

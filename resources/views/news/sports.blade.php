@@ -17,15 +17,14 @@
 
 
     .nav-link {
-    border: none;
-    background: none;
-}
+        border: none;
+        background: none;
+    }
 
-.nav-link.active {
-    color: #c40000 !important;
-    border-bottom: 2px solid #c40000;
-}
-
+    .nav-link.active {
+        color: #c40000 !important;
+        border-bottom: 2px solid #c40000;
+    }
     </style>
 </head>
 
@@ -131,7 +130,7 @@
                         <p class="mb-1">
                             There is little more pressure than a normal match: Axar on India vs Pakistan games
                         </p>
-                        <p class="small text-muted mb-0 text-uppercase">PTI</p>
+                        <small style="font-size:10px;"><a href="/" class="smll">PTI</a></small>
                     </div>
                 </a>
 
@@ -142,7 +141,7 @@
                         <p class="mb-1">
                             T20 World Cup, IND vs PAK: Suryakumar dedicates win to India
                         </p>
-                        <p class="small text-muted mb-0 text-uppercase">REUTERS</p>
+                        <p style="font-size:10px;"><a href="/" class="smll">REUTERS</a></p>
                     </div>
                 </a>
 
@@ -153,20 +152,22 @@
                         <p class="mb-1">
                             T20 World Cup India vs Pakistan: Kishan, bowlers seal Team India's passage
                         </p>
-                        <p class="small text-muted mb-0 text-uppercase">K.C. VIJAYA KUMAR</p>
+                        <p style="font-size:10px;"><a href="/" class="smll">K.C. VIJAYA KUMAR</a></p>
                     </div>
                 </a>
 
                 <!-- Image Block -->
                 <a href="{{ route('english.news') }}" class="txt">
                     <img src="{{ asset('img/cricket.png') }}" class="img-fluid mt-3 mb-3">
-
-                    <p class="red fw-bold mb-1">CRICKET</p>
-                    <p class="mb-1">
-                        T20 World Cup: Will take time to get over the loss against SA: Rashid
-                    </p>
-                    <p class="small text-muted text-uppercase">VIVEK KRISHNAN</p>
                 </a>
+                <p class=" fw-bold mb-1"><a href="/" class="red">CRICKET</a></p>
+                <p class="mb-1">
+                    <a href="/" class="txt">
+                        T20 World Cup: Will take time to get over the loss against SA: Rashid
+                    </a>
+                </p>
+                <p style="font-size:10px;"><a href="/" class="smll">VIVEK KRISHNAN</a></p>
+
 
             </div>
 
@@ -178,61 +179,71 @@
                     <h2 class="fw-bold mb-3" style="font-family:'Merriweather', serif;">
                         England opts to bat against Italy in must-win T20 World Cup tie
                     </h2>
+                </a>
 
+                <div class="row">
 
-                    <div class="row">
+                    <!-- Image -->
 
-                        <!-- Image -->
-
-                        <div class="col-md-7">
+                    <div class="col-md-7">
+                        <a href="/">
                             <img src="{{ asset('img/austalia.png') }}" class="img-fluid">
-                        </div>
+                        </a>
+                    </div>
 
-                        <!-- Summary -->
-                        <div class="col-md-5">
-                            <p>
+                    <!-- Summary -->
+                    <div class="col-md-5">
+                        <p>
+                            <a href="/" class="txt">
                                 A victory in this contest will take England into the Super Eights stage and knock
                                 Scotland
                                 out
                                 of contention
-                            </p>
-                            <p class="small text-uppercase text-muted">PTI</p>
-                        </div>
-
+                            </a>
+                        </p>
+                        <p style="font-size:10px;"><a href="/" class="smll">PTI</a></p>
                     </div>
-                </a>
+
+                </div>
+
 
                 <hr class="my-4">
-
-
                 <div class="row">
 
 
                     <div class="col-md-6">
-                        <a href="{{ route('english.news') }}" class="txt">
-                            <p class="red fw-bold mb-1">HOCKEY</p>
-                            <h5 class="fw-bold">
-                                FIH Pro League losses indicate Indian hockey’s problems go beyond the scoreline
-                            </h5>
-                            <p class="small text-uppercase text-muted">UTHRA GANESAN</p>
 
-                            <hr>
+                        <p class="red fw-bold mb-1"><a href="/" class="red">HOCKEY</a></p>
 
-                            <p class="red fw-bold mb-1">CRICKET</p>
-                            <h5 class="fw-bold">
+                        <h5 class="fw-bold">
+                            <a href="/" class="txt">
+                                FIH Pro League losses indicate Indian hockey’s problems go beyond the scoreline</a>
+                        </h5>
+                        <p style="font-size:10px;"> <a href="/" class="smll">UTHRA GANESAN</a></p>
+
+                        <hr>
+
+                        <p class="fw-bold mb-1"><a href="/" class="red">CRICKET</a></p>
+                        <h5 class="fw-bold">
+                            <a href="/" class="txt">
                                 T20 World Cup: India continues to rise with clinical win over Pakistan
-                            </h5>
-                        </a>
+                            </a>
+                        </h5>
+
                     </div>
 
 
                     <div class="col-md-6">
-                        <a href="{{ route('english.news') }}" class="txt">
-                            <h5 class="fw-bold">
+
+                        <h5 class="fw-bold">
+                            <a href="/" class="txt">
                                 Omarzai’s all-round heroics seal five-wicket win for Afghanistan
-                            </h5>
+                            </a>
+                        </h5>
+                        <a href="/">
                             <img src="{{ asset('img/worldcup.png') }}" class="img-fluid mt-2">
                         </a>
+
                     </div>
 
                 </div>
@@ -281,8 +292,10 @@
 
                     <!-- News Item 1 -->
                     <div class="d-flex py-3 border-bottom">
-                        <img src="{{ asset('img/thumb1.png') }}" width="95" height="70" class="me-3 object-fit-cover">
-
+                        <a href="/">
+                            <img src="{{ asset('img/thumb1.png') }}" width="95" height="70"
+                                class="me-3 object-fit-cover">
+                        </a>
                         <a href="{{ route('english.news') }}" class="txt">
                             T20 World Cup: India vs Pakistan match highlights
                         </a>
@@ -291,8 +304,10 @@
 
                     <!-- News Item 2 -->
                     <div class="d-flex py-3 border-bottom">
-                        <img src="{{ asset('img/thumb2.png') }}" width="95" height="70" class="me-3 object-fit-cover">
-
+                        <a href="/">
+                            <img src="{{ asset('img/thumb2.png') }}" width="95" height="70"
+                                class="me-3 object-fit-cover">
+                        </a>
                         <a href="{{ route('english.news') }}" class="txt">
                             Iran open to compromises to reach nuclear deal
                         </a>
@@ -301,8 +316,10 @@
 
                     <!-- News Item 3 -->
                     <div class="d-flex py-3 border-bottom">
-                        <img src="{{ asset('img/thumb3.png') }}" width="95" height="70" class="me-3 object-fit-cover">
-
+                        <a href="/">
+                            <img src="{{ asset('img/thumb3.png') }}" width="95" height="70"
+                                class="me-3 object-fit-cover">
+                        </a>
                         <a href="{{ route('english.news') }}" class="txt">
                             PM Modi declines invitation to ceremony
                         </a>
@@ -349,17 +366,19 @@
                     <!-- COLUMN 1 -->
                     <div class="col-lg-3">
 
-                        <a href="#" class="txt">
+                        <a href="#">
 
                             <img src="{{ asset('img/austalia.png') }}" class="img-fluid mb-3">
-
-                            <h5 style="font-family:'Merriweather', serif;">
-                                England opts to bat against Italy in must-win T20 World Cup tie
-                            </h5>
-
-                            <p class="small text-uppercase text-muted mt-2">PTI</p>
-
                         </a>
+                        <h5 style="font-family:'Merriweather', serif;">
+                            <a href="/" class="txt">
+                                England opts to bat against Italy in must-win T20 World Cup tie
+                            </a>
+                        </h5>
+
+                        <p style="font-size:10px;"><a href="/" class="smll">PTI</a></p>
+
+
 
                     </div>
 
@@ -367,32 +386,34 @@
                     <!-- COLUMN 2 -->
                     <div class="col-lg-3 border-start">
 
-                        <a href="#" class="txt">
 
-                            <h5 style="font-family:'Merriweather', serif;">
+
+                        <h5 style="font-family:'Merriweather', serif;">
+                            <a href="/" class="txt">
                                 Omarzai’s all-round heroics seal five-wicket win for Afghanistan over UAE, sends South
                                 Africa to Super 8
-                            </h5>
-
-                            <p class="small text-uppercase text-muted mt-2">PTI</p>
-
+                        </h5>
                         </a>
+
+                        <p style="font-size:10px;"><a href="/" class="smll">PTI</a></p>
+
+
 
                         <hr>
 
-                        <a href="#" class="txt">
 
-                            <p class="red fw-bold small mb-1 text-uppercase">Cricket</p>
 
-                            <h5 style="font-family:'Merriweather', serif;">
+                        <p class=" fw-bold small mb-1 text-uppercase"> <a href="/" class="red">Cricket</a></p>
+
+                        <h5 style="font-family:'Merriweather', serif;">
+                            <a href="/" class="txt">
                                 T20 World Cup: India continues to rise with clinical win over Pakistan
-                            </h5>
+                            </a>
+                        </h5>
 
-                            <p class="small text-uppercase text-muted mt-2">
-                                K.C. VIJAYA KUMAR
-                            </p>
+                        <p style="font-size:10px;"><a href="/" class="smll">K.C VIJAY KUMAR</a></p>
 
-                        </a>
+
 
                     </div>
 
@@ -400,17 +421,20 @@
                     <!-- COLUMN 3 -->
                     <div class="col-lg-3 border-start">
 
-                        <a href="#" class="txt">
+                        <a href="#">
 
                             <img src="{{ asset('img/worldcup.png') }}" class="img-fluid mb-3">
-
-                            <h5 style="font-family:'Merriweather', serif;">
-                                There is little more pressure than a normal match: Axar on India vs Pakistan games
-                            </h5>
-
-                            <p class="small text-uppercase text-muted mt-2">PTI</p>
-
                         </a>
+
+                        <h5 style="font-family:'Merriweather', serif;">
+                            <a href="/" class="txt">
+                                There is little more pressure than a normal match: Axar on India vs Pakistan games
+                            </a>
+                        </h5>
+
+                        <p style="font-size:10px;"><a href="/" class="smll">PTI</a></p>
+
+
 
                     </div>
 
@@ -418,15 +442,18 @@
                     <!-- COLUMN 4 -->
                     <div class="col-lg-3 border-start">
 
-                        <a href="#" class="txt">
+                        <a href="#">
 
                             <img src="{{ asset('img/cricket.png') }}" class="img-fluid mb-3">
+                        </a>
 
-                            <p class="red fw-bold small mb-1 text-uppercase">Cricket</p>
+                        <p class=" fw-bold small mb-1 text-uppercase"><a href="/" class="red">Cricket</a></p>
 
-                            <h5 style="font-family:'Merriweather', serif;">
+                        <h5 style="font-family:'Merriweather', serif;">
+                            <a href="/" class="txt">
                                 Kishan took the game away from us: Pakistan coach Hesson
-                            </h5>
+                            </a>
+                        </h5>
 
                         </a>
 
@@ -436,7 +463,7 @@
 
             </div>
 
-             <div class="container my-5">
+            <div class="container my-5">
 
                 <!-- SECTION TITLE -->
                 <div class="container mb-4">
@@ -452,7 +479,7 @@
 
                         <!-- Center Title -->
                         <h2 class="mx-4 red fw-bold mb-0">
-                           Football
+                            Football
                         </h2>
 
                         <!-- Right Lines -->
@@ -472,17 +499,20 @@
                     <!-- COLUMN 1 -->
                     <div class="col-lg-3">
 
-                        <a href="#" class="txt">
+                        <a href="#">
 
                             <img src="{{ asset('img/austalia.png') }}" class="img-fluid mb-3">
-
-                            <h5 style="font-family:'Merriweather', serif;">
-                                England opts to bat against Italy in must-win T20 World Cup tie
-                            </h5>
-
-                            <p class="small text-uppercase text-muted mt-2">PTI</p>
-
                         </a>
+
+                        <h5 style="font-family:'Merriweather', serif;">
+                            <a href="/" class="txt">
+                                England opts to bat against Italy in must-win T20 World Cup tie
+                            </a>
+                        </h5>
+
+                        <p style="font-size:10px;"><a href="/" class="smll">PTI</a></p>
+
+
 
                     </div>
 
@@ -490,16 +520,18 @@
                     <!-- COLUMN 2 -->
                     <div class="col-lg-3 border-start">
 
-                        <a href="#" class="txt">
 
-                            <h5 style="font-family:'Merriweather', serif;">
+
+                        <h5 style="font-family:'Merriweather', serif;">
+                            <a href="/" class="txt">
                                 Omarzai’s all-round heroics seal five-wicket win for Afghanistan over UAE, sends South
                                 Africa to Super 8
-                            </h5>
+                            </a>
+                        </h5>
 
-                            <p class="small text-uppercase text-muted mt-2">PTI</p>
+                        <p style="font-size:10px;"><a href="/" class="smll">PTI</a></p>
 
-                        </a>
+
 
                         <hr>
 
@@ -508,11 +540,14 @@
                             <p class="red fw-bold small mb-1 text-uppercase">football</p>
 
                             <h5 style="font-family:'Merriweather', serif;">
-                                T20 World Cup: India continues to rise with clinical win over Pakistan
+                                <a href="/" class="txt">
+                                    T20 World Cup: India continues to rise with clinical win over Pakistan
+                                </a>
                             </h5>
 
-                            <p class="small text-uppercase text-muted mt-2">
-                                K.C. VIJAYA KUMAR
+                            <p style="font-size:10px;"><a href="/" class="smll">
+                                    K.C. VIJAYA KUMAR
+                                </a>
                             </p>
 
                         </a>
@@ -523,17 +558,20 @@
                     <!-- COLUMN 3 -->
                     <div class="col-lg-3 border-start">
 
-                        <a href="#" class="txt">
+                        <a href="#">
 
                             <img src="{{ asset('img/football1.png') }}" class="img-fluid mb-3">
-
-                            <h5 style="font-family:'Merriweather', serif;">
-                                There is little more pressure than a normal match: Axar on India vs Pakistan games
-                            </h5>
-
-                            <p class="small text-uppercase text-muted mt-2">PTI</p>
-
                         </a>
+
+                        <h5 style="font-family:'Merriweather', serif;">
+                            <a href="/" class="txt">
+                                There is little more pressure than a normal match: Axar on India vs Pakistan games
+                            </a>
+                        </h5>
+
+                        <p style="font-size:10px;"><a href="/" class="smll">PTI</a></p>
+
+
 
                     </div>
 
@@ -545,10 +583,12 @@
 
                             <img src="{{ asset('img/football2.png') }}" class="img-fluid mb-3">
 
-                            <p class="red fw-bold small mb-1 text-uppercase">Football</p>
+                            <p class=" fw-bold small mb-1 text-uppercase"><a href="/" class="red">Football</a></p>
 
                             <h5 style="font-family:'Merriweather', serif;">
-                                Kishan took the game away from us: Pakistan coach Hesson
+                                <a href="/" class="txt">
+                                    Kishan took the game away from us: Pakistan coach Hesson
+                                </a>
                             </h5>
 
                         </a>
@@ -561,203 +601,198 @@
 
             <div class="container my-5">
 
-    <!-- SECTION TITLE -->
-    <div class="d-flex align-items-center mb-4">
-        <div class="flex-grow-1 border-top"></div>
+                <!-- SECTION TITLE -->
+                <div class="d-flex align-items-center mb-4">
+                    <div class="flex-grow-1 border-top"></div>
 
-        <h2 class="fw-bold red mx-4 mb-0"
-            style="font-family:'Playfair Display', serif;">
-            Other Sports
-        </h2>
+                    <h2 class="fw-bold red mx-4 mb-0" style="font-family:'Playfair Display', serif;">
+                        Other Sports
+                    </h2>
 
-        <div class="flex-grow-1 border-top"></div>
-    </div>
-
-
-    <!-- TABS -->
-    <ul class="nav justify-content-center mb-4" id="sportsTab" role="tablist"
-        style="font-family:'Merriweather', serif;">
-
-        <li class="nav-item">
-            <button class="nav-link active red fw-bold"
-                data-bs-toggle="tab"
-                data-bs-target="#hockey"
-                type="button">
-                HOCKEY
-            </button>
-        </li>
-
-        <li class="nav-item">
-            <button class="nav-link text-dark"
-                data-bs-toggle="tab"
-                data-bs-target="#tennis"
-                type="button">
-                TENNIS
-            </button>
-        </li>
-
-        <li class="nav-item">
-            <button class="nav-link text-dark"
-                data-bs-toggle="tab"
-                data-bs-target="#athletics"
-                type="button">
-                ATHLETICS
-            </button>
-        </li>
-
-        <li class="nav-item">
-            <button class="nav-link text-dark"
-                data-bs-toggle="tab"
-                data-bs-target="#motorsport"
-                type="button">
-                MOTORSPORT
-            </button>
-        </li>
-
-    </ul>
+                    <div class="flex-grow-1 border-top"></div>
+                </div>
 
 
-    <!-- TAB CONTENT -->
-    <div class="tab-content">
+                <!-- TABS -->
+                <ul class="nav justify-content-center mb-4" id="sportsTab" role="tablist"
+                    style="font-family:'Merriweather', serif;">
 
-       
-        <div class="tab-pane fade show active" id="hockey">
+                    <li class="nav-item">
+                        <button class="nav-link active red fw-bold" data-bs-toggle="tab" data-bs-target="#hockey"
+                            type="button">
+                            HOCKEY
+                        </button>
+                    </li>
 
-            <div class="row g-4">
+                    <li class="nav-item">
+                        <button class="nav-link text-dark" data-bs-toggle="tab" data-bs-target="#tennis" type="button">
+                            TENNIS
+                        </button>
+                    </li>
 
-                <!-- COLUMN 1 -->
-                <div class="col-lg-4">
+                    <li class="nav-item">
+                        <button class="nav-link text-dark" data-bs-toggle="tab" data-bs-target="#athletics"
+                            type="button">
+                            ATHLETICS
+                        </button>
+                    </li>
 
-                    <a href="#" class="txt">
+                    <li class="nav-item">
+                        <button class="nav-link text-dark" data-bs-toggle="tab" data-bs-target="#motorsport"
+                            type="button">
+                            MOTORSPORT
+                        </button>
+                    </li>
 
-                        <img src="{{ asset('img/other1.png') }}"
-                             class="img-fluid mb-3">
+                </ul>
 
-                        <h5 style="font-family:'Merriweather', serif;">
-                            FIH Pro League losses indicate Indian hockey’s problems go beyond the scoreline
-                        </h5>
 
-                        <p class="small text-uppercase text-muted mt-2">
-                            UTHRA GANESAN
-                        </p>
+                <!-- TAB CONTENT -->
+                <div class="tab-content">
 
-                    </a>
+
+                    <div class="tab-pane fade show active" id="hockey">
+
+                        <div class="row g-4">
+
+                            <!-- COLUMN 1 -->
+                            <div class="col-lg-4">
+
+                                <a href="#">
+
+                                    <img src="{{ asset('img/other1.png') }}" class="img-fluid mb-3">
+                                </a>
+
+                                <h5 style="font-family:'Merriweather', serif;">
+                                    <a href="/" class="txt">
+                                        FIH Pro League losses indicate Indian hockey’s problems go beyond the scoreline
+                                    </a>
+                                </h5>
+
+                                <p style="font-size:10px;"><a href="/" class="smll">
+                                        UTHRA GANESAN
+                                    </a>
+                                </p>
+
+                                </a>
+
+                            </div>
+
+
+                            <!-- COLUMN 2 -->
+                            <div class="col-lg-4 border-start">
+
+                                <a href="#" class="txt">
+
+                                    <h5 style="font-family:'Merriweather', serif;">
+                                        Pro League: India ends home leg with another loss
+                                    </h5>
+
+                                    <p style="font-size:10px;"><a href="/" class="smll">
+                                            UTHRA GANESAN
+                                        </a>
+                                    </p>
+
+                                </a>
+
+                                <hr>
+
+                                <a href="#" class="txt">
+
+                                    <h5 style="font-family:'Merriweather', serif;">
+                                        Belgium stays perfect as India suffers third loss on the trot
+                                    </h5>
+                                    <p style="font-size:10px;"><a href="/" class="smll">
+                                            UTHRA GANESAN
+                                        </a>
+                                    </p>
+
+                                </a>
+
+                            </div>
+
+
+                            <!-- COLUMN 3 -->
+                            <div class="col-lg-4 border-start">
+
+                                <a href="#" class="txt">
+
+                                    <img src="{{ asset('img/other2.png') }}" class="img-fluid mb-3">
+
+                                    <h5 style="font-family:'Merriweather', serif;">
+                                        Pro League: Belgium continues winning run
+                                    </h5>
+
+                                    <p style="font-size:10px;"><a href="/" class="smll">
+                                            UTHRA GANESAN
+                                        </a>
+                                    </p>
+
+                                </a>
+
+                                <hr>
+
+                                <a href="#" class="text-decoration-none text-dark d-block">
+
+                                    <h5 style="font-family:'Merriweather', serif;">
+                                        Argentina puts eight past hapless India
+                                    </h5>
+
+                                    <p style="font-size:10px;"><a href="/" class="smll">
+                                            UTHRA GANESAN
+                                        </a>
+                                    </p>
+
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- ============ TENNIS TAB (Example Content) ============ -->
+                    <div class="tab-pane fade" id="tennis">
+                        <div class="text-center py-5">
+                            <h5 style="font-family:'Merriweather', serif;">
+                                Tennis content goes here...
+                            </h5>
+                        </div>
+                    </div>
+
+
+                    <!-- ATHLETICS -->
+                    <div class="tab-pane fade" id="athletics">
+                        <div class="text-center py-5">
+                            <h5 style="font-family:'Merriweather', serif;">
+                                Athletics content goes here...
+                            </h5>
+                        </div>
+                    </div>
+
+
+                    <!-- MOTORSPORT -->
+                    <div class="tab-pane fade" id="motorsport">
+                        <div class="text-center py-5">
+                            <h5 style="font-family:'Merriweather', serif;">
+                                Motorsport content goes here...
+                            </h5>
+                        </div>
+                    </div>
 
                 </div>
 
 
-                <!-- COLUMN 2 -->
-                <div class="col-lg-4 border-start">
-
-                    <a href="#" class="txt">
-
-                        <h5 style="font-family:'Merriweather', serif;">
-                            Pro League: India ends home leg with another loss
-                        </h5>
-
-                        <p class="small text-uppercase text-muted mt-2">
-                            UTHRA GANESAN
-                        </p>
-
+                <!-- SEE MORE -->
+                <div class="text-center mt-5">
+                    <a href="#" class="see-more ">
+                        SEE MORE →
                     </a>
-
-                    <hr>
-
-                    <a href="#" class="txt">
-
-                        <h5 style="font-family:'Merriweather', serif;">
-                            Belgium stays perfect as India suffers third loss on the trot
-                        </h5>
-
-                        <p class="small text-uppercase text-muted mt-2">
-                            UTHRA GANESAN
-                        </p>
-
-                    </a>
-
-                </div>
-
-
-                <!-- COLUMN 3 -->
-                <div class="col-lg-4 border-start">
-
-                    <a href="#" class="txt">
-
-                        <img src="{{ asset('img/other2.png') }}"
-                             class="img-fluid mb-3">
-
-                        <h5 style="font-family:'Merriweather', serif;">
-                            Pro League: Belgium continues winning run
-                        </h5>
-
-                        <p class="small text-uppercase text-muted mt-2">
-                            UTHRA GANESAN
-                        </p>
-
-                    </a>
-
-                    <hr>
-
-                    <a href="#" class="text-decoration-none text-dark d-block">
-
-                        <h5 style="font-family:'Merriweather', serif;">
-                            Argentina puts eight past hapless India
-                        </h5>
-
-                        <p class="small text-uppercase text-muted mt-2">
-                            UTHRA GANESAN
-                        </p>
-
-                    </a>
-
                 </div>
 
             </div>
-
-        </div>
-
-
-
-        <!-- ============ TENNIS TAB (Example Content) ============ -->
-        <div class="tab-pane fade" id="tennis">
-            <div class="text-center py-5">
-                <h5 style="font-family:'Merriweather', serif;">
-                    Tennis content goes here...
-                </h5>
-            </div>
-        </div>
-
-
-        <!-- ATHLETICS -->
-        <div class="tab-pane fade" id="athletics">
-            <div class="text-center py-5">
-                <h5 style="font-family:'Merriweather', serif;">
-                    Athletics content goes here...
-                </h5>
-            </div>
-        </div>
-
-
-        <!-- MOTORSPORT -->
-        <div class="tab-pane fade" id="motorsport">
-            <div class="text-center py-5">
-                <h5 style="font-family:'Merriweather', serif;">
-                    Motorsport content goes here...
-                </h5>
-            </div>
-        </div>
-
-    </div>
-
-
-    <!-- SEE MORE -->
-    <div class="text-center mt-5">
-        <a href="#" class="fw-bold text-dark text-decoration-none">
-            SEE MORE →
-        </a>
-    </div>
-
-</div>
 
 
 
