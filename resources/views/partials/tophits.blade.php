@@ -78,42 +78,38 @@
 
                                 <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
-                                        <img src="img/movie.png" class="img-fluid w-100">
-                                        <div class="overlay p-3 text-white">
-                                            <small class="fw-bold">TECHNOLOGY</small>
-                                            <h3 class="fw-bold mt-2">Nothing’s first flagship retail store</h3>
-                                        </div>
+                                        <a href="/">
+                                            <img src="img/movie.png" class="img-fluid w-100">
+                                        </a>
+
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
-                                        <img src="img/biffes.png" class="img-fluid w-100">
-                                        <div class="overlay p-3 text-white">
-                                            <small class="fw-bold">WORLD</small>
-                                            <h3 class="fw-bold mt-2">U.S. used Anthropic's Claude during raid</h3>
-                                        </div>
+                                        <a href="/">
+                                            <img src="img/biffes.png" class="img-fluid w-100">
+                                        </a>
+                                        >
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
-                                        <img src="img/anomie.png" class="img-fluid w-100">
-                                        <div class="overlay p-3 text-white">
-                                            <small class="fw-bold">WORLD</small>
-                                            <h3 class="fw-bold mt-2">U.S. used Anthropic's Claude during raid</h3>
-                                        </div>
+                                        <a href="/">
+                                            <img src="img/anomie.png" class="img-fluid w-100">
+                                        </a>
+
                                     </div>
                                 </div>
 
 
                                 <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
-                                        <img src="img/adventure.png" class="img-fluid w-100">
-                                        <div class="overlay p-3 text-white">
-                                            <small class="fw-bold">HOMES & GARDENS</small>
-                                            <h3 class="fw-bold mt-2">Designing the new arena in India</h3>
-                                        </div>
+                                        <a href="/">
+                                            <img src="img/adventure.png" class="img-fluid w-100">
+                                        </a>
+
                                     </div>
                                 </div>
 
@@ -126,40 +122,38 @@
 
                                 <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
-                                        <img src="img/battle.png" class="img-fluid w-100">
-                                        <div class="overlay p-3 text-white">
-                                            <small class="fw-bold">TECHNOLOGY</small>
-                                            <h6 class="fw-bold mt-2">Nothing’s first flagship retail store</h6>
-                                        </div>
+                                        <a href="/">
+                                            <img src="img/battle.png" class="img-fluid w-100">
+                                        </a>
+
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
-                                        <img src="img/adventure.png" class="img-fluid w-100">
-                                        <div class="overlay p-3 text-white">
-                                            <small class="fw-bold">WORLD</small>
-                                            <h6 class="fw-bold mt-2">U.S. used Anthropic's Claude during raid</h6>
-                                        </div>
+                                        <a href="/">
+                                            <img src="img/adventure.png" class="img-fluid w-100">
+                                        </a>
+
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="bg-danger text-white d-flex align-items-end p-4" style="height:434px;">
                                         <div>
-                                            <small class="fw-bold">LIFE & STYLE</small>
-                                            <h4 class="fw-bold mt-3">Valentine’s day: redefining romance</h4>
+                                            <small class="fw-bold"><a href="/" class="video">LIFE & STYLE</a></small>
+                                            <h4 class="fw-bold mt-3"><a href="/" class="video">Valentine’s day:
+                                                    redefining romance</a></h4>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
-                                        <img src="img/anomie.png" class="img-fluid w-100">
-                                        <div class="overlay p-3 text-white">
-                                            <small class="fw-bold">HOMES & GARDENS</small>
-                                            <h6 class="fw-bold mt-2">Designing the new arena in India</h6>
-                                        </div>
+                                        <a href="/">
+                                            <img src="img/anomie.png" class="img-fluid w-100">
+                                        </a>
+
                                     </div>
                                 </div>
 
@@ -172,40 +166,38 @@
 
                                 <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
-                                        <img src="images/slide1.png" class="img-fluid w-100">
-                                        <div class="overlay p-3 text-white">
-                                            <small class="fw-bold">TECHNOLOGY</small>
-                                            <h6 class="fw-bold mt-2">Nothing’s first flagship retail store</h6>
-                                        </div>
+                                        <a href="/">
+                                            <img src="images/slide1.png" class="img-fluid w-100">
+                                        </a>
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
-                                        <img src="images/slide4.png" class="img-fluid w-100">
-                                        <div class="overlay p-3 text-white">
-                                            <small class="fw-bold">WORLD</small>
-                                            <h6 class="fw-bold mt-2">U.S. used Anthropic's Claude during raid</h6>
-                                        </div>
+                                        <a href="/">
+                                            <img src="images/slide4.png" class="img-fluid w-100">
+                                        </a>
+
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
+
                                     <div class="bg-danger text-white d-flex align-items-end p-4" style="height:434px;">
                                         <div>
-                                            <small class="fw-bold">LIFE & STYLE</small>
-                                            <h4 class="fw-bold mt-3">Valentine’s day: redefining romance</h4>
+                                            <small class="fw-bold"><a href="/" class="video">LIFE & STYLE</a></small>
+                                            <h4 class="fw-bold mt-3"><a href="/" class="video">Valentine’s day:
+                                                    redefining romance</a></h4>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="col-md-3">
                                     <div class="position-relative overflow-hidden">
-                                        <img src="images/slide3.png" class="img-fluid w-100">
-                                        <div class="overlay p-3 text-white">
-                                            <small class="fw-bold">HOMES & GARDENS</small>
-                                            <h6 class="fw-bold mt-2">Designing the new arena in India</h6>
-                                        </div>
+                                        <a href="/">
+                                            <img src="images/slide3.png" class="img-fluid w-100">
+                                        </a>
+
                                     </div>
                                 </div>
 
@@ -223,7 +215,7 @@
                 <div class="swiper-pagination mb-5"></div>
 
             </div>
-            
+
 
         </div>
     </section>
