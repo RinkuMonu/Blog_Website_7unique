@@ -3,8 +3,9 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash; // <-- Ye missing tha
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,11 +16,20 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
+        // 1. Test User banane ke liye bhi firstOrCreate use karna behtar hai
+        User::firstOrCreate(
+            ['email' => 'test@example.com'],
+            ['name' => 'Test User', 'password' => Hash::make('password')]
+        );
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        // 2. Admin User
+        User::firstOrCreate(
+            ['email' => 'admin@gmail.com'], // Pehle check karega ye email hai ya nahi
+            [
+                'name' => 'Admin',
+                'password' => Hash::make('12345678'),
+                'role' => '1',
+            ]
+        );
     }
 }
