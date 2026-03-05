@@ -4,9 +4,13 @@
 <div class="page-content app-content content ">
     <div class="container-fluid">
         <h4 class="mb-4">Edit Post: {{ $post->title }}</h4>
-
-        <form action="{{ route('admin.posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
+        @php 
+            $role = auth()->user()->role == 1 ? 'admin' : 'author'; 
+        @endphp
+        <form action="{{ route($role . '.posts.update', $post->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
+            {{-- Update ke liye humesha niche wali line zaroor likhein --}}
+            @method('POST')
             <div class="row">
                 <div class="col-md-8">
                     <div class="card shadow-sm mb-4">
@@ -113,18 +117,32 @@
                             <h5 class="card-title mb-3">Publish Settings</h5>
                             
                             <div class="form-check form-switch mb-2">
-                                <input class="form-check-input" type="checkbox" name="status" value="1" {{ $post->status == 'published' ? 'checked' : '' }}>
+                                <input class="form-check-input" type="checkbox" name="status" value="1" {{ $post->status == 'published' || $post->status == '1' ? 'checked' : '' }}>
                                 <label class="form-check-label">Published</label>
                             </div>
-
+                            <div class="form-check form-switch mb-4">
+                                <input class="form-check-input" type="checkbox" name="is_live" value="1" {{ $post->is_live ? 'checked' : '' }}>
+                                <label class="form-check-label text-success">Live 🔴</label>
+                            </div>
                             <div class="form-check form-switch mb-2">
                                 <input class="form-check-input" type="checkbox" name="is_trending" value="1" {{ $post->is_trending ? 'checked' : '' }}>
                                 <label class="form-check-label text-danger">Trending 🔥</label>
                             </div>
 
-                            <div class="form-check form-switch mb-4">
+                            <div class="form-check form-switch mb-2">
                                 <input class="form-check-input" type="checkbox" name="is_latest" value="1" {{ $post->is_latest ? 'checked' : '' }}>
                                 <label class="form-check-label text-primary">Latest</label>
+                            </div>
+
+                            {{-- Naye Status: Popular aur Premium --}}
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" name="is_popular" value="1" {{ $post->is_popular ? 'checked' : '' }}>
+                                <label class="form-check-label text-warning">Popular ⭐</label>
+                            </div>
+
+                            <div class="form-check form-switch mb-4">
+                                <input class="form-check-input" type="checkbox" name="is_premium" value="1" {{ $post->is_premium ? 'checked' : '' }}>
+                                <label class="form-check-label text-info">Premium 💎</label>
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100 py-2">

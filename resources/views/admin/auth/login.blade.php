@@ -94,7 +94,7 @@
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
                                 <h2 class="card-title fw-bold mb-1">Welcome to <br/> News Blog! 👋</h2>
                                 <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
-                                <form class="auth-login-form mt-2" action="{{ route('login') }}" method="POST">
+                                <form class="auth-login-form mt-2" action="{{ request()->is('admin*') ? route('admin.login.post') : route('author.login.post') }}" method="POST">
                                     @csrf
                                     <div class="mb-1">
                                         <label class="form-label" for="login-email">Email</label>
@@ -117,7 +117,7 @@
                                             <label class="form-check-label" for="remember-me"> Remember Me</label>
                                         </div>
                                     </div>
-                                    <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
+                                    <button class="btn btn-primary w-100" tabindex="4">Sign in as {{ $type }}</button>
                                 </form>
                                 <!-- <p class="text-center mt-2"><span>New on our platform?</span><a href="auth-register-cover.html"><span>&nbsp;Create an account</span></a></p>
                                 <div class="divider my-2">

@@ -16,7 +16,7 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title mb-4">Add New Category</h5>
-                        <form action="{{ route('admin.categories.store') }}" method="POST">
+                        <form action="{{ route(auth()->user()->role == 1 ? 'admin.categories.store' : 'author.categories.store') }}" method="POST">
                             @csrf
                             <div class="form-group mb-3">
                                 <label class="form-label">Category Name</label>

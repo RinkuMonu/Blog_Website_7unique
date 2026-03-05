@@ -84,8 +84,6 @@
 
             </div>
 
-
-
             <div class="row">
                 <div class="col-lg-8">
                     <div class="row">
@@ -128,15 +126,7 @@
                                 <li><a href="#">Classifieds - Print</a></li>
                                 <li><a href="#">Bookstore & Special Publications</a></li>
 
-                                <h6 class="fw-bold  text-dark pt-3 pb-2 mt-3">
-                                    Contact us
-                                </h6>
-
-                                <ul class="list-unstyled">
-                                    <li><a href="#" class="text-decoration-none text-dark">Careers</a></li>
-                                    <li><a href="#" class="text-decoration-none text-dark">Advertise With Us</a></li>
-                                    <li><a href="#" class="text-decoration-none text-dark">Press Release</a></li>
-                                </ul>
+                               
 
                             </ul>
                         </div>
@@ -149,15 +139,7 @@
                                 <li><a href="#">Economy</a></li>
                                 <li><a href="#">Markets</a></li>
                                 <li><a href="#">Budget</a></li>
-                                <h6 class="fw-bold  text-dark pt-3 pb-2 mt-3">
-                                    Contact us
-                                </h6>
-
-                                <ul class="list-unstyled">
-                                    <li><a href="#" class="text-decoration-none text-dark">Careers</a></li>
-                                    <li><a href="#" class="text-decoration-none text-dark">Advertise With Us</a></li>
-                                    <li><a href="#" class="text-decoration-none text-dark">Press Release</a></li>
-                                </ul>
+                                
 
                             </ul>
                         </div>
@@ -171,15 +153,7 @@
                                 <li><a href="#">Kerala</a></li>
                                 <li><a href="#">Tamil Nadu</a></li>
                                 <li><a href="#">Telangana</a></li>
-                                <h6 class="fw-bold  text-dark pt-3 pb-2 mt-3">
-                                    Contact us
-                                </h6>
-
-                                <ul class="list-unstyled">
-                                    <li><a href="#" class="text-decoration-none text-dark">Careers</a></li>
-                                    <li><a href="#" class="text-decoration-none text-dark">Advertise With Us</a></li>
-                                    <li><a href="#" class="text-decoration-none text-dark">Press Release</a></li>
-                                </ul>
+                               
 
                             </ul>
                         </div>
@@ -190,29 +164,27 @@
                 <div class="col-lg-4">
                     <div class="row">
                         <div class="col-md-6 mb-4">
-                            <h6 class="fw-bold  border-top border-5 text-dark border-dark pt-3 pb-2">Trending on The
-                                Hindu</h6>
+                            <h6 class="fw-bold  border-top border-5 text-dark border-dark pt-3 pb-2">
+                                Trending on SevenUnique
+                            </h6>
+
                             <ul class="list-unstyled footer-links">
-                                <li><a href="#"> News <img src="{{ asset('images/trend.png') }}" alt="Trending"
-                                            height="16"></a></li>
-                                <li><a href="#">Bangladesh Elections 2026 LIVE <img
-                                            src="{{ asset('images/trend.png') }}" alt="Trending" height="16"></a></li>
-                                <li><a href="#">What did the 16th Finance Commission recommend? <img
-                                            src="{{ asset('images/trend.png') }}" alt="Trending" height="16"></a></li>
-                                <li><a href="#">Chennai Comic Con 2026 <img src="{{ asset('images/trend.png') }}"
-                                            alt="Trending" height="16"></a></li>
-                                <li><a href="#">Parliament Budget Session Day 11 LIVE <img
-                                            src="{{ asset('images/trend.png') }}" alt="Trending" height="16"></a></li>
-                                <li><a href="#">Bharat Bandh LIVE <img src="{{ asset('images/trend.png') }}"
-                                            alt="Trending" height="16"></a></li>
-                                <li><a href="#">The Hindu Tech Summit 2026 LIVE<img
-                                            src="{{ asset('images/trend.png') }}" alt="Trending" height="16"></a></li>
-                                <li><a href="#">Live news <img src="{{ asset('images/trend.png') }}" alt="Trending"
-                                            height="16"></a></li>
-                                <li><a href="#">Life Beneath the Indian Ocean <img src="{{ asset('images/trend.png') }}"
-                                            alt="Trending" height="16"></a></li>
+                                @php
+                                $trendingPosts = \App\Models\Post::where('is_trending',1)
+                                                    ->where('status','published')
+                                                    ->latest()
+                                                    ->take(4)
+                                                    ->get();
+                                @endphp
 
-
+                                @foreach($trendingPosts as $post)
+                                <li>
+                                    <a href="{{ url('post/'.$post->slug) }}">
+                                    {{ $post->title }}
+                                    <img src="{{ asset('images/trend.png') }}" alt="Trending" height="16">
+                                    </a>
+                                </li>
+                                @endforeach
                             </ul>
                         </div>
 
@@ -220,30 +192,33 @@
 
                         <div class="col-lg-6 col-md-6 mb-4">
 
-                            <h6 class="fw-bold  border-top border-5 text-dark border-dark pt-3 pb-2">Trending on Group
-                                sites</h6>
+                            <h6 class="fw-bold border-top border-5 text-dark border-dark pt-3 pb-2">
+                                Trending on Group sites
+                            </h6>
+
                             <ul class="list-unstyled footer-links">
-                                <li><a href="#"> Stock Market Live Updates <img src="{{ asset('images/trend.png') }}"
-                                            alt="Trending" height="16"></a></li>
-                                <li><a href="#">IPL 2026 Auction Live Updates<img src="{{ asset('images/trend.png') }}"
-                                            alt="Trending" height="16"></a></li>
-                                <li><a href="#">IND vs ENG Test Series Full Results <img
-                                            src="{{ asset('images/trend.png') }}" alt="Trending" height="16"></a></li>
-                                <li><a href="#">TH Games<img src="{{ asset('images/trend.png') }}" alt="Trending"
-                                            height="16"></a></li>
-                                <li><a href="#">Gold Rate Today <img src="{{ asset('images/trend.png') }}"
-                                            alt="Trending" height="16"></a></li>
-                                <li><a href="#">Silver Rate Today <img src="{{ asset('images/trend.png') }}"
-                                            alt="Trending" height="16"></a></li>
-                                <li><a href="#">Arvind Kejriwal Exclusive Interview<img
-                                            src="{{ asset('images/trend.png') }}" alt="Trending" height="16"></a></li>
-                                <li><a href="#">Editor’s Note: Putting Muslims in their place? <img
-                                            src="{{ asset('images/trend.png') }}" alt="Trending" height="16"></a></li>
-                                <li><a href="#">Frontline Current Issue<img src="{{ asset('images/trend.png') }}"
-                                            alt="Trending" height="16"></a></li>
 
+                                @php
+                                $popularPosts = \App\Models\Post::where('is_popular',1)
+                                                    ->where('status','published')
+                                                    ->latest()
+                                                    ->take(4)
+                                                    ->get();
+                                @endphp
 
-                            </ul>
+                                @foreach($popularPosts as $post)
+
+                                <li>
+                                <a href="{{ url('post/'.$post->slug) }}">
+                                {{ $post->title }}
+
+                                <img src="{{ asset('images/trend.png') }}" alt="Trending" height="16">
+                                </a>
+                                </li>
+
+                                @endforeach
+
+                                </ul>
                         </div>
                     </div>
 
@@ -264,33 +239,47 @@
                         </div>
 
                         <!-- Left News Column -->
+                        @php
+                            $latestPosts = \App\Models\Post::where('status','published')
+                                            ->latest()
+                                            ->take(2)
+                                            ->get();
+                        @endphp
+
                         <div class="col-md-6 text-dark">
                             <ul class="list-unstyled">
-                                <li class="mb-3 border-bottom pb-2">Delhi: exploring the many versions of a city that
-                                    co-exist</li>
-                                <li class="mb-3 border-bottom pb-2">Shooting at South Carolina State University
-                                    residence complex kills 2, wounds 1</li>
-                                <li class="mb-3 border-bottom pb-2">Winter on a plate: A culinary trail through Delhi
+
+                                @foreach($latestPosts->take(5) as $post)
+
+                                <li class="mb-3 border-bottom pb-2">
+                                    <a href="{{ url('post/'.$post->slug) }}" class="text-dark text-decoration-none">
+                                    {{ $post->title }}
+                                    </a>
                                 </li>
-                                <li class="mb-3 border-bottom pb-2">At India’s Grand Canyon</li>
-                                <li class="mb-3 border-bottom pb-2">BJP to begin talks on seat allocation in a month:
-                                    Nainar Nagendhran</li>
+
+                                @endforeach
+
                             </ul>
                         </div>
 
                         <!-- Right News Column -->
                         <div class="col-md-6 text-dark">
+
                             <ul class="list-unstyled">
-                                <li class="mb-3 border-bottom pb-2">When the sea takes over</li>
-                                <li class="mb-3 border-bottom pb-2">Have worked on more speed and revs on the ball:
-                                    Varun Chakravarthy</li>
-                                <li class="mb-3 border-bottom pb-2">Dhinakaran calls for regularisation of 328 temporary
-                                    teaching staff</li>
-                                <li class="mb-3 border-bottom pb-2">Hello Kitty designer bows out after 40 years in
-                                    charge</li>
-                                <li class="mb-3 border-bottom pb-2">Love in the time of quick commerce</li>
+
+                            @foreach($latestPosts->skip(5) as $post)
+
+                            <li class="mb-3 border-bottom pb-2">
+                            <a href="{{ url('post/'.$post->slug) }}" class="text-dark text-decoration-none">
+                            {{ $post->title }}
+                            </a>
+                            </li>
+
+                            @endforeach
+
                             </ul>
-                        </div>
+
+                            </div>
 
                     </div>
 

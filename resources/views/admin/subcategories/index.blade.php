@@ -19,7 +19,7 @@
                 <div class="card shadow-sm">
                     <div class="card-body">
                         <h5 class="card-title mb-4">Add New Subcategory</h5>
-                        <form action="{{ route('admin.subcategories.store') }}" method="POST">
+                        <form action="{{ auth()->user() ? route(auth()->user()->role == 1 ? 'admin.subcategories.store' : 'author.subcategories.store') : '#' }}" method="POST">
                             @csrf
                             <div class="mb-3">
                                 <label class="form-label">Parent Category</label>

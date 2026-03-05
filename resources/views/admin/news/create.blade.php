@@ -10,7 +10,7 @@
             <div class="alert alert-danger">Please fix the errors below.</div>
         @endif
 
-        <form action="{{ route('admin.posts.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route(auth()->user()->role == 1 ? 'admin.posts.store' : 'author.posts.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row">
                 <div class="col-md-8">
@@ -100,18 +100,34 @@
                             <h5 class="card-title mb-3">Publish Settings</h5>
                             
                             <div class="form-check form-switch mb-2">
-                                <input class="form-check-input" type="checkbox" name="status" value="1" {{ old('status') || is_null(old('status')) ? 'checked' : '' }}>
+                                <input class="form-check-input" type="checkbox" name="status" value="1" {{ old('status', '1') == '1' ? 'checked' : '' }}>
                                 <label class="form-check-label">Published / Active</label>
                             </div>
-
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" name="is_live" value="1" {{ old('is_live') ? 'checked' : '' }}>
+                                <label class="form-check-label text-success">
+                                    Mark as Live 🔴
+                                </label>
+                            </div>
                             <div class="form-check form-switch mb-2">
                                 <input class="form-check-input" type="checkbox" name="is_trending" value="1" {{ old('is_trending') ? 'checked' : '' }}>
                                 <label class="form-check-label text-danger">Mark as Trending 🔥</label>
                             </div>
 
-                            <div class="form-check form-switch mb-4">
-                                <input class="form-check-input" type="checkbox" name="is_latest" value="1" {{ old('is_latest') || is_null(old('is_latest')) ? 'checked' : '' }}>
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" name="is_latest" value="1" {{ old('is_latest', '1') == '1' ? 'checked' : '' }}>
                                 <label class="form-check-label text-primary">Mark as Latest</label>
+                            </div>
+
+                            {{-- Naye Status: Popular aur Premium --}}
+                            <div class="form-check form-switch mb-2">
+                                <input class="form-check-input" type="checkbox" name="is_popular" value="1" {{ old('is_popular') ? 'checked' : '' }}>
+                                <label class="form-check-label text-warning">Mark as Popular ⭐</label>
+                            </div>
+
+                            <div class="form-check form-switch mb-4">
+                                <input class="form-check-input" type="checkbox" name="is_premium" value="1" {{ old('is_premium') ? 'checked' : '' }}>
+                                <label class="form-check-label text-info">Mark as Premium 💎</label>
                             </div>
 
                             <button type="submit" class="btn btn-success w-100 py-2">

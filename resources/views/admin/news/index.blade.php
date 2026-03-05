@@ -9,7 +9,7 @@
                 <h4 class="mb-0">All News Posts</h4>
             </div>
             <div class="col-md-6 text-end">
-                <a href="{{ route('admin.posts.create') }}" class="btn btn-primary">
+                <a href="{{ route(auth()->user()->role == 1 ? 'admin.posts.create' : 'author.posts.create') }}" class="btn btn-primary">
                     <i class="fas fa-plus"></i> Add New Post
                 </a>
             </div>
@@ -75,14 +75,17 @@
                                 </td>
                                 <td class="text-center">
                                     <div class="btn-group">
-                                        <a href="{{ route('admin.posts.edit', $post->id) }}" class="btn btn-sm btn-outline-primary" title="Edit">
-                                           edit <i class="fas fa-edit"></i>
+                                        @php $prefix = auth()->user()->role == 1 ? 'admin' : 'author'; @endphp
+
+                                        <a href="{{ route($prefix . '.posts.edit', $post->id) }}" class="btn btn-sm btn-outline-primary" title="Edit">
+                                            edit <i class="fas fa-edit"></i>
                                         </a>
-                                        <form action="{{ route('admin.posts.destroy', $post->id) }}" method="POST" onsubmit="return confirm('Kya aap wakayi is post ko delete karna chahte hain?')">
+
+                                        <form action="{{ route($prefix . '.posts.destroy', $post->id) }}" method="POST" onsubmit="return confirm('Kya aap wakayi is post ko delete karna chahte hain?')">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-sm btn-outline-danger" title="Delete">
-                                                delete<i class="fas fa-trash"></i>
+                                                delete <i class="fas fa-trash"></i>
                                             </button>
                                         </form>
                                     </div>

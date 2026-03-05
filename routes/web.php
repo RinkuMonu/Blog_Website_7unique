@@ -1,106 +1,96 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SubcategoryController;
-use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
-use App\Http\Controllers\User\AuthController as UserAuthController;
 use App\Http\Controllers\Admin\DashboardController;
+use App\Http\Controllers\User\AuthController as UserAuthController;
+// --- 1. DEFAULT LOGIN ROUTE (Sabse upar taaki Middleware ise pehchan le) ---
+Route::get('login', [AuthController::class, 'loginGet'])->name('login');
 
-Route::resource('posts', PostController::class);
-Route::get('/', [PostController::class, 'index']);
-Route::get('admin/login', [AuthController::class, 'loginGet'])->name('admin.login');
-Route::get('user/login', [UserAuthController::class, 'loginGet'])->name('user.login');
-
-Route::post('admin/login', [AuthController::class, 'login'])->name('login');
-Route::get('/admin', [AuthController::class, 'loginGet']);
+// --- 2. Public / Home Routes ---
+Route::get('/',[PostController::class,'home'])->name('home');
+Route::get('/{slug}/{subslug?}',[PostController::class,'slugWiseData']);
+Route::get('/{slug}/{subslug?}/{postTitle}',[PostController::class,'postDetails'])->name('post.details');
 
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/subcategories', [SubcategoryController::class, 'index'])->name('subcategories.index');
+
+// --- 3. News Static Pages ---
+    Route::view('/english-news', 'news.englishnews')->name('english.news');
+    Route::view('/india-news', 'news.india')->name('india.news');
+    Route::view('/movies-news', 'news.movies')->name('movies.news');
+    Route::view('/world', 'news.world')->name('world.news');
+    Route::view('/sports-news', 'news.sports')->name('sports.news');
+    Route::view('/premium-news', 'news.premium')->name('premium.news');
+    Route::view('/opinion-news', 'news.opinion')->name('opinion');
+    Route::view('/data', 'news.data')->name('data');
+    Route::view('/health', 'news.health')->name('health');
+    Route::view('/science', 'news.science')->name('science');
+    Route::view('/entertainment', 'news.entertainment')->name('entertainment');
+
+// --- 4. Authentication Routes ---
+Route::get('admin/login', [AuthController::class, 'loginGet'])->name('admin.login');
+Route::post('admin/login', [AuthController::class, 'login'])->name('admin.login.post');
+Route::get('author/login', [AuthController::class, 'loginGet'])->name('author.login');
+Route::post('author/login', [AuthController::class, 'login'])->name('author.login.post');
+Route::get('user/login', [UserAuthController::class, 'loginGet'])->name('user.login');
+
+// Common Dashboard Redirect
+Route::get('/dashboard', function() {
+    return auth()->user()->role == 1 ? redirect()->route('admin.dashboard') : redirect()->route('author.dashboard');
+})->name('dashboard')->middleware('auth');
+
+// --- 5. API / Helper Routes ---
 Route::get('/get-subcategories/{id}', function($id) {
     $subcategories = \App\Models\Subcategory::where('category_id', $id)->get();
     return response()->json($subcategories);
 });
-Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
-Route::middleware(['auth', 'admin'])->prefix('admin')->group(function () {
-  Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-  Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
-  Route::resource('member', MemberController::class, );  
-  // Category Management (Sirf Add/Edit/Delete)
-    Route::post('/categories/store', [CategoryController::class, 'store'])->name('admin.categories.store');
-    Route::get('/categories/edit/{id}', [CategoryController::class, 'edit'])->name('admin.categories.edit');
-    Route::post('/categories/update/{id}', [CategoryController::class, 'update'])->name('admin.categories.update');
-    Route::delete('/categories/delete/{id}', [CategoryController::class, 'destroy'])->name('admin.categories.destroy');
+// --- 6. Role Based Protected Routes ---
+Route::middleware(['auth'])->group(function () {
+    $roles = ['admin', 'author'];
     
-    Route::post('/subcategories/store', [SubcategoryController::class, 'store'])->name('admin.subcategories.store');
-    Route::get('/subcategories/edit/{id}', [SubcategoryController::class, 'edit'])->name('admin.subcategories.edit');
-    Route::post('/subcategories/update/{id}', [SubcategoryController::class, 'update'])->name('admin.subcategories.update');
-    Route::delete('/subcategories/delete/{id}', [SubcategoryController::class, 'destroy'])->name('admin.subcategories.destroy');
-    // Post Management
-    Route::get('/posts', [PostController::class, 'getPost'])->name('admin.posts.index');
-    Route::get('/posts/create', [PostController::class, 'create'])->name('admin.posts.create');
-    Route::post('/posts/store', [PostController::class, 'store'])->name('admin.posts.store');
-    Route::get('/posts/edit/{id}', [PostController::class, 'edit'])->name('admin.posts.edit');
-    Route::post('/posts/update/{id}', [PostController::class, 'update'])->name('admin.posts.update');
-    Route::delete('/posts/delete/{id}', [PostController::class, 'destroy'])->name('admin.posts.destroy');
-    // Status Toggles
-    Route::post('/posts/toggle-trending/{id}', [PostController::class, 'toggleTrending'])->name('admin.posts.trending');
+    foreach ($roles as $role) {
+        // Yahan middleware ka naam wahi hona chahiye jo aapne Kernel.php mein register kiya hai
+        Route::middleware($role)->prefix($role)->name($role . '.')->group(function () {
+            
+            Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+            Route::get('/logout', [DashboardController::class, 'logout'])->name('logout');
+            Route::resource('member', MemberController::class);
+
+            // Category Management
+            Route::prefix('categories')->name('categories.')->group(function () {
+                Route::get('/', [CategoryController::class, 'index'])->name('index');
+                Route::post('/store', [CategoryController::class, 'store'])->name('store');
+                Route::get('/edit/{id}', [CategoryController::class, 'edit'])->name('edit');
+                Route::post('/update/{id}', [CategoryController::class, 'update'])->name('update');
+                Route::delete('/delete/{id}', [CategoryController::class, 'destroy'])->name('destroy');
+            });
+
+            // Subcategory Management
+            Route::prefix('subcategories')->name('subcategories.')->group(function () {
+                Route::get('/', [SubcategoryController::class, 'index'])->name('index');
+                Route::post('/store', [SubcategoryController::class, 'store'])->name('store');
+                Route::get('/edit/{id}', [SubcategoryController::class, 'edit'])->name('edit');
+                Route::post('/update/{id}', [SubcategoryController::class, 'update'])->name('update');
+                Route::delete('/delete/{id}', [SubcategoryController::class, 'destroy'])->name('destroy');
+            });
+
+            // Post Management
+            Route::prefix('posts')->name('posts.')->group(function () {
+                Route::get('/', [PostController::class, 'getPost'])->name('index');
+                Route::get('/create', [PostController::class, 'create'])->name('create');
+                Route::post('/store', [PostController::class, 'store'])->name('store');
+                Route::get('/edit/{id}', [PostController::class, 'edit'])->name('edit');
+                Route::post('/update/{id}', [PostController::class, 'update'])->name('update');
+                Route::delete('/delete/{id}', [PostController::class, 'destroy'])->name('destroy');
+                Route::post('/toggle-trending/{id}', [PostController::class, 'toggleTrending'])->name('trending');
+            });
+        });
+    }
 });
-Route::get('/english-news', function () {
-    return view('news.englishnews');
-})->name('english.news');
 
-
-Route::get('/', function () {
-    return view('home');
-});
-
-
-
-Route::get('/india-news', function () {
-    return view('news.india');
-})->name('india.news');
-
-
-
-Route::get('/movies-news', function () {
-    return view('news.movies');
-})->name('movies.news');
-
-
-Route::get('/world', function () {
-    return view('news.world');
-})->name('world');
-
-
-Route::get('/sports-news', function () {
-    return view('news.sports');
-})->name('sports.news');
-
-
-Route::get('/premium-news', function () {
-    return view('news.premium');
-})->name('premium.news');
-
-Route::get('/opinion-news', function () {
-    return view('news.opinion');
-})->name('opinion.news');
-
-Route::get('/data', function () {
-    return view('news.data');
-})->name('data');
-
-Route::get('/health', function () {
-    return view('news.health');
-})->name('health');
-
-Route::get('/science', function () {
-    return view('news.science');
-})->name('science');
-
-
-Route::get('/entertainment', function () {
-    return view('news.entertainment');
-})->name('entertainment');
+Route::resource('posts', PostController::class)->only(['index', 'show']);
