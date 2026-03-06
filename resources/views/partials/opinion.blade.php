@@ -22,57 +22,62 @@ body {
     cursor: pointer;
 }
 </style>
-<div class="container my-5">
-<div class="opinion-wrapper">
+    <div class="container my-5">
+        <div class="opinion-wrapper">
 
-<div class="text-center mb-4">
+            <div class="text-center mb-4">
+                <h2 class="text-center fw-bold" style="color:#B00020;">The Hindu Opinion</h2>
 
-<h2 class="text-center fw-bold" style="color:#B00020;">The Hindu Opinion</h2>
+                <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
 
-<div class="d-flex justify-content-center align-items-center gap-2 mt-2">
+                    <div class="premium-img-container">
+                        <a href="/">
+                            <img src="images/h-circle-yellow-new.svg" alt="Premium Badge">
+                        </a>
+                    </div>
 
-<div class="premium-img-container">
-<a href="/">
-<img src="images/h-circle-yellow-new.svg" alt="Premium Badge">
-</a>
-</div>
+                    <span class="fw-bold small premium-text">
+                    The PREMIUM
+                    </span>
 
-<span class="fw-bold small premium-text">
-The PREMIUM
-</span>
+                </div>
+            </div>
 
-</div>
-</div>
+            <div class="row">
+                @foreach($allCategoriesData->where('category_id', 5) as $post)
+                    @php
+                        $url = '';
 
-<div class="row">
+                        if($post->subcategory){
+                            $url = url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug);
+                        }else{
+                            $url = url($post->category->slug.'/'.$post->slug);
+                        }
+                    @endphp
 
-@foreach($allCategoriesData->where('category_id', 5) as $post)
+                    <div class="col-lg-3 divider">
 
-<div class="col-lg-3 divider">
+                        <a href="{{ $url }}">
+                            <img src="{{ asset('storage/'.$post->thumbnail) }}" class="opinion-img">
+                        </a>
 
-<a href="{{ url('post/'.$post->slug) }}">
-<img src="{{ asset('storage/'.$post->thumbnail) }}" class="opinion-img">
-</a>
+                        <div class="fs-5">
+                            <a href="{{ $url }}" class="txt">
+                                {{ $post->title }}
+                            </a>
+                        </div>
 
-<div class="fs-5">
-<a href="{{ url('post/'.$post->slug) }}" class="txt">
-{{ $post->title }}
-</a>
-</div>
+                        <span style="font-size:10px;">
+                            <a href="/" class="smll">{{ $post->user->name ?? '' }}</a>
+                        </span>
 
-<span style="font-size:10px;">
-<a href="/" class="smll">{{ $post->user->name ?? '' }}</a>
-</span>
+                    </div>
+                @endforeach
+            </div>
 
-</div>
+            <div class="see-more">
+                <a href="{{url('/opinion')}}">SEE MORE →</a>
+            </div>
 
-@endforeach
-
-</div>
-
-<div class="see-more">
-SEE MORE →
-</div>
-
-</div>
-</div>
+        </div>
+    </div>

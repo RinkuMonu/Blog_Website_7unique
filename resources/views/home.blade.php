@@ -34,12 +34,15 @@
 
             <!-- LEFT COLUMN -->
             <div class="col-lg-3 border-end">
-                <a href="#" class="text-decoration-none">
+                <a href="{{ url('/premium') }}" class="text-decoration-none">
                     <h3 class="fw-bold mb-4 red" style="font-size: 30px; color: #B00020">Premium</h3>
                 </a>
 
                 @foreach($premium->where('category_id', 6) as $post)
-                    <a href="{{ url('news/'.$post->slug) }}" class="txt d-block">
+                    <a href="{{ $post->subcategory 
+                            ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug) 
+                            : url($post->category->slug.'/'.$post->slug) }}" 
+                        class="txt d-block">
                         {{ $post->title }}
                     </a>
 
@@ -68,12 +71,19 @@
                 <hr>
 
                 @foreach($premium->where('category_id', '!=', 6)->take(3) as $post)
-                    <a href="{{ url('category/'.$post->category->slug) }}" class="text-decoration-none">
-                        <h3 class="fw-bold red" style="font-size: 16px; color: #B00020">
-                            {{ $post->category->name }}
-                        </h3>
+                    <a href="{{ $post->subcategory 
+                                ? url($post->category->slug.'/'.$post->subcategory->slug) 
+                                : url($post->category->slug) }}" 
+                        class="text-decoration-none">
+
+                            <h3 class="fw-bold red" style="font-size:16px; color:#B00020">
+                                {{ $post->subcategory ? $post->subcategory->name : $post->category->name }}
+                            </h3>
+
                     </a>
-                    <a href="{{ url('news/'.$post->slug) }}" class="txt d-block">
+                    <a href="{{ $post->subcategory 
+                            ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug) 
+                            : url($post->category->slug.'/'.$post->slug) }}" class="txt d-block">
                         {{ $post->title }}
                     </a>
                     <hr>
@@ -301,7 +311,7 @@
         </div>
         
         <div class="see-more-wrapper text-center">
-            <a href="{{ url('category/finance') }}" class="see-more fw-bold text-uppercase">
+            <a href="{{ url('/finance') }}" class="see-more fw-bold text-uppercase">
                 SEE MORE
             </a>→
         </div>

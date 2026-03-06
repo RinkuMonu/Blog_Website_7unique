@@ -163,13 +163,13 @@ body {
 
                     <!-- Bottom Row: e-Paper + Subscribe -->
                     <div class="d-flex align-items-center gap-3">
-                        <a href="#" class="text-danger text-decoration-none small fw-semibold">
+                        <!-- <a href="#" class="text-danger text-decoration-none small fw-semibold">
                             e-books
                         </a>
 
                         <a href="#" class="btn text-white btn-sm px-3" style="background-color: #B00200;">
                             SUBSCRIBE
-                        </a>
+                        </a> -->
                     </div>
 
                 </div>
@@ -834,7 +834,6 @@ body {
                     </div>
 
                 </div>
-
                 <!-- SOCIAL + BOTTOM ROW -->
                 <div class="row mt-4 align-items-center border-top pt-3">
 
