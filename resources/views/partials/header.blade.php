@@ -211,11 +211,11 @@ body {
                         </a>
                     </li>
 
-                    <li class="nav-item">
+                    <!-- <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
                             <i class="bi bi-search"></i> Search
                         </a>
-                    </li>
+                    </li> -->
 
                 </ul>
                 <!-- center menu -->

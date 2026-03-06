@@ -88,75 +88,43 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-md-3 mb-4">
-                            <h6 class="fw-bold  border-top border-5 text-dark border-dark pt-3 pb-2">Seven Unique</h6>
+                            <h6 class="fw-bold border-top border-5 text-dark border-dark pt-3 pb-2">Seven Unique</h6>
                             <ul class="list-unstyled footer-links">
-
                                 <li><a href="#">About Us</a></li>
                                 <li><a href="#">Code of Editorial Values</a></li>
                                 <li><a href="#">News Archive</a></li>
                                 <li><a href="#">Sitemap</a></li>
                                 <li><a href="#">Digital Subscription</a></li>
-                                <li><a href="#">Subscribe to Newslettersn</a></li>
+                                <li><a href="#">Subscribe to Newsletters</a></li>
                                 <li><a href="#">Rss Feeds</a></li>
                                 <li><a href="#">Readers Editor-Terms of Reference</a></li>
                                 <li><a href="#">Authors & Contributors</a></li>
                                 <li><a href="#">Gift Front page</a></li>
-                                <h6 class="fw-bold  text-dark pt-3 pb-2 mt-3">
-                                    Contact us
-                                </h6>
-
-                                <ul class="list-unstyled">
-                                    <li><a href="#" class="text-decoration-none text-dark">Careers</a></li>
-                                    <li><a href="#" class="text-decoration-none text-dark">Advertise With Us</a></li>
-                                    <li><a href="#" class="text-decoration-none text-dark">Press Release</a></li>
-                                </ul>
-
-
                             </ul>
-
-                        </div>
-
-
-                        <div class="col-md-3 mb-4">
-                            <h6 class="fw-bold  border-top text-dark border-5 border-dark pt-3 pb-2">Other Products</h6>
+                            
+                            <h6 class="fw-bold text-dark pt-3 pb-2 mt-3">Contact us</h6>
                             <ul class="list-unstyled footer-links">
-                                <li><a href="#">Markets</a></li>
-                                <li><a href="#">STEP</a></li>
-                                <li><a href="#">Images</a></li>
-                                <li><a href="#">Classifieds - Print</a></li>
-                                <li><a href="#">Bookstore & Special Publications</a></li>
-
-                               
-
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Advertise With Us</a></li>
+                                <li><a href="#">Press Release</a></li>
                             </ul>
                         </div>
 
-                        <div class="col-md-3 mb-4">
-                            <h6 class="fw-bold border-top border-5 text-dark border-dark  pt-3 pb-2">Business</h6>
+                        @foreach($footerCategories as $category)
+                        <div class="col-md-2 mb-4"> <h6 class="fw-bold border-top border-5 text-dark border-dark pt-3 pb-2">
+                                {{ $category->name }}
+                            </h6>
                             <ul class="list-unstyled footer-links">
-                                <li><a href="#">Agri-Business</a></li>
-                                <li><a href="#">Industry</a></li>
-                                <li><a href="#">Economy</a></li>
-                                <li><a href="#">Markets</a></li>
-                                <li><a href="#">Budget</a></li>
-                                
-
+                                @foreach($category->subcategories as $sub)
+                                <li>
+                                    <a href="{{ url($category->slug.'/'.$sub->slug) }}">
+                                        {{ $sub->name }}
+                                    </a>
+                                </li>
+                                @endforeach
                             </ul>
                         </div>
-
-                        <!-- Column 4 -->
-                        <div class="col-md-3 mb-4">
-                            <h6 class="fw-bold  border-top border-5 text-dark border-dark pt-3 pb-2">States</h6>
-                            <ul class="list-unstyled footer-links">
-                                <li><a href="#">Andhra Pradesh</a></li>
-                                <li><a href="#">Karnataka</a></li>
-                                <li><a href="#">Kerala</a></li>
-                                <li><a href="#">Tamil Nadu</a></li>
-                                <li><a href="#">Telangana</a></li>
-                               
-
-                            </ul>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
 
@@ -177,13 +145,21 @@
                                                     ->get();
                                 @endphp
 
-                                @foreach($trendingPosts as $post)
-                                <li>
-                                    <a href="{{ url('post/'.$post->slug) }}">
-                                    {{ $post->title }}
-                                    <img src="{{ asset('images/trend.png') }}" alt="Trending" height="16">
-                                    </a>
-                                </li>
+                               @foreach($trendingPosts as $post)
+
+                                    @php
+                                        $postUrl = $post->subcategory
+                                            ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug)
+                                            : url($post->category->slug.'/'.$post->slug);
+                                    @endphp
+
+                                    <li>
+                                        <a href="{{ $postUrl }}">
+                                        {{ $post->title }}
+                                            <img src="{{ asset('images/trend.png') }}" alt="Trending" height="16">
+                                        </a>
+                                    </li>
+
                                 @endforeach
                             </ul>
                         </div>
@@ -197,36 +173,33 @@
                             </h6>
 
                             <ul class="list-unstyled footer-links">
-
                                 @php
-                                $popularPosts = \App\Models\Post::where('is_popular',1)
-                                                    ->where('status','published')
-                                                    ->latest()
-                                                    ->take(4)
-                                                    ->get();
+                                    $popularPosts = \App\Models\Post::where('is_popular',1)
+                                                ->where('status','published')
+                                                ->latest()
+                                                ->take(4)
+                                                ->get();
                                 @endphp
-
                                 @foreach($popularPosts as $post)
 
-                                <li>
-                                <a href="{{ url('post/'.$post->slug) }}">
-                                {{ $post->title }}
+                                    @php
+                                    $postUrl = $post->subcategory
+                                        ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug)
+                                        : url($post->category->slug.'/'.$post->slug);
+                                    @endphp
 
-                                <img src="{{ asset('images/trend.png') }}" alt="Trending" height="16">
-                                </a>
-                                </li>
+                                    <li>
+                                        <a href="{{ $postUrl }}">
+                                        {{ $post->title }}
+                                        <img src="{{ asset('images/trend.png') }}" alt="Trending" height="16">
+                                        </a>
+                                    </li>
 
                                 @endforeach
 
-                                </ul>
+                            </ul>
                         </div>
                     </div>
-
-
-
-
-
-
                     <!-- Latest News Section -->
 
                     <!-- Latest News Section -->
@@ -241,52 +214,57 @@
                         <!-- Left News Column -->
                         @php
                             $latestPosts = \App\Models\Post::where('status','published')
-                                            ->latest()
-                                            ->take(2)
-                                            ->get();
+                                ->latest()
+                                ->take(4)
+                                ->get();
                         @endphp
 
-                        <div class="col-md-6 text-dark">
-                            <ul class="list-unstyled">
+                            <div class="col-md-6 text-dark">
+                                <ul class="list-unstyled">
 
-                                @foreach($latestPosts->take(5) as $post)
+                                    @foreach($latestPosts as $post)
 
-                                <li class="mb-3 border-bottom pb-2">
-                                    <a href="{{ url('post/'.$post->slug) }}" class="text-dark text-decoration-none">
-                                    {{ $post->title }}
-                                    </a>
-                                </li>
+                                        @php
+                                        $postUrl = $post->subcategory
+                                            ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug)
+                                            : url($post->category->slug.'/'.$post->slug);
+                                        @endphp
 
-                                @endforeach
+                                        <li class="mb-3 border-bottom pb-2">
+                                            <a href="{{ $postUrl }}" class="text-dark text-decoration-none">
+                                            {{ $post->title }}
+                                            </a>
+                                        </li>
 
-                            </ul>
-                        </div>
+                                    @endforeach
+
+                                </ul>
+                            </div>
 
                         <!-- Right News Column -->
                         <div class="col-md-6 text-dark">
 
                             <ul class="list-unstyled">
+                                @foreach($latestPosts->skip(5) as $post)
 
-                            @foreach($latestPosts->skip(5) as $post)
+                                    @php
+                                        $postUrl = $post->subcategory
+                                            ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug)
+                                            : url($post->category->slug.'/'.$post->slug);
+                                    @endphp
 
-                            <li class="mb-3 border-bottom pb-2">
-                            <a href="{{ url('post/'.$post->slug) }}" class="text-dark text-decoration-none">
-                            {{ $post->title }}
-                            </a>
-                            </li>
+                                    <li class="mb-3 border-bottom pb-2">
+                                        <a href="{{ $postUrl }}" class="text-dark text-decoration-none">
+                                        {{ $post->title }}
+                                        </a>
+                                    </li>
 
-                            @endforeach
-
+                                @endforeach
                             </ul>
 
-                            </div>
+                        </div>
 
                     </div>
-
-
-
-
-
                 </div>
 
                 <!-- Bottom Line -->
@@ -320,8 +298,6 @@
                     </div>
 
                 </div>
-
-
             </div>
     </footer>
 </body>

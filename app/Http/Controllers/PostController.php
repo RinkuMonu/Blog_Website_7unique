@@ -11,60 +11,165 @@ use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
-    public function slugWiseData($slug, $subslug = null)
+    // public function slugWiseData($slug, $subslug = null)
+    // {
+    //     $category = Category::where('slug', $slug)->first() ?? abort(404);
+    //     $query = Post::where('category_id', $category->id)->where('status', 'published');
+    //     if ($subslug) {
+    //         $subcategory = Subcategory::where('slug', $subslug)
+    //             ->where('category_id', $category->id)
+    //             ->first() ?? abort(404);            
+    //     } else {
+    //         $subcategory = null;
+    //     }
+    //     $posts = $query->latest()->paginate(15);
+    //     $latest_news = Post::with('category')->with('subcategory')
+    //         ->where('category_id', $category->id)
+    //         ->where('is_latest', 1)
+    //         ->where('status', 'published')
+    //         ->latest()
+    //         ->take(5)
+    //         ->get();
+    //     $popular = Post::where('category_id', $category->id) 
+    //         ->where('is_popular', 1)
+    //         ->where('status', 'published')
+    //         ->latest()
+    //         ->take(5)
+    //         ->get();   
+    //     $live_post = Post::where('category_id', $category->id)
+    //         ->where('status', 'published')
+    //         ->where('is_live', 1)->skip(1)->take(1)
+    //         ->latest()
+    //         ->first();     
+    //     $active_slug = $subslug ?? $slug;
+    //     $all_subcategories = Subcategory::where('category_id', $category->id)->get();
+    //     return view('news.listing', compact(
+    //         'category', 'subcategory', 'posts', 'active_slug', 'all_subcategories', 'latest_news', 'popular','live_post'
+    //     ));
+    // }
+    // public function postDetails($slug, $postTitle)
+    // {
+    //     dd("fadf");
+    //     $category = Category::where('slug', $slug)->first() ?? abort(404);
+    //     if ($subslug) {
+    //         $subcategory = Subcategory::where('slug', $subslug)
+    //             ->where('category_id', $category->id)
+    //             ->first() ?? abort(404);            
+    //     } else {
+    //         $subcategory = null;
+    //     }
+    //     $post = Post::where('slug', Str::slug($postTitle))
+    //         ->where('category_id', $category->id)
+    //         ->when($subcategory, function ($query) use ($subcategory) {
+    //             return $query->where('subcategory_id', $subcategory->id);
+    //         })
+    //         ->where('status', 'published')
+    //         ->firstOrFail();
+    //     return view('news.details', compact('post'));
+    // }
+
+    public function handleRequest(Request $request, $slug, $param2 = null, $param3 = null)
     {
+        // 1. Category check karein
         $category = Category::where('slug', $slug)->first() ?? abort(404);
-        $query = Post::where('category_id', $category->id)->where('status', 'published');
-        if ($subslug) {
-            $subcategory = Subcategory::where('slug', $subslug)
+
+        $subcategory = null;
+        $postTitleSlug = null;
+
+        // 2. Logic: URL structure identify karein
+        if ($param3) {
+            // Case: /{category}/{subcategory}/{post-slug}
+            $subcategory = Subcategory::where('slug', $param2)
                 ->where('category_id', $category->id)
-                ->first() ?? abort(404);            
-        } else {
-            $subcategory = null;
+                ->first() ?? abort(404);
+            $postTitleSlug = $param3;
+        } elseif ($param2) {
+            // Case: /{category}/{something} 
+            // Check karein ki 'something' subcategory hai ya post slug
+            $checkSub = Subcategory::where('slug', $param2)
+                ->where('category_id', $category->id)
+                ->first();
+            
+            if ($checkSub) {
+                $subcategory = $checkSub;
+            } else {
+                $postTitleSlug = $param2;
+            }
         }
+
+        // --- DECISION POINT ---
+
+        // A. POST DETAILS VIEW (Agar postTitleSlug mil gaya hai)
+        if ($postTitleSlug) {
+            $post = Post::with(['user', 'category', 'subcategory']) // category/subcategory eager load karein
+                ->where('slug', $postTitleSlug)
+                ->where('category_id', $category->id)
+                ->when($subcategory, function ($query) use ($subcategory) {
+                    return $query->where('subcategory_id', $subcategory->id);
+                })
+                ->where('status', 'published')
+                ->firstOrFail();
+
+            // Breadcrumbs aur Sidebar ke liye data
+            $all_subcategories = Subcategory::where('category_id', $category->id)->get();
+            $popular = Post::with(['user', 'category', 'subcategory'])
+                ->where('is_popular', 1)
+                ->latest()
+                ->take(5)
+                ->get();
+
+            return view('news.details', compact('post', 'category', 'subcategory', 'all_subcategories', 'popular'));
+        }
+
+        // B. LISTING VIEW (Agar postTitleSlug nahi hai, toh category ya subcategory list dikhao)
+        $query = Post::where('category_id', $category->id)
+            ->where('status', 'published');
+
+        if ($subcategory) {
+            $query->where('subcategory_id', $subcategory->id);
+        }
+
         $posts = $query->latest()->paginate(15);
-        $latest_news = Post::with('category')->with('subcategory')
+
+        // Latest News Logic
+        $latest_news = Post::with(['category', 'subcategory'])
             ->where('category_id', $category->id)
             ->where('is_latest', 1)
             ->where('status', 'published')
             ->latest()
             ->take(5)
             ->get();
+
+        // Popular News Logic
         $popular = Post::where('category_id', $category->id) 
             ->where('is_popular', 1)
             ->where('status', 'published')
             ->latest()
             ->take(5)
             ->get();   
+
+        // Live Post Logic
         $live_post = Post::where('category_id', $category->id)
             ->where('status', 'published')
-            ->where('is_live', 1)->skip(1)->take(1)
+            ->where('is_live', 1)
             ->latest()
+            ->skip(1)
+            ->take(1)
             ->first();     
-        $active_slug = $subslug ?? $slug;
+
+        $active_slug = $subcategory ? $subcategory->slug : $category->slug;
         $all_subcategories = Subcategory::where('category_id', $category->id)->get();
+
         return view('news.listing', compact(
-            'category', 'subcategory', 'posts', 'active_slug', 'all_subcategories', 'latest_news', 'popular','live_post'
+            'category', 
+            'subcategory', 
+            'posts', 
+            'active_slug', 
+            'all_subcategories', 
+            'latest_news', 
+            'popular',
+            'live_post'
         ));
-    }
-    public function postDetails($slug, $subslug = null, $postTitle)
-    {
-        $category = Category::where('slug', $slug)->first() ?? abort(404);
-        if ($subslug) {
-            $subcategory = Subcategory::where('slug', $subslug)
-                ->where('category_id', $category->id)
-                ->first() ?? abort(404);            
-        } else {
-            $subcategory = null;
-        }
-        $post = Post::where('slug', Str::slug($postTitle))
-            ->where('category_id', $category->id)
-            ->when($subcategory, function ($query) use ($subcategory) {
-                return $query->where('subcategory_id', $subcategory->id);
-            })
-            ->where('status', 'published')
-            ->firstOrFail();
-        return view('news.details', compact('post'));
     }
     public function index() {
         $posts = Post::with(['category', 'subcategory'])->latest()->get();

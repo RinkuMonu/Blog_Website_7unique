@@ -92,129 +92,149 @@
             </div>
 
 
-            <!-- CENTER COLUMN -->
-        <div class="col-lg-6 px-4">
+            <div class="col-lg-6 px-4">
 
-                @php
-                    $mainLive = $liveData->first();
-                    $secondLive = $liveData->skip(1)->first();
-                    $thirdLive = $liveData->skip(2)->first();
-                    $fourthLive = $liveData->skip(3)->first();
-                @endphp
+@php
+    $mainLive = $liveData->first();
+    $secondLive = $liveData->skip(1)->first();
+    $thirdLive = $liveData->skip(2)->first();
+    $fourthLive = $liveData->skip(3)->first();
+@endphp
 
-                    <!-- MAIN NEWS -->
-                    @if($mainLive)
+<!-- MAIN NEWS -->
+@if($mainLive)
+    @php
+        $mainLiveUrl = $mainLive->subcategory
+            ? url($mainLive->category->slug.'/'.$mainLive->subcategory->slug.'/'.$mainLive->slug)
+            : url($mainLive->category->slug.'/'.$mainLive->slug);
+    @endphp
 
-                        <span class="fw-bold red" style="font-size: 14px;">
-                            <a href="{{ url('post/'.$mainLive->slug) }}" class="red">
-                                <span class="live-dot"></span> LIVE
-                            </a>
-                        </span>
+    <span class="fw-bold red" style="font-size: 14px;">
+        <a href="{{ $mainLiveUrl }}" class="red">
+            <span class="live-dot"></span> LIVE
+        </a>
+    </span>
 
-                        <h1 style="font-size: 34px; font-weight: 900;">
-                            <a href="{{ url('post/'.$mainLive->slug) }}" class="txt">
-                                {{ $mainLive->title }}
-                            </a>
-                        </h1>
+    <h1 style="font-size:34px;font-weight:900;">
+        <a href="{{ $mainLiveUrl }}" class="txt">
+            {{ $mainLive->title }}
+        </a>
+    </h1>
 
-                        <p class="text-muted" style="font-size: 14px;">
-                            <a href="{{ url('post/'.$mainLive->slug) }}" class="txt">
-                                {{ Str::limit(strip_tags($mainLive->content),150) }}
-                            </a>
-                        </p>
+    <p class="text-muted">
+        <a href="{{ $mainLiveUrl }}" class="txt">
+            {{ Str::limit(strip_tags($mainLive->content),150) }}
+        </a>
+    </p>
 
-                        <a href="{{ url('post/'.$mainLive->slug) }}">
-                            <img src="{{ asset('storage/'.$mainLive->thumbnail) }}" class="img-fluid my-3" alt="News Image">
-                        </a>
+    <a href="{{ $mainLiveUrl }}">
+        <img src="{{ asset('storage/'.$mainLive->thumbnail) }}" class="img-fluid my-3" alt="News">
+    </a>
+@endif
 
-                    @endif
+<!-- SECOND ROW -->
+<div class="row mt-4">
 
+    <!-- LEFT SMALL NEWS -->
+    @if($secondLive)
+        @php
+            $secondLiveUrl = $secondLive->subcategory
+                ? url($secondLive->category->slug.'/'.$secondLive->subcategory->slug.'/'.$secondLive->slug)
+                : url($secondLive->category->slug.'/'.$secondLive->slug);
+        @endphp
 
-                    <!-- SECOND ROW -->
-                    <div class="row mt-4">
-                        <!-- LEFT SMALL NEWS -->
-                        @if($secondLive)
-                            <div class="col-md-6">
-                                <a href="{{ url('post/'.$secondLive->slug) }}" class="text-decoration-none">
-                                    <h6 class="fw-bold txt" style="font-size: 20px;">
-                                        {{ $secondLive->title }}
-                                    </h6>
+        <div class="col-md-6">
+            <a href="{{ $secondLiveUrl }}" class="text-decoration-none">
+                <h6 class="fw-bold txt" style="font-size: 20px;">
+                    {{ $secondLive->title }}
+                </h6>
+                <img src="{{ asset('storage/'.$secondLive->thumbnail) }}" class="img-fluid mb-2" alt="News">
+            </a>
+        </div>
+    @endif
 
-                                    <img src="{{ asset('storage/'.$secondLive->thumbnail) }}" class="img-fluid mb-2" alt="News">
-                                </a>
-                            </div>
-                        @endif
-                        <!-- RIGHT SMALL NEWS -->
-                        <div class="col-md-6">
-                            @if($thirdLive)
+    <!-- RIGHT SMALL NEWS -->
+    <div class="col-md-6">
 
-                                <span class="fw-bold red" style="font-size: 14px;">
-                                <span class="live-dot"></span> LIVE</span>
+        @if($thirdLive)
+            @php
+                $thirdLiveUrl = $thirdLive->subcategory
+                    ? url($thirdLive->category->slug.'/'.$thirdLive->subcategory->slug.'/'.$thirdLive->slug)
+                    : url($thirdLive->category->slug.'/'.$thirdLive->slug);
+            @endphp
 
-                                <a href="{{ url('post/'.$thirdLive->slug) }}" class="text-decoration-none">
-                                    <h6 class="fw-bold txt" style="font-size: 20px;">
-                                    {{ $thirdLive->title }}
-                                    </h6>
-                                </a>
+            <span class="fw-bold red" style="font-size: 14px;">
+                <span class="live-dot"></span> LIVE
+            </span>
 
-                                <span class="text-muted fw-semibold text-uppercase" style="font-size: 9px;">
-                                    <a href="#" class="smll">
-                                        {{ $thirdLive->user->name ?? 'Admin' }}
-                                    </a>
-                                </span>
+            <a href="{{ $thirdLiveUrl }}" class="text-decoration-none">
+                <h6 class="fw-bold txt" style="font-size: 20px;">
+                    {{ $thirdLive->title }}
+                </h6>
+            </a>
 
-                                <hr>
+            <span class="text-muted fw-semibold text-uppercase" style="font-size: 9px;">
+                <a href="#" class="smll">{{ $thirdLive->user->name ?? 'Admin' }}</a>
+            </span>
+            <hr>
+        @endif
 
-                            @endif
+        @if($fourthLive)
+            @php
+                $fourthLiveUrl = $fourthLive->subcategory
+                    ? url($fourthLive->category->slug.'/'.$fourthLive->subcategory->slug.'/'.$fourthLive->slug)
+                    : url($fourthLive->category->slug.'/'.$fourthLive->slug);
+            @endphp
 
-                            @if($fourthLive)
-                                <a href="{{ url('post/'.$fourthLive->slug) }}" class="text-decoration-none">
-                                    <h6 class="fw-bold txt" style="font-size: 20px;">
-                                        {{ $fourthLive->title }}
-                                    </h6>
-                                </a>
-                            @endif
-                        </div>
-                    </div>
+            <a href="{{ $fourthLiveUrl }}" class="text-decoration-none">
+                <h6 class="fw-bold txt" style="font-size: 20px;">
+                    {{ $fourthLive->title }}
+                </h6>
+            </a>
+        @endif
 
-                </div>
+    </div>
+</div>
+</div>
 
-            <!-- RIGHT COLUMN -->
-            <div class="col-lg-3 border-start ps-4">
-                <h5 class="fw-bold mb-4">
-                    <a href="#" class="red text-decoration-none">Latest News</a>
-                </h5>
+<!-- RIGHT COLUMN -->
+<div class="col-lg-3 border-start ps-4">
+    <h5 class="fw-bold mb-4">
+        <a href="#" class="red text-decoration-none">Latest News</a>
+    </h5>
 
-                <div class="timeline">
-                    @foreach($latest->take(5) as $key => $post)
-                        <div class="timeline-item {{ $key == 0 ? 'active' : '' }}">
-                            <a href="{{ url('news/'.$post->slug) }}" class="txt text-decoration-none">
-                                <small class="time">
-                                    {{ $post->created_at->diffForHumans() }} - 
-                                    {{ $post->category->name ?? 'News' }}
-                                </small>
-                                <p class="news-title">
-                                    {{ $post->title }}
-                                </p>
-                            </a>
-                        </div>
-                    @endforeach
-                </div>
+    <div class="timeline">
+        @foreach($latest->take(5) as $key => $post)
+            @php
+                $postUrl = $post->subcategory
+                    ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug)
+                    : url($post->category->slug.'/'.$post->slug);
+            @endphp
 
-                <a href="#" class="smll fw-semibold text-decoration-none" style="font-size:10px;">
-                    READ MORE STORIES
-                </a>
-                
-                <hr class="my-1">
-                <hr class="my-1">
-                <hr class="my-1">
-
-                <a href="/">
-                    <img src="{{ asset('images/sugam.png') }}" class="img-fluid w-100 mb-3 mt-5" alt="Advertisement">
+            <div class="timeline-item {{ $key == 0 ? 'active' : '' }}">
+                <a href="{{ $postUrl }}" class="txt text-decoration-none">
+                    <small class="time">
+                        {{ $post->created_at->diffForHumans() }} - 
+                        {{ $post->category->name ?? 'News' }}
+                    </small>
+                    <p class="news-title">{{ $post->title }}</p>
                 </a>
             </div>
+        @endforeach
+    </div>
 
-        </div>
+    <a href="#" class="smll fw-semibold text-decoration-none" style="font-size:10px;">
+        READ MORE STORIES
+    </a>
+    
+    <hr class="my-1">
+    <hr class="my-1">
+    <hr class="my-1">
+
+    <a href="/">
+        <img src="{{ asset('images/sugam.png') }}" class="img-fluid w-100 mb-3 mt-5" alt="Advertisement">
+    </a>
+</div>
 
     </div>
 
@@ -228,83 +248,103 @@
             <h2 class="text-center fw-bold mb-5" style="color:#B00020;">
                 Budget Session of Parliament
             </h2>
-
             @if($finance->count() > 0)
-            <div class="row mb-5">
-                <div class="{{ $finance->count() > 5 ? 'col-lg-6' : 'col-lg-10 mx-auto' }}">
-                    
-                    @php $first = $finance->first(); @endphp
-                    @if($first)
-                        <a href="{{ url('news/'.$first->slug) }}">
-                            <img src="{{ asset('storage/'.$first->thumbnail) }}" class="img-fluid w-100 mb-3" onerror="this.src='{{ asset('images/parliament.png') }}'">
-                        </a>
-                        <h3 class="fw-bold">
-                            <a href="{{ url('news/'.$first->slug) }}" class="text-dark txt">{{ $first->title }}</a>
-                        </h3>
-                        <p class="text-muted small">
-                            {{ Str::limit(strip_tags($first->content), 150) }}
-                        </p>
-                        <span class="text-uppercase text-muted small" style="font-size: 9px;">
-                            {{ $first->user->name ?? 'Staff Reporter' }}
-                        </span>
-                    @endif
+                <div class="row mb-5">
+                    <div class="{{ $finance->count() > 5 ? 'col-lg-6' : 'col-lg-10 mx-auto' }}">
+                        
+                        @php $first = $finance->first(); @endphp
+                        @if($first)
+                            @php
+                                $firstUrl = $first->subcategory 
+                                    ? url($first->category->slug.'/'.$first->subcategory->slug.'/'.$first->slug)
+                                    : url($first->category->slug.'/'.$first->slug);
+                            @endphp
+                            <a href="{{ $firstUrl }}">
+                                <img src="{{ asset('storage/'.$first->thumbnail) }}" class="img-fluid w-100 mb-3">
+                            </a>
+                            <h3 class="fw-bold">
+                                <a href="{{ $firstUrl }}" class="text-dark txt">
+                                    {{ $first->title }}
+                                </a>
+                            </h3>
+                            <p class="text-muted small">
+                                {{ Str::limit(strip_tags($first->content), 150) }}
+                            </p>
+                            <span class="text-uppercase text-muted small" style="font-size: 9px;">
+                                {{ $first->user->name ?? 'Staff Reporter' }}
+                            </span>
+                        @endif
 
-                    <hr class="my-4">
+                        <hr class="my-4">
 
-                    {{-- SMALL ARTICLES BELOW (Only show if data exists) --}}
-                    <div class="row">
-                        @foreach($finance->slice(1, 4) as $post)
-                            <div class="col-md-6 mb-4">
-                                <h6><a href="{{ url('news/'.$post->slug) }}" class="text-dark txt">{{ $post->title }}</a></h6>
-                                <span class="text-muted text-uppercase small" style="font-size: 9px;">
+                        <div class="row">
+                            @foreach($finance->slice(1, 4) as $post)
+
+                                @php
+                                    $postUrl = $post->subcategory
+                                    ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug)
+                                    : url($post->category->slug.'/'.$post->slug);
+                                @endphp
+
+                                <div class="col-md-6 mb-4">
+
+                                    <h6>
+                                        <a href="{{ $postUrl }}" class="text-dark txt">
+                                        {{ $post->title }}
+                                        </a>
+                                    </h6>
+
+                                    <span class="text-muted text-uppercase small" style="font-size: 9px;">
                                     {{ $post->user->name ?? 'The Hindu Bureau' }}
-                                </span>
-                                @if($post->thumbnail)
-                                    <img src="{{ asset('storage/'.$post->thumbnail) }}" class="img-fluid my-3" alt="">
-                                @endif
-                            </div>
-                        @endforeach
-                    </div>
-                </div>
+                                    </span>
 
-                {{-- Right Side Column - Ye tabhi dikhega jab 5 se zyada posts hongi --}}
-                @if($finance->count() > 5)
-                <div class="col-lg-6">
-                    @php $videoPost = $finance->get(5); @endphp
-                    @if($videoPost)
-                    <div class="bg-dark text-white p-3 mb-4">
-                        <div class="ratio ratio-16x9 mb-3">
-                            @if($videoPost->video_url)
-                                <iframe src="{{ $videoPost->video_url }}" allowfullscreen></iframe>
-                            @else
-                                <img src="{{ asset('storage/'.$videoPost->thumbnail) }}" class="img-fluid" style="object-fit:cover">
-                            @endif
+                                    @if($post->thumbnail)
+                                        <img src="{{ asset('storage/'.$post->thumbnail) }}" class="img-fluid my-3" alt="">
+                                    @endif
+
+                                </div>
+
+                            @endforeach
                         </div>
-                        <p class="small text-uppercase"><a href="#" class="video">HIGHLIGHTS</a></p>
-                        <h5 class="fw-bold">
-                            <a href="{{ url('news/'.$videoPost->slug) }}" class="video">{{ $videoPost->title }}</a>
-                        </h5>
-                        <p class="small">{{ Str::limit(strip_tags($videoPost->content), 100) }}</p>
                     </div>
-                    @endif
 
-                    <div class="row">
-                        @foreach($finance->slice(6, 4) as $post)
-                            <div class="col-md-6 mb-3 {{ $loop->iteration % 2 != 0 ? 'border-end' : '' }}">
-                                @if($post->thumbnail)
-                                    <img src="{{ asset('storage/'.$post->thumbnail) }}" class="img-fluid mb-2" alt="">
-                                @endif
-                                <h6><a href="{{ url('news/'.$post->slug) }}" class="text-dark txt">{{ $post->title }}</a></h6>
-                                <span class="text-muted text-uppercase small" style="font-size: 9px;">
-                                    {{ $post->user->name ?? 'The Hindu Bureau' }}
-                                </span>
-                                <hr>
+                    @if($finance->count() > 5)
+                        <div class="col-lg-6">
+                            @php $videoPost = $finance->get(5); @endphp
+                            @if($videoPost)
+                            <div class="bg-dark text-white p-3 mb-4">
+                                <div class="ratio ratio-16x9 mb-3">
+                                    @if($videoPost->video_url)
+                                        <iframe src="{{ $videoPost->video_url }}" allowfullscreen></iframe>
+                                    @else
+                                        <img src="{{ asset('storage/'.$videoPost->thumbnail) }}" class="img-fluid" style="object-fit:cover">
+                                    @endif
+                                </div>
+                                <p class="small text-uppercase"><a href="#" class="video">HIGHLIGHTS</a></p>
+                                <h5 class="fw-bold">
+                                    <a href="{{ url('news/'.$videoPost->slug) }}" class="video">{{ $videoPost->title }}</a>
+                                </h5>
+                                <p class="small">{{ Str::limit(strip_tags($videoPost->content), 100) }}</p>
                             </div>
-                        @endforeach
-                    </div>
+                            @endif
+
+                            <div class="row">
+                                @foreach($finance->slice(6, 4) as $post)
+                                    <div class="col-md-6 mb-3 {{ $loop->iteration % 2 != 0 ? 'border-end' : '' }}">
+                                        @if($post->thumbnail)
+                                            <img src="{{ asset('storage/'.$post->thumbnail) }}" class="img-fluid mb-2" alt="">
+                                        @endif
+                                        <h6><a href="{{ url('news/'.$post->slug) }}" class="text-dark txt">{{ $post->title }}</a></h6>
+                                        <span class="text-muted text-uppercase small" style="font-size: 9px;">
+                                            {{ $post->user->name ?? 'The Hindu Bureau' }}
+                                        </span>
+                                        <hr>
+                                    </div>
+                                @endforeach
+                            </div>
+                        </div>
+                    @endif
                 </div>
-                @endif
-            </div>
             @else
                 <p class="text-center text-muted">No finance news available at the moment.</p>
             @endif
