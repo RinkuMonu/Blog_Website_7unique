@@ -12,9 +12,9 @@ Route::get('login', [AuthController::class, 'loginGet'])->name('login');
 
 // --- 2. Public / Home Routes ---
 Route::get('/',[PostController::class,'home'])->name('home');
-Route::get('/{slug}/{subslug?}',[PostController::class,'slugWiseData']);
-Route::get('/{slug}/{subslug?}/{postTitle}',[PostController::class,'postDetails'])->name('post.details');
-
+// Route::get('/{slug}/{subslug?}',[PostController::class,'slugWiseData']);
+// Route::get('/{slug}/{postTitle}',[PostController::class,'postDetails'])->name('post.details');
+Route::get('/{slug}/{param2?}/{param3?}', [PostController::class, 'handleRequest'])->name('dynamic.route');
 Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/subcategories', [SubcategoryController::class, 'index'])->name('subcategories.index');
 
