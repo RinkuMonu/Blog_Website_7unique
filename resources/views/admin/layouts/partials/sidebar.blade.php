@@ -48,63 +48,76 @@ ease;
 
     <div class="main-menu-content mt-2">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            
-            <li class="nav-item">
-                <a class="d-flex align-items-center {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
-                    <div class="menu-icon-wrapper">
-                        <i data-feather="home" class="menu-icon ms-1"></i>
-                    </div>
-                    <span class="menu-title text-truncate">Dashboard</span>
-                    <span class="menu-badge badge bg-light-primary">Home</span>
-                </a>
-            </li>
+    
+            {{-- Check karo user login hai ya nahi --}}
+            @auth
+                @php 
+                    $prefix = auth()->user()->role == 1 ? 'admin' : 'author'; 
+                @endphp
 
-            <li class="navigation-header">
-                <span class="navigation-header-text">Content Management</span>
-                <i data-feather="more-horizontal" class="navigation-header-icon"></i>
-            </li>
+                <li class="nav-item">
+                    <a class="d-flex align-items-center {{ request()->routeIs('dashboard') ? 'active' : '' }}" href="{{ route('dashboard') }}">
+                        <div class="menu-icon-wrapper">
+                            <i data-feather="home" class="menu-icon ms-1"></i>
+                        </div>
+                        <span class="menu-title text-truncate">Dashboard</span>
+                        <span class="menu-badge badge bg-light-primary">Home</span>
+                    </a>
+                </li>
 
-            <li class="nav-item">
-                <a class="d-flex align-items-center {{ request()->routeIs('categories.index') || request()->routeIs('admin.categories.*') ? 'active' : '' }}" href="{{ route('categories.index') }}">
-                    <div class="menu-icon-wrapper">
-                        <i data-feather="grid" class="menu-icon ms-1"></i>
-                    </div>
-                    <span class="menu-title text-truncate">Categories</span>
-                    <span class="menu-badge badge bg-light-success">Setup</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="d-flex align-items-center {{ request()->routeIs('subcategories.index') || request()->routeIs('admin.subcategories.*') ? 'active' : '' }}" href="{{ route('subcategories.index') }}">
-                    <div class="menu-icon-wrapper">
-                        <i data-feather="grid" class="menu-icon ms-1"></i>
-                    </div>
-                    <span class="menu-title text-truncate">Sub-Categories</span>
-                    <span class="menu-badge badge bg-light-success">Setup</span>
-                </a>
-            </li>
-            <li class="nav-item">
-                <a class="d-flex align-items-center {{ request()->routeIs('admin.posts.index') || request()->routeIs('admin.posts.*') ? 'active' : '' }}" href="{{ route('admin.posts.index') }}">
-                    <div class="menu-icon-wrapper">
-                        <i data-feather="file-text" class="menu-icon ms-1"></i>
-                    </div>
-                    <span class="menu-title text-truncate">News Posts</span>
-                    <span class="menu-badge badge bg-light-danger">Hot</span>
-                </a>
-            </li>
+                <li class="navigation-header">
+                    <span class="navigation-header-text">Content Management</span>
+                    <i data-feather="more-horizontal" class="navigation-header-icon"></i>
+                </li>
 
-            <li class="navigation-header">
-                <span class="navigation-header-text">User Management</span>
-                <i data-feather="more-horizontal" class="navigation-header-icon"></i>
-            </li>
+                {{-- Categories --}}
+                <li class="nav-item">
+                    <a class="d-flex align-items-center {{ request()->is($prefix.'/categories*') ? 'active' : '' }}" href="{{ route($prefix.'.categories.index') }}">
+                        <div class="menu-icon-wrapper">
+                            <i data-feather="grid" class="menu-icon ms-1"></i>
+                        </div>
+                        <span class="menu-title text-truncate">Categories</span>
+                        <span class="menu-badge badge bg-light-success">Setup</span>
+                    </a>
+                </li>
 
-            <li class="nav-item">
-                <a class="d-flex align-items-center {{ request()->routeIs('member.*') ? 'active' : '' }}" href="{{ route('member.index') }}">
-                    <div class="menu-icon-wrapper">
-                        <i data-feather="users" class="menu-icon ms-1"></i>
-                    </div>
-                    <span class="menu-title text-truncate">Team Members</span>
-                </a>
-            </li>
+                {{-- Subcategories --}}
+                <li class="nav-item">
+                    <a class="d-flex align-items-center {{ request()->is($prefix.'/subcategories*') ? 'active' : '' }}" href="{{ route($prefix.'.subcategories.index') }}">
+                        <div class="menu-icon-wrapper">
+                            <i data-feather="grid" class="menu-icon ms-1"></i>
+                        </div>
+                        <span class="menu-title text-truncate">Sub-Categories</span>
+                        <span class="menu-badge badge bg-light-success">Setup</span>
+                    </a>
+                </li>
+
+                {{-- News Posts --}}
+                <li class="nav-item">
+                    <a class="d-flex align-items-center {{ request()->is($prefix.'/posts*') ? 'active' : '' }}" href="{{ route($prefix.'.posts.index') }}">
+                        <div class="menu-icon-wrapper">
+                            <i data-feather="file-text" class="menu-icon ms-1"></i>
+                        </div>
+                        <span class="menu-title text-truncate">News Posts</span>
+                        <span class="menu-badge badge bg-light-danger">Hot</span>
+                    </a>
+                </li>
+
+                <li class="navigation-header">
+                    <span class="navigation-header-text">User Management</span>
+                    <i data-feather="more-horizontal" class="navigation-header-icon"></i>
+                </li>
+            @endauth
+
+            {{-- Agar user login NAHI hai (Guest hai) toh ye dikhao --}}
+            @guest
+                <li class="nav-item">
+                    <a class="d-flex align-items-center" href="{{ route('admin.login') }}">
+                        <i data-feather="log-in"></i>
+                        <span class="menu-title">Login</span>
+                    </a>
+                </li>
+            @endguest
 
         </ul>
     </div>

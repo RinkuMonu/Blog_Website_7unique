@@ -11,18 +11,77 @@ use Illuminate\Support\Str;
 
 class PostController extends Controller
 {
+    public function slugWiseData($slug, $subslug = null)
+    {
+        $category = Category::where('slug', $slug)->first() ?? abort(404);
+        $query = Post::where('category_id', $category->id)->where('status', 'published');
+        if ($subslug) {
+            $subcategory = Subcategory::where('slug', $subslug)
+                ->where('category_id', $category->id)
+                ->first() ?? abort(404);            
+        } else {
+            $subcategory = null;
+        }
+        $posts = $query->latest()->paginate(15);
+        $latest_news = Post::with('category')->with('subcategory')
+            ->where('category_id', $category->id)
+            ->where('is_latest', 1)
+            ->where('status', 'published')
+            ->latest()
+            ->take(5)
+            ->get();
+        $popular = Post::where('category_id', $category->id) 
+            ->where('is_popular', 1)
+            ->where('status', 'published')
+            ->latest()
+            ->take(5)
+            ->get();   
+        $live_post = Post::where('category_id', $category->id)
+            ->where('status', 'published')
+            ->where('is_live', 1)->skip(1)->take(1)
+            ->latest()
+            ->first();     
+        $active_slug = $subslug ?? $slug;
+        $all_subcategories = Subcategory::where('category_id', $category->id)->get();
+        return view('news.listing', compact(
+            'category', 'subcategory', 'posts', 'active_slug', 'all_subcategories', 'latest_news', 'popular','live_post'
+        ));
+    }
+    public function postDetails($slug, $subslug = null, $postTitle)
+    {
+        $category = Category::where('slug', $slug)->first() ?? abort(404);
+        if ($subslug) {
+            $subcategory = Subcategory::where('slug', $subslug)
+                ->where('category_id', $category->id)
+                ->first() ?? abort(404);            
+        } else {
+            $subcategory = null;
+        }
+        $post = Post::where('slug', Str::slug($postTitle))
+            ->where('category_id', $category->id)
+            ->when($subcategory, function ($query) use ($subcategory) {
+                return $query->where('subcategory_id', $subcategory->id);
+            })
+            ->where('status', 'published')
+            ->firstOrFail();
+        return view('news.details', compact('post'));
+    }
     public function index() {
         $posts = Post::with(['category', 'subcategory'])->latest()->get();
         return view('news.index', compact('posts'));
     }
     public function getPost() {
-        $posts = Post::with(['category', 'subcategory'])->latest()->get();
-        return view('admin.news.index', compact('posts'));
+        $query = Post::with(['category', 'subcategory']);
+       
+        $posts = $query->latest()->get();
+        $viewPath = 'admin.news.index' ;
+        return view($viewPath, compact('posts'));
     }
     public function create() {
         $categories = Category::all();
         $subcategories = Subcategory::all(); 
-        return view('admin.news.create', compact('categories', 'subcategories'));
+        $viewPath = 'admin.news.create';
+        return view($viewPath, compact('categories', 'subcategories'));
     }
     public function store(Request $request) {
         try {
@@ -39,16 +98,30 @@ class PostController extends Controller
                 'status' => 'nullable',
                 'is_trending' => 'nullable',
                 'is_latest' => 'nullable',
+                'is_popular' => 'nullable',
+                'is_premium' => 'nullable',
+                'is_live' => 'nullable', // Ye add kiya
             ]);
+
             $validatedData['slug'] = \Illuminate\Support\Str::slug($request->title);
+            $validatedData['user_id'] = auth()->id();
+
+            // Checkboxes ka logic: Agar check hai toh 1, warna 0
             $validatedData['is_trending'] = $request->has('is_trending') ? 1 : 0;
             $validatedData['is_latest'] = $request->has('is_latest') ? 1 : 0;
+            $validatedData['is_popular'] = $request->has('is_popular') ? 1 : 0;
+            $validatedData['is_premium'] = $request->has('is_premium') ? 1 : 0;
+            $validatedData['is_live'] = $request->has('is_live') ? 1 : 0; // Ye add kiya
+            
+            // Status logic
             $validatedData['status'] = $request->has('status') ? 'published' : 'draft';
 
+            // Thumbnail upload logic
             if ($request->hasFile('thumbnail')) {
                 $validatedData['thumbnail'] = $request->file('thumbnail')->store('thumbnails', 'public');
             }
 
+            // Multiple images upload logic
             if ($request->hasFile('images')) {
                 $imagePaths = [];
                 foreach ($request->file('images') as $file) {
@@ -59,36 +132,54 @@ class PostController extends Controller
 
             Post::create($validatedData);
 
-            return redirect()->route('admin.posts.index')->with('success', 'News Uploaded!');
+            $routePrefix = (auth()->user()->role == 1) ? 'admin' : 'author';
+            return redirect()->route($routePrefix . '.posts.index')
+                            ->with('success', 'News Uploaded Successfully!');
 
         } catch (\Illuminate\Validation\ValidationException $e) {
             return back()->withErrors($e->errors())->withInput();
-        } catch (\Illuminate\Validation\ValidationException $e) {
-            return back()->withErrors($e->errors())->withInput();
+        } catch (\Exception $e) {
+            return back()->with('error', 'Something went wrong: ' . $e->getMessage())->withInput();
         }
     }
     public function home() {
-        $trending = Post::where('is_trending', 1)->where('status', 1)->latest()->take(5)->get();
-        $latest = Post::where('status', 1)->latest()->paginate(10); // is_latest ki jagah status check behtar hai
-        $categories = Category::with('subcategories')->get(); // Sidebar ke liye relations ke sath
-        
-        return view('welcome', compact('trending', 'latest', 'categories'));
+        $trending = Post::with('user')->where('is_trending', 1)->where('status', 'published')->latest()->get();
+        $latest = Post::with('category')->with('subcategory')->with('user')->where('is_latest', 1)->where('status', 'published')->latest()->paginate(10);
+        $popular = Post::with('user')->where('is_popular', 1)->where('status', 'published')->latest()->paginate(10);
+        $premium = Post::with('category')->with('subcategory')->with('user')->where(function($query) {
+            $query->where('category_id', 6)
+                ->orWhere('is_premium', 1);
+        })->where('status', 'published')->latest()->paginate(10);
+        $finance = Post::with('user')->where('category_id', 7)->where('status', 'published')->latest()->paginate(10);
+        // dd($premium);        
+        $allCategoriesData = Post::with('user')->with('category')->where('status', 'published')->latest()->get();
+        $categories = Category::with('subcategories')->get();  
+        $liveData = Post::with('user')->where('is_live', 1)->where('status', 'published')->latest()->get();      
+        return view('home', compact('trending', 'latest','popular', 'premium', 'finance', 'allCategoriesData', 'categories', 'liveData'));
     }
     public function categoryPosts($slug) {
         $category = Category::where('slug', $slug)->firstOrFail();
-        $posts = Post::where('category_id', $category->id)->where('status', 1)->latest()->paginate(12);
+        $posts = Post::where('category_id', $category->id)->where('status', 'published')->latest()->paginate(12);
         return view('frontend.category', compact('category', 'posts'));
     }
-
     public function edit($id) {
         $post = Post::findOrFail($id);
+        // if (auth()->user()->role != 1 && $post->user_id != auth()->id()) {
+        //     return back()->with('error', 'Aapko is post ko edit karne ki permission nahi hai.');
+        // }
         $categories = Category::all();
         $subcategories = Subcategory::where('category_id', $post->category_id)->get(); 
-        return view('admin.news.edit', compact('post', 'categories', 'subcategories'));
+        $viewPath = 'admin.news.edit';
+        return view($viewPath, compact('post', 'categories', 'subcategories'));
     }
     // 2. Update Logic
     public function update(Request $request, $id) {
         $post = Post::findOrFail($id);
+
+        // --- SECURITY CHECK: Author sirf apni post update kar sake ---
+        // if (auth()->user()->role != 1 && $post->user_id != auth()->id()) {
+        //     return back()->with('error', 'Aapko is post ko update karne ki permission nahi hai.');
+        // }
 
         $validatedData = $request->validate([
             'title' => 'required|max:255',
@@ -99,41 +190,56 @@ class PostController extends Controller
             'images.*' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
             'video_url' => 'nullable|url',
             'tags' => 'nullable|string',
+            'is_trending' => 'nullable',
+            'is_latest' => 'nullable',
+            'is_popular' => 'nullable',
+            'is_live'     => 'nullable',
+            'is_premium' => 'nullable',
+            'status' => 'nullable',
         ]);
 
-        // Basic Fields
+        // Basic Fields update
         $post->title = $request->title;
-        $post->slug = Str::slug($request->title);
+        $post->slug = \Illuminate\Support\Str::slug($request->title);
         $post->category_id = $request->category_id;
         $post->subcategory_id = $request->subcategory_id;
         $post->content = $request->content;
         $post->video_url = $request->video_url;
         $post->tags = $request->tags;
         
-        // Toggles
-        $post->is_trending = $request->has('is_trending');
-        $post->is_latest = $request->has('is_latest');
+        // Toggles logic (1 for true, 0 for false)
+        $post->is_trending = $request->has('is_trending') ? 1 : 0;
+        $post->is_latest = $request->has('is_latest') ? 1 : 0;
+        $post->is_popular = $request->has('is_popular') ? 1 : 0;
+        $post->is_premium = $request->has('is_premium') ? 1 : 0;
+        $post->is_live     = $request->has('is_live') ? 1 : 0;
         $post->status = $request->has('status') ? 'published' : 'draft';
 
-        // Thumbnail Update
+        // Thumbnail Update logic
         if ($request->hasFile('thumbnail')) {
-            if ($post->thumbnail) { Storage::disk('public')->delete($post->thumbnail); }
+            if ($post->thumbnail) { 
+                \Storage::disk('public')->delete($post->thumbnail); 
+            }
             $post->thumbnail = $request->file('thumbnail')->store('thumbnails', 'public');
         }
 
-        // Multiple Images Update (Adding new to existing)
+        // Multiple Images Update
         if ($request->hasFile('images')) {
             $newImages = [];
             foreach ($request->file('images') as $file) {
                 $newImages[] = $file->store('post_images', 'public');
-            }
-            // Purani images ke sath nayi merge kar rahe hain
-            $currentImages = $post->images ?? [];
+            }   
+            $currentImages = is_array($post->images) ? $post->images : [];
             $post->images = array_merge($currentImages, $newImages);
         }
 
         $post->save();
-        return redirect()->route('admin.posts.index')->with('success', 'Post Updated Successfully!');
+
+        // --- DYNAMIC REDIRECT based on Role ---
+        $routePrefix = (auth()->user()->role == 1) ? 'admin' : 'author';
+
+        return redirect()->route($routePrefix . '.posts.index')
+                        ->with('success', 'Post Updated Successfully!');
     }
     // 3. Delete Post
     public function destroy($id) {
@@ -155,45 +261,35 @@ class PostController extends Controller
         $post = Post::findOrFail($id);
         $post->is_trending = !$post->is_trending;
         $post->save();
-
         return back()->with('success', 'Trending Status Updated!');
     }
-     public function englishnews() {
+    public function englishnews() {
         $posts = Post::latest()->get();
         return view('news.englishnews', compact('posts'));
     }
+    public function india() {
+        $posts = Post::latest()->paginate(5); 
 
-   public function india() {
-   $posts = Post::latest()->paginate(5); 
-
-    return view('news.india', compact('posts'));
-}
-
- public function movies() {
+        return view('news.india', compact('posts'));
+    }
+    public function movies() {
         $posts = Post::latest()->get();
         return view('news.movies', compact('posts'));
     }
-
-
-     public function sports() {
+    public function sports() {
         $posts = Post::latest()->get();
         return view('news.sports', compact('posts'));
-    }
-
-    
-     public function premium() {
+    }    
+    public function premium() {
         $posts = Post::latest()->get();
         return view('news.premium', compact('posts'));
-     }
-
-      
-     public function opinion() {
+    }      
+    public function opinion() {
         $posts = Post::latest()->get();
         return view('news.opinion', compact('posts'));
-     }
-
-     public function entertainment() {
+    }
+    public function entertainment() {
         $posts = Post::latest()->get();
         return view('news.entertainment', compact('posts'));
-     }
+    }
 }

@@ -1,3 +1,6 @@
+<?php
+use Illuminate\Support\ServiceProvider;
+?>
 <style>
 .navbar-nav {
     gap: 22px;
@@ -122,7 +125,6 @@ body {
 
 <body>
 
-
     <div class="bg-white py-2 ">
         <div class="container">
 
@@ -161,13 +163,13 @@ body {
 
                     <!-- Bottom Row: e-Paper + Subscribe -->
                     <div class="d-flex align-items-center gap-3">
-                        <a href="#" class="text-danger text-decoration-none small fw-semibold">
+                        <!-- <a href="#" class="text-danger text-decoration-none small fw-semibold">
                             e-books
                         </a>
 
                         <a href="#" class="btn text-white btn-sm px-3" style="background-color: #B00200;">
                             SUBSCRIBE
-                        </a>
+                        </a> -->
                     </div>
 
                 </div>
@@ -210,59 +212,48 @@ body {
                     </li>
 
                     <li class="nav-item">
-    <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
-        <i class="bi bi-search"></i> Search
-    </a>
-</li>
+                        <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
+                            <i class="bi bi-search"></i> Search
+                        </a>
+                    </li>
 
                 </ul>
-
-                <!-- Center Menu -->
+                <!-- center menu -->
                 <ul class="navbar-nav fw-semibold me-4">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('india.news') }}">India</a>
-                    </li>
+                    @foreach($headerMenu as $category)
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('world') }}">World</a>
-                    </li>
+                        @if($category->name == 'News')
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('movies.news') }}">Movies</a>
-                    </li>
+                            @foreach($category->subcategories->take(2) as $sub)
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url($category->slug.'/'.$sub->slug) }}">
+                                    
+                                    @if($sub->name == 'national')
+                                        India
+                                    @elseif($sub->name == 'international')
+                                        World
+                                    @else
+                                        {{ ucfirst($sub->name) }}
+                                    @endif
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('sports.news') }}">Sport</a>
-                    </li>
+                                </a>
+                            </li>
+                            @endforeach
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('data') }}">Data</a>
-                    </li>
+                        @else
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('health') }}">Health</a>
-                    </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="{{ url($category->slug) }}">
+                                    {{ ucfirst($category->name) }}
+                                </a>
+                            </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('opinion.news') }}">Opinion</a>
-                    </li>
+                        @endif
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('science') }}">Science</a>
-                    </li>
+                    @endforeach
 
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('entertainment') }}">Entertainment</a>
-                    </li>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('premium.news') }}">Premium</a>
-                    </li>
-
-                </ul>
-
+                    </ul>
             </div>
         </div>
     </nav>
@@ -843,7 +834,6 @@ body {
                     </div>
 
                 </div>
-
                 <!-- SOCIAL + BOTTOM ROW -->
                 <div class="row mt-4 align-items-center border-top pt-3">
 

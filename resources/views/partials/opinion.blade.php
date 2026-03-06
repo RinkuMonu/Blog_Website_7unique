@@ -22,105 +22,62 @@ body {
     cursor: pointer;
 }
 </style>
+    <div class="container my-5">
+        <div class="opinion-wrapper">
 
-<div class="container my-5">
-    <div class="opinion-wrapper">
+            <div class="text-center mb-4">
+                <h2 class="text-center fw-bold" style="color:#B00020;">The Hindu Opinion</h2>
 
-        <div class="text-center mb-4">
+                <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
 
-            <h2 class="text-center fw-bold" style="color:#B00020;">The Hindu Opinion</h2>
+                    <div class="premium-img-container">
+                        <a href="/">
+                            <img src="images/h-circle-yellow-new.svg" alt="Premium Badge">
+                        </a>
+                    </div>
 
-            <div class="d-flex justify-content-center align-items-center gap-2 mt-2">
-
-                <!-- Badge Image -->
-                <div class="premium-img-container">
-                    <a href="/">
-                        <img src="images/h-circle-yellow-new.svg" alt="Premium Badge">
-                    </a>
-                </div>
-
-                <!-- PREMIUM Text -->
-                <span class="fw-bold small premium-text">
+                    <span class="fw-bold small premium-text">
                     The PREMIUM
-                </span>
+                    </span>
 
+                </div>
+            </div>
+
+            <div class="row">
+                @foreach($allCategoriesData->where('category_id', 5) as $post)
+                    @php
+                        $url = '';
+
+                        if($post->subcategory){
+                            $url = url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug);
+                        }else{
+                            $url = url($post->category->slug.'/'.$post->slug);
+                        }
+                    @endphp
+
+                    <div class="col-lg-3 divider">
+
+                        <a href="{{ $url }}">
+                            <img src="{{ asset('storage/'.$post->thumbnail) }}" class="opinion-img">
+                        </a>
+
+                        <div class="fs-5">
+                            <a href="{{ $url }}" class="txt">
+                                {{ $post->title }}
+                            </a>
+                        </div>
+
+                        <span style="font-size:10px;">
+                            <a href="/" class="smll">{{ $post->user->name ?? '' }}</a>
+                        </span>
+
+                    </div>
+                @endforeach
+            </div>
+
+            <div class="see-more">
+                <a href="{{url('/opinion')}}">SEE MORE →</a>
             </div>
 
         </div>
-
-
-
-        <div class="row">
-
-            <!-- COLUMN 1 -->
-            <div class="col-lg-3 divider">
-                <a href="/">
-                    <img src="images/process.png" class="opinion-img">
-                </a>
-                <div style="font-size: 20px;">
-                    <a href="/" class="txt">
-                        Bridging a divide with an ‘Indian Scientific Service’
-                    </a>
-                </div>
-                <span style="font-size:10px;"><a href="/" class="smll">P. RAGAVAN</a></span>
-            </div>
-
-            <!-- COLUMN 2 -->
-            <div class="col-lg-3 divider">
-                <div class="fs-5">
-                    <a href="/" class="txt">
-                        A common framework to build trust in AI in Asia
-                    </a>
-                </div>
-                <span style="font-size:10px;"><a href="/" class="smll">ARUN TEJA POLCUMPALLY</a></span>
-                <hr>
-
-                <div class="fs-5">
-                    <a href="/" class="txt">
-                        We need fiscal prudence during elections
-                    </a>
-                </div>
-                <span style="font-size:10px;"><a href="/" class="smll">T. RAMAKRISHNAN</a></span>
-            </div>
-
-            <!-- COLUMN 3 -->
-            <div class="col-lg-3 divider">
-                <a href="/">
-                    <img src="images/modi.png" class="opinion-img">
-                </a>
-                <div class="fs-5">
-                    <a href="/" class="txt">
-                        Is a ‘double engine government’ crucial for growth?
-                    </a>
-                </div>
-                <span style="font-size:10px;"><a href="/" class="smll">N. SAI CHARAN</a></span>
-            </div>
-
-            <!-- COLUMN 4 (YOUR MISSING COLUMN) -->
-            <div class="col-lg-3">
-
-                <div class="fs-5">
-                    <a hre="/" class="txt">
-                        The UAE-India corridor is sparking a growth story
-                    </a>
-                </div>
-                <span style="font-size:10px;"><a href="/" class="smll">BADR JAFAR</a></span>
-                <hr>
-
-                <div class="fs-5">
-                    <a href="/" class="txt">
-                        The labour codes redefine wages, empower the worker
-                    </a>
-                </div>
-                <span style="font-size:10px;"><a href="/" class="smll">R. MUKUNDAN</a></span>
-
-            </div>
-
-        </div>
-
-        <div class="see-more">
-            SEE MORE →
-        </div>
-
     </div>
-</div>
