@@ -102,12 +102,7 @@
                                 <li><a href="#">Gift Front page</a></li>
                             </ul>
                             
-                            <h6 class="fw-bold text-dark pt-3 pb-2 mt-3">Contact us</h6>
-                            <ul class="list-unstyled footer-links">
-                                <li><a href="#">Careers</a></li>
-                                <li><a href="#">Advertise With Us</a></li>
-                                <li><a href="#">Press Release</a></li>
-                            </ul>
+                          
                         </div>
 
                         @foreach($footerCategories as $category)
@@ -117,7 +112,7 @@
                             <ul class="list-unstyled footer-links">
                                 @foreach($category->subcategories as $sub)
                                 <li>
-                                    <a href="{{ url($category->slug.'/'.$sub->slug) }}">
+                                   <a href="{{ route('dynamic.route', ['slug' => $category->slug, 'param2' => $sub->slug]) }}">
                                         {{ $sub->name }}
                                     </a>
                                 </li>
@@ -145,21 +140,20 @@
                                                     ->get();
                                 @endphp
 
-                               @foreach($trendingPosts as $post)
-
+                                @foreach($trendingPosts as $post)
                                     @php
-                                        $postUrl = $post->subcategory
-                                            ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug)
-                                            : url($post->category->slug.'/'.$post->slug);
+                                        // Named route use karke dynamic parameters set karna
+                                        $postUrl = $post->subcategory 
+                                            ? route('dynamic.route', [$post->category->slug, $post->subcategory->slug, $post->slug])
+                                            : route('dynamic.route', [$post->category->slug, $post->slug]);
                                     @endphp
 
                                     <li>
                                         <a href="{{ $postUrl }}">
-                                        {{ $post->title }}
+                                            {{ $post->title }}
                                             <img src="{{ asset('images/trend.png') }}" alt="Trending" height="16">
                                         </a>
                                     </li>
-
                                 @endforeach
                             </ul>
                         </div>
@@ -223,19 +217,18 @@
                                 <ul class="list-unstyled">
 
                                     @foreach($latestPosts as $post)
-
                                         @php
-                                        $postUrl = $post->subcategory
-                                            ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug)
-                                            : url($post->category->slug.'/'.$post->slug);
+                                            // Named route 'dynamic.route' ka use karke parameters pass karna
+                                            $postUrl = $post->subcategory 
+                                                ? route('dynamic.route', [$post->category->slug, $post->subcategory->slug, $post->slug])
+                                                : route('dynamic.route', [$post->category->slug, $post->slug]);
                                         @endphp
 
                                         <li class="mb-3 border-bottom pb-2">
                                             <a href="{{ $postUrl }}" class="text-dark text-decoration-none">
-                                            {{ $post->title }}
+                                                {{ $post->title }}
                                             </a>
                                         </li>
-
                                     @endforeach
 
                                 </ul>
@@ -245,20 +238,19 @@
                         <div class="col-md-6 text-dark">
 
                             <ul class="list-unstyled">
-                                @foreach($latestPosts->skip(5) as $post)
-
+                               @foreach($latestPosts->skip(5) as $post)
                                     @php
-                                        $postUrl = $post->subcategory
-                                            ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug)
-                                            : url($post->category->slug.'/'.$post->slug);
+                                        // Named route 'dynamic.route' ka use karke parameters set karna
+                                        $postUrl = $post->subcategory 
+                                            ? route('dynamic.route', [$post->category->slug, $post->subcategory->slug, $post->slug])
+                                            : route('dynamic.route', [$post->category->slug, $post->slug]);
                                     @endphp
 
                                     <li class="mb-3 border-bottom pb-2">
                                         <a href="{{ $postUrl }}" class="text-dark text-decoration-none">
-                                        {{ $post->title }}
+                                            {{ $post->title }}
                                         </a>
                                     </li>
-
                                 @endforeach
                             </ul>
 

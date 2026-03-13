@@ -44,15 +44,15 @@
         <nav aria-label="breadcrumb">
             <ol class="breadcrumb mb-2">
                 <li class="breadcrumb-item">
-                    <a href="{{ url($category->slug) }}" 
-                    class="text-decoration-none fw-semibold {{ $active_slug == $category->slug ? 'red' : 'text-dark' }}">
+                    <a href="{{ route('dynamic.route', ['slug' => $category->slug]) }}" 
+                        class="text-decoration-none fw-semibold {{ $active_slug == $category->slug ? 'red' : 'text-dark' }}">
                         {{ strtoupper($category->name) }}
                     </a>
                 </li>
 
                 @foreach($all_subcategories as $sub)
                     <li class="breadcrumb-item">
-                        <a  href="{{ url($category->slug.'/'.$sub->slug) }}" 
+                        <a  href="{{ route('dynamic.route', ['slug' => $category->slug, 'param2' => $sub->slug]) }}" 
                         class="text-decoration-none fw-semibold {{ $active_slug == $sub->slug ? 'red' : 'text-dark' }}">
                             {{ strtoupper($sub->name) }}
                         </a>
@@ -71,11 +71,11 @@
 
                     <p class="fw-bold mb-1">
                         @if($post->subcategory)
-                            <a href="{{ url($category->slug.'/'.$post->subcategory->slug) }}" class="red text-uppercase">
+                            <a href="{{ route('dynamic.route', ['slug' => $category->slug, 'param2' => $post->subcategory->slug]) }}" class="red text-uppercase">
                                 {{ $post->subcategory->name }}
                             </a>
                         @else
-                            <a href="{{ url($category->slug) }}" class="red text-uppercase">
+                            <a href="{{ route('dynamic.route', ['slug' => $category->slug]) }}" class="red text-uppercase">
                                 {{ $category->name }}
                             </a>
                         @endif
@@ -83,8 +83,8 @@
 
                     <p class="mb-1">
                         <a href="{{ $post->subcategory 
-                                ? url($category->slug.'/'.$post->subcategory->slug.'/'.$post->slug) 
-                                : url($category->slug.'/'.$post->slug) }}" 
+                                ? route('dynamic.route', ['slug' => $category->slug, 'param2' => $post->subcategory->slug, 'param3' => $post->slug]) 
+                                : route('dynamic.route', ['slug' => $category->slug, 'param2' => $post->slug]) }}" 
                         class="txt">
 
                             {{ $post->title }}
@@ -114,9 +114,9 @@
 
                     <div class="position-relative mb-4">
                         @php
-                            $link = $featured->subcategory
-                                    ? url($category->slug.'/'.$featured->subcategory->slug.'/'.$featured->slug)
-                                    : url($category->slug.'/'.$featured->slug);
+                            $link = $featured->subcategory 
+                                ? route('dynamic.route', [$category->slug, $featured->subcategory->slug, $featured->slug])
+                                : route('dynamic.route', [$category->slug, $featured->slug]);
                         @endphp
 
                             <a href="{{ $link }}">
@@ -129,7 +129,7 @@
                             style="background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);">
 
                             <p class="fw-bold mb-2 text-uppercase small">
-                                <a href="{{ url($category->slug) }}" class="red text-decoration-none">
+                                <a href="{{ route('dynamic.route', ['slug' => $category->slug]) }}" class="red text-decoration-none">
                                     {{ $category->name }}
                                 </a>
                             </p>
@@ -155,7 +155,7 @@
                 <div class="d-flex gap-3 align-items-start border-top pt-3">
 
                     <div class="position-relative" style="width:320px;">
-                        <a href="{{ url($live_post->slug) }}">
+                       <a href="{{ route('dynamic.route', [$live_post->category->slug, $live_post->subcategory?->slug, $live_post->slug]) }}">
                             <img src="{{ asset('storage/' . $live_post->thumbnail) }}" 
                                 class="img-fluid rounded"
                                 alt="{{ $live_post->title }}">
@@ -169,15 +169,15 @@
                     <div>
 
                         <p class="fw-bold text-uppercase small mb-1">
-                            <a href="{{ url($category->slug) }}" class="red text-decoration-none">
+                            <a href="{{ route('dynamic.route', ['slug' => $category->slug]) }}" class="red text-decoration-none">
                                 {{ $category->name }}
                             </a>
                         </p>
 
                         <h5 class="fw-bold mb-1">
                             <a href="{{ $live_post->subcategory 
-                                    ? url($category->slug.'/'.$live_post->subcategory->slug.'/'.$live_post->slug) 
-                                    : url($category->slug.'/'.$live_post->slug) }}" 
+                                    ? route('dynamic.route', [$category->slug, $live_post->subcategory->slug, $live_post->slug]) 
+                                    : route('dynamic.route', [$category->slug, $live_post->slug]) }}" 
                             class="text-dark text-decoration-none">
 
                                 <span class="badge bg-danger me-1">LIVE</span>
@@ -223,18 +223,13 @@
 
                         <div class="d-flex py-3 border-bottom">
 
-                            <a href="{{ $pop->subcategory 
-                                    ? url($pop->category->slug.'/'.$pop->subcategory->slug.'/'.$pop->slug) 
-                                    : url($pop->category->slug.'/'.$pop->slug) }}">
-                                    
+                           <a href="{{ route('dynamic.route', [$pop->category->slug, $pop->subcategory?->slug, $pop->slug]) }}">
                                 <img src="{{ asset('storage/' . $pop->thumbnail) }}" 
                                     width="95" height="70" 
                                     class="me-3 object-fit-cover">
                             </a>
 
-                            <a href="{{ $pop->subcategory 
-                                    ? url($pop->category->slug.'/'.$pop->subcategory->slug.'/'.$pop->slug) 
-                                    : url($pop->category->slug.'/'.$pop->slug) }}" 
+                            <a href="{{ route('dynamic.route', [$pop->category->slug, $pop->subcategory?->slug, $pop->slug]) }}" 
                             class="txt small fw-semibold text-decoration-none">
 
                                 {{ $pop->title }}
@@ -262,15 +257,10 @@
 
                     @foreach($posts as $post)
 
-                    @php
-                        $postUrl = $post->subcategory
-                            ? url($post->category->slug.'/'.$post->subcategory->slug.'/'.$post->slug)
-                            : url($post->category->slug.'/'.$post->slug);
-                    @endphp
-
-                    <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
-
-                        <a href="{{ $postUrl }}">
+                   <div class="d-flex align-items-start mb-4 pb-4 border-bottom">
+                        
+                        {{-- Image Link --}}
+                        <a href="{{ route('dynamic.route', [$post->category->slug, $post->subcategory?->slug, $post->slug]) }}">
                             <img src="{{ asset('storage/' . $post->thumbnail) }}"
                                 width="110"
                                 height="85"
@@ -278,9 +268,10 @@
                         </a>
 
                         <div>
-
+                            {{-- Title Link --}}
                             <p class="fs-5 mb-1">
-                                <a href="{{ $postUrl }}" class="txt text-decoration-none">
+                                <a href="{{ route('dynamic.route', [$post->category->slug, $post->subcategory?->slug, $post->slug]) }}" 
+                                class="txt text-decoration-none">
                                     {{ $post->title }}
                                 </a>
                             </p>
@@ -289,9 +280,7 @@
                                 {{ $post->created_at->format('M d, Y') }} |
                                 {{ $post->author ?? 'PTI' }}
                             </p>
-
                         </div>
-
                     </div>
 
                     @endforeach
@@ -311,34 +300,26 @@
                     <h4 class="red fw-bold mb-4">Latest News</h4>
                     <div class="latest-news">
 
-                        @foreach($latest_news as $latest)
+                       @foreach($latest_news as $latest)
+                            @php
+                                $latestUrl = $latest->subcategory 
+                                    ? route('dynamic.route', [$latest->category->slug, $latest->subcategory->slug, $latest->slug])
+                                    : route('dynamic.route', [$latest->category->slug, $latest->slug]);
+                            @endphp
 
-                        @php
-                            $latestUrl = $latest->subcategory
-                                ? url($latest->category->slug.'/'.$latest->subcategory->slug.'/'.$latest->slug)
-                                : url($latest->category->slug.'/'.$latest->slug);
-                        @endphp
-
-                        <div class="timeline-item @if($loop->first) active @endif">
-
-                            <div class="timeline-dot"></div>
-
-                            <div class="timeline-content">
-
-                                <p class="small text-muted mb-1">
-                                    {{ $latest->created_at->diffForHumans() }}
-                                </p>
-
-                                <p class="mb-0">
-                                    <a href="{{ $latestUrl }}" class="txt text-decoration-none">
-                                        {{ $latest->title }}
-                                    </a>
-                                </p>
-
+                            <div class="timeline-item @if($loop->first) active @endif">
+                                <div class="timeline-dot"></div>
+                                <div class="timeline-content">
+                                    <p class="small text-muted mb-1">
+                                        {{ $latest->created_at->diffForHumans() }}
+                                    </p>
+                                    <p class="mb-0">
+                                        <a href="{{ $latestUrl }}" class="txt text-decoration-none">
+                                            {{ $latest->title }}
+                                        </a>
+                                    </p>
+                                </div>
                             </div>
-
-                        </div>
-
                         @endforeach
 
                     </div>

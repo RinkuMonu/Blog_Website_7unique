@@ -9,11 +9,9 @@ class AuthController extends Controller
 {
     public function loginGet()
     {        
-        // Agar user pehle se login hai toh seedha dashboard bhej do
         if (Auth::check()) {
             return $this->redirectUserByRole(Auth::user());
         }
-
         $type = request()->is('admin*') ? 'Admin' : 'Author';
         return view('admin.auth.login', compact('type'));
     }

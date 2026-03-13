@@ -20,11 +20,10 @@
                     <div class="w-100 d-lg-flex flex-column  justify-content-left px-5">
                         <div class="d-flex  align-items-baseline gap-2">
                                 <a class="brand-logoo" href="#">
-                                <img src="{{ asset('images/ekeroLogo.png') }}" 
-                                    alt="Ekero Logo" 
+                                <img src="" 
+                                    alt="blog Logo" 
                                     style="height: 150px; width:auto; position: static !important;">
                             </a>
-                            <p class="fw-bold" style="font-size:18px; color:#000;">Building Wealth Together</p>
                         </div>
                       
                     <img class="img-fluid" 
@@ -53,9 +52,8 @@
     </div>
 @endif
                             <div class="col-12 col-sm-8 col-md-6 col-lg-12 px-xl-2 mx-auto">
-                                <h2 class="card-title fw-bold mb-1">Welcome to Ekero Partners! 👋</h2>
-                                <p class="card-text mb-2">Please sign-in to your account and start the adventure</p>
-                                <form class="auth-login-form mt-2" action="{{ route('user.login.store') }}" method="POST">
+                                <h2 class="card-title fw-bold mb-1">Welcome to News Blog 👋</h2>
+                                <form class="auth-login-form mt-2" action="{{ route('user.login.post') }}" method="POST">
                                     @csrf
                                     <div class="mb-1">
                                         <label class="form-label" for="login-email">Email</label>
@@ -63,7 +61,7 @@
                                     </div>
                                     <div class="mb-1">
                                         <div class="d-flex justify-content-between">
-                                            <label class="form-label" for="login-password">Password</label><a href="{{route('user.forget.password')}}"><small>Forgot Password?</small></a>
+                                            <label class="form-label" for="login-password">Password</label><a href="#"><small>Forgot Password?</small></a>
                                         </div>
                                         <div class="input-group input-group-merge form-password-toggle">
                                             <input class="form-control form-control-merge" id="login-password" type="password" name="password" placeholder="············" aria-describedby="login-password" tabindex="2" /><span class="input-group-text cursor-pointer"><i data-feather="eye"></i></span>
@@ -77,7 +75,7 @@
                                     </div>
                                     <button class="btn btn-primary w-100" tabindex="4">Sign in</button>
                                 </form>
-                                <p class="text-center mt-2"><span>New on our platform?</span><a href="{{ route('user.register')}}"><span>&nbsp;Create an account</span></a></p>
+                                <p class="text-center mt-2"><span>New on our platform?</span><a href="#"><span>&nbsp;Create an account</span></a></p>
                                
                             </div>
                         </div>

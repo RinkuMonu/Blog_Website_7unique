@@ -227,7 +227,7 @@ body {
 
                             @foreach($category->subcategories->take(2) as $sub)
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url($category->slug.'/'.$sub->slug) }}">
+                                <a class="nav-link" href="{{ route('dynamic.route', [$category->slug, $sub->slug]) }}">
                                     
                                     @if($sub->name == 'national')
                                         India
@@ -244,7 +244,7 @@ body {
                         @else
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ url($category->slug) }}">
+                                <a class="nav-link" href="{{ route('dynamic.route', ['slug' => $category->slug]) }}">
                                     {{ ucfirst($category->name) }}
                                 </a>
                             </li>
@@ -868,61 +868,50 @@ body {
     <div class="modal fade" id="loginModal" tabindex="-1">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content p-4">
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
 
-                <!-- Close Button -->
-                <button type="button" class="btn-close position-absolute top-0 end-0 m-3"
-                    data-bs-dismiss="modal"></button>
-
-                <!-- Logo -->
-                <div class="text-center mb-3">
+                <div class="text-center mb-4">
                     <h2 class="fw-bold">SEVENUNIQUE</h2>
                 </div>
 
-                <h5 class="text-center fw-bold mb-3">
-                    Login to your account
-                </h5>
+                <h5 class="text-center fw-bold mb-4">Select your role to login</h5>
 
-                <p class="text-center small">
-                    Don’t have an account?
-                    <a href="#" class="fw-bold text-dark">Sign up</a>
-                </p>
+                <div class="row g-2 mb-4" id="roleSelector">
+                    <div class="col-4">
+                        <a href="{{ url('/user/login') }}" class="text-decoration-none text-dark">
+                            <div class="role-box p-3 border rounded text-center clickable-role" data-role="user">
+                                <i class="bi bi-person d-block mb-1 fs-4"></i>
+                                <span class="small fw-bold">User</span>
+                            </div>
+                        </a>
+                    </div>
 
-                <!-- Social Buttons -->
-                <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+                    <div class="col-4">
+                        <a href="{{ url('/author/login') }}" class="text-decoration-none text-dark">
+                            <div class="role-box p-3 border rounded text-center clickable-role" data-role="author">
+                                <i class="bi bi-pen d-block mb-1 fs-4"></i>
+                                <span class="small fw-bold">Author</span>
+                            </div>
+                        </a>
+                    </div>
 
-                    <span class="text-dark mb-0">
-                        Continue with
-                    </span>
-
-                    <button class="btn btn-light border d-flex align-items-center justify-content-center">
-                        <i class="bi bi-apple"></i>
-                    </button>
-
-                    <button class="btn btn-light border d-flex align-items-center justify-content-center">
-                        <i class="bi bi-google"></i>
-                    </button>
-
+                    <div class="col-4">
+                        <a href="{{ url('/admin/login') }}" class="text-decoration-none text-dark">
+                            <div class="role-box p-3 border rounded text-center clickable-role" data-role="admin">
+                                <i class="bi bi-shield-lock d-block mb-1 fs-4"></i>
+                                <span class="small fw-bold">Admin</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
 
 
-                <div class="text-center my-2">or</div>
 
-                <!-- Email Field -->
-                <div class="mb-3">
-                    <input type="email" class="form-control" placeholder="Email">
-                </div>
-
-                <!-- Next Button -->
-                <button class="btn btn-dark w-100">
-                    NEXT
-                </button>
-
-                <p class="small text-muted text-center mt-3">
-                    If you have an account with The Hindu Businessline,
-                    The Hindu e-Paper, Frontline, or Sportstar,
-                    you can use the same account to login here.
+                <p class="small text-muted text-center mt-4">
+                    If you have an account with <strong>Seven Unique News</strong>, 
+                    <strong>Seven Unique Blog</strong>, or our <strong>Community Forum</strong>, 
+                    you can use the same credentials to log in here.
                 </p>
-
             </div>
         </div>
     </div>
