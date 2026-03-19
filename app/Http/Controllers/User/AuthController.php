@@ -13,10 +13,20 @@ use Illuminate\Support\Facades\Mail;
 use App\Mail\OtpEmail;
 use Illuminate\Support\Facades\Session;
 use  App\Mail\ForgetPasswardMail;
+use Illuminate\Support\Facades\Auth;
+
 
 class AuthController extends Controller
 {
+    public function loginGet()
+    {
+        if (Auth::check() && Auth::user()->role == 2) {
+            return redirect()->route('index');
+        }
 
+        $type = 'User';
+        return view('admin.auth.login', compact('type'));
+    }
     public function register(Request $request, $id = null)
     {
         return view("user.register", compact('link', 'shares','id'));
@@ -30,7 +40,7 @@ class AuthController extends Controller
             $user->name = $request->name;
             $user->email = $request->email;
             $user->password = Hash::make($request->password);
-            $user->role = 3;
+            $user->role = 2;
             $user->save();
 
             
@@ -144,16 +154,12 @@ class AuthController extends Controller
 
         $user = User::where('email', $request->email)->first();
 
-
         if (!$user || !Hash::check($request->password, $user->password)) {
             return back()->withErrors(['email' => 'The provided credentials do not match our records.'])->withInput();
         }
 
-
         auth()->login($user);
-
-
-        // return redirect()->route('user.dashboard');
+        return redirect()->route('home')->with('success', 'Logged in successfully!');
 
     }
 

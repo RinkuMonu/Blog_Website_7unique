@@ -8,35 +8,36 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\AuthController as UserAuthController;
 // --- 1. DEFAULT LOGIN ROUTE (Sabse upar taaki Middleware ise pehchan le) ---
-Route::get('login', [AuthController::class, 'loginGet'])->name('login');
+// Route::get('login', [UserAuthController::class, 'loginGet'])->name('user.login');
 
 // --- 2. Public / Home Routes ---
 Route::get('/',[PostController::class,'home'])->name('home');
 // Route::get('/{slug}/{subslug?}',[PostController::class,'slugWiseData']);
 // Route::get('/{slug}/{postTitle}',[PostController::class,'postDetails'])->name('post.details');
-Route::get('/{slug}/{param2?}/{param3?}', [PostController::class, 'handleRequest'])->name('dynamic.route');
-Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
-Route::get('/subcategories', [SubcategoryController::class, 'index'])->name('subcategories.index');
 
 // --- 3. News Static Pages ---
-    Route::view('/english-news', 'news.englishnews')->name('english.news');
-    Route::view('/india-news', 'news.india')->name('india.news');
-    Route::view('/movies-news', 'news.movies')->name('movies.news');
-    Route::view('/world', 'news.world')->name('world.news');
-    Route::view('/sports-news', 'news.sports')->name('sports.news');
-    Route::view('/premium-news', 'news.premium')->name('premium.news');
-    Route::view('/opinion-news', 'news.opinion')->name('opinion');
-    Route::view('/data', 'news.data')->name('data');
-    Route::view('/health', 'news.health')->name('health');
-    Route::view('/science', 'news.science')->name('science');
-    Route::view('/entertainment', 'news.entertainment')->name('entertainment');
+    // Route::view('/english-news', 'news.englishnews')->name('english.news');
+    // Route::view('/india-news', 'news.india')->name('india.news');
+    // Route::view('/movies-news', 'news.movies')->name('movies.news');
+    // Route::view('/world', 'news.world')->name('world.news');
+    // Route::view('/sports-news', 'news.sports')->name('sports.news');
+    // Route::view('/premium-news', 'news.premium')->name('premium.news');
+    // Route::view('/opinion-news', 'news.opinion')->name('opinion');
+    // Route::view('/data', 'news.data')->name('data');
+    // Route::view('/health', 'news.health')->name('health');
+    // Route::view('/science', 'news.science')->name('science');
+    // Route::view('/entertainment', 'news.entertainment')->name('entertainment');
 
 // --- 4. Authentication Routes ---
 Route::get('admin/login', [AuthController::class, 'loginGet'])->name('admin.login');
 Route::post('admin/login', [AuthController::class, 'login'])->name('admin.login.post');
 Route::get('author/login', [AuthController::class, 'loginGet'])->name('author.login');
 Route::post('author/login', [AuthController::class, 'login'])->name('author.login.post');
-Route::get('user/login', [UserAuthController::class, 'loginGet'])->name('user.login');
+Route::get('user/login', [UserAuthController::class, 'login'])->name('user.login');
+Route::post('user/login', [UserAuthController::class, 'loginStore'])->name('user.login.post');
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories.index');
+Route::get('/subcategories', [SubcategoryController::class, 'index'])->name('subcategories.index');
 
 // Common Dashboard Redirect
 Route::get('/dashboard', function() {
@@ -94,3 +95,4 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::resource('posts', PostController::class)->only(['index', 'show']);
+Route::get('/{slug}/{param2?}/{param3?}', [PostController::class, 'handleRequest'])->name('dynamic.route');
