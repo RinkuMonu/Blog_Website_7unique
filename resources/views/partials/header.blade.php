@@ -2,207 +2,166 @@
 use Illuminate\Support\ServiceProvider;
 ?>
 <style>
-.navbar-nav {
-    gap: 22px;
-}
-
-body {
-    font-family: 'Merriweather', serif;
-}
-
-.navbar-nav .nav-link {
-    font-family: 'Merriweather', serif;
-    color: black;
-    padding: 12px 0;
-    font-size: 17px;
-    transition: color 0.3s ease;
-}
-
-.navbar-nav .nav-link:hover {
-    color: #b00200 !important;
-}
-
-.nav-pills .nav-link.active {
-    background-color: #3a3a3a !important;
-}
-
-.nav-pills .nav-link:hover {
-    background-color: #3a3a3a !important;
-    color: #fff !important;
-}
-
-/* Mobile Menu Styles */
-@media (max-width: 991.98px) {
-    #mainNav.show {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        background: #fff;
-        overflow-y: auto;
-        z-index: 1050;
-        padding: 20px;
-        -webkit-overflow-scrolling: touch;
+    .navbar-nav {
+        gap: 22px;
     }
 
-    #mainNav .navbar-nav {
-        gap: 10px;
+    body {
+        font-family: 'Merriweather', serif;
     }
 
-    body.menu-open {
-        overflow: hidden;
+    .navbar-nav .nav-link {
+        font-family: 'Merriweather', serif;
+        color: black;
+        padding: 12px 0;
+        font-size: 17px;
+        transition: color 0.3s ease;
     }
 
-    /* Mega Menu Mobile Styles */
-    #fullMenu.show {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        overflow-y: auto;
-        z-index: 1051;
-        background: #fff;
-        -webkit-overflow-scrolling: touch;
+    .navbar-nav .nav-link:hover {
+        color: #b00200 !important;
     }
 
-    #fullMenu .bg-light {
-        min-height: 100vh;
+    .nav-pills .nav-link.active {
+        background-color: #3a3a3a !important;
     }
 
-    /* Close button for mega menu on mobile */
-    #fullMenu .close-mega-menu {
-        display: block;
-        position: sticky;
-        top: 0;
-        background: #fff;
-        z-index: 10;
-        padding: 15px;
-        border-bottom: 1px solid #ddd;
-    }
-}
-
-/* Desktop mega menu - make it sticky */
-@media (min-width: 992px) {
-    #fullMenu {
-        position: sticky;
-        top: 0;
-        z-index: 1040;
+    .nav-pills .nav-link:hover {
+        background-color: #3a3a3a !important;
+        color: #fff !important;
     }
 
-    #fullMenu.show {
-        position: sticky;
-        top: 0;
+    /* Mobile Menu Styles */
+    @media (max-width: 991.98px) {
+        #mainNav.show {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: #fff;
+            overflow-y: auto;
+            z-index: 1050;
+            padding: 20px;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #mainNav .navbar-nav {
+            gap: 10px;
+        }
+
+        body.menu-open {
+            overflow: hidden;
+        }
+
+        /* Mega Menu Mobile Styles */
+        #fullMenu.show {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            overflow-y: auto;
+            z-index: 1051;
+            background: #fff;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        #fullMenu .bg-light {
+            min-height: 100vh;
+        }
+
+        /* Close button for mega menu on mobile */
+        #fullMenu .close-mega-menu {
+            display: block;
+            position: sticky;
+            top: 0;
+            background: #fff;
+            z-index: 10;
+            padding: 15px;
+            border-bottom: 1px solid #ddd;
+        }
     }
-}
 
-@media (min-width: 992px) {
-    #fullMenu .close-mega-menu {
-        display: none;
+    /* Desktop mega menu - make it sticky */
+    @media (min-width: 992px) {
+        #fullMenu {
+            position: sticky;
+            top: 0;
+            z-index: 1040;
+        }
+
+        #fullMenu.show {
+            position: sticky;
+            top: 0;
+        }
     }
-}
 
-.footer-icon {
-    color: #000;
-    text-decoration: none;
-    font-size: 1.2rem;
-}
+    @media (min-width: 992px) {
+        #fullMenu .close-mega-menu {
+            display: none;
+        }
+    }
 
-.footer-icon:hover {
-    color: #B00200;
-}
-.modal-backdrop {
-    background-color: #000 !important;
-}
+    .footer-icon {
+        color: #000;
+        text-decoration: none;
+        font-size: 1.2rem;
+    }
 
-.modal-backdrop.show {
-    opacity: 1 !important;
-}
+    .footer-icon:hover {
+        color: #B00200;
+    }
+    .modal-backdrop {
+        background-color: #000 !important;
+    }
+
+    .modal-backdrop.show {
+        opacity: 1 !important;
+    }
 
 </style>
 </head>
 
 <body>
-
     <div class="bg-white py-2 ">
         <div class="container">
-
-
             <div class="row align-items-center">
-
-
                 <div class="col-6 col-md-4 d-flex align-items-center gap-3">
                     <span class="text-muted fw-semibold small">
                         {{ \Carbon\Carbon::now()->format('F d, Y') }}
-                    </span>
-
-                    <a href="#" class="text-decoration-none fw-semibold small" style="color:#B00200;">
-                        e-Paper
-                    </a>
+                    </span>                    
                 </div>
-
-
                 <div class="col-12 col-md-4 text-center order-3 order-md-2 my-2 my-md-0">
                     <h1 class="m-0 fw-bold" style="font-family: 'Times New Roman', serif; font-size: 38px;">
                         <a href="/" class="text-decoration-none text-dark">
-                            SEVENUNIQUE
+                            Aaj Ki Newz
                         </a>
                     </h1>
                 </div>
-
-
                 <div class="col-6 col-md-4 d-flex flex-column align-items-end order-2 order-md-3">
-
-
                     <a href="#" class="text-dark text-decoration-none small mb-1" data-bs-toggle="modal"
                         data-bs-target="#loginModal">
                         LOGIN <i class="bi bi-person"></i>
                     </a>
-
-
-                    <!-- Bottom Row: e-Paper + Subscribe -->
-                    <div class="d-flex align-items-center gap-3">
-                        <!-- <a href="#" class="text-danger text-decoration-none small fw-semibold">
-                            e-books
-                        </a>
-
-                        <a href="#" class="btn text-white btn-sm px-3" style="background-color: #B00200;">
-                            SUBSCRIBE
-                        </a> -->
-                    </div>
-
                 </div>
-
-
-
             </div>
-
         </div>
     </div>
-
-
-
-
     <!-- MAIN NAVIGATION -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
-
         <div class="container">
-
             <!-- Mobile Toggle -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="mainNav">
-
                 <!-- Close Button for Mobile Main Menu -->
                 <div class="d-lg-none w-100 d-flex justify-content-end mb-3">
                     <button class="btn btn-link text-dark" data-bs-toggle="collapse" data-bs-target="#mainNav">
                         <i class="bi bi-x-lg fs-4"></i>
                     </button>
                 </div>
-
                 <!-- Left Search + Menu -->
                 <ul class="navbar-nav me-5 align-items-center">
                     <li class="nav-item">
@@ -210,21 +169,16 @@ body {
                             <i class="bi bi-list fs-4"></i>
                         </a>
                     </li>
-
                     <!-- <li class="nav-item">
                         <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#searchModal">
                             <i class="bi bi-search"></i> Search
                         </a>
                     </li> -->
-
                 </ul>
                 <!-- center menu -->
                 <ul class="navbar-nav fw-semibold me-4">
-
                     @foreach($headerMenu as $category)
-
                         @if($category->name == 'News')
-
                             @foreach($category->subcategories->take(2) as $sub)
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dynamic.route', [$category->slug, $sub->slug]) }}">
@@ -240,64 +194,48 @@ body {
                                 </a>
                             </li>
                             @endforeach
-
                         @else
-
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('dynamic.route', ['slug' => $category->slug]) }}">
                                     {{ ucfirst($category->name) }}
                                 </a>
                             </li>
-
                         @endif
-
                     @endforeach
-
-                    </ul>
+                </ul>
             </div>
         </div>
     </nav>
 
     <div class="collapse w-100 bg-white border-top " id="fullMenu">
-
         <!-- Close Button for Mobile -->
         <div class="close-mega-menu d-lg-none">
             <button class="btn btn-link text-dark" data-bs-toggle="collapse" data-bs-target="#fullMenu">
                 <i class="bi bi-x-lg"></i> Close Menu
             </button>
         </div>
-
         <!-- Close Button for Desktop -->
         <div class="d-none d-lg-block text-end pt-2 pe-3">
             <button class="btn btn-link text-dark" data-bs-toggle="collapse" data-bs-target="#fullMenu">
                 <i class="bi bi-x-lg fs-5"></i>
             </button>
         </div>
-
         <div class="bg-light ">
             <div class="container py-4">
-
                 <div class="row">
-
                     <!-- LEFT SECTION -->
                     <div class="col-lg-9">
-
                         <div class="row">
-
                             <div class="col-md-3">
                                 <ul class="list-unstyled" id="megaAccordion">
                                     <li class="text-danger fw-bold mb-2">● LIVE NOW</li>
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#newsDrop"
                                             style="cursor:pointer;">
-
                                             <span>News</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="newsDrop" data-bs-parent="#megaAccordion">
                                             <ul class="list-unstyled ps-3">
                                                 <li>Politics</li>
@@ -307,18 +245,13 @@ body {
                                                 <li>Governance</li>
                                             </ul>
                                         </div>
-
                                     </li>
-
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#opinionDrop"
                                             style="cursor:pointer;">
-
                                             <span>Opinion</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
 
                                         <div class="collapse mt-2" id="opinionDrop" data-bs-parent="#megaAccordion">
@@ -330,20 +263,15 @@ body {
                                                 <li>Letters</li>
                                             </ul>
                                         </div>
-
                                     </li>
 
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#dataDrop"
                                             style="cursor:pointer;">
-
                                             <span>Data</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="dataDrop" data-bs-parent="#megaAccordion">
                                             <ul class="list-unstyled ps-3">
                                                 <li>Infographics</li>
@@ -353,18 +281,13 @@ body {
                                                 <li>Data Stories</li>
                                             </ul>
                                         </div>
-
                                     </li>
-
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#booksDrop"
                                             style="cursor:pointer;">
-
                                             <span>Books</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
 
                                         <div class="collapse mt-2" id="booksDrop" data-bs-parent="#megaAccordion">
@@ -376,20 +299,14 @@ body {
                                                 <li>Fiction & Non-Fiction</li>
                                             </ul>
                                         </div>
-
                                     </li>
-
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#realEstateDrop"
                                             style="cursor:pointer;">
-
                                             <span>Real Estate</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="realEstateDrop" data-bs-parent="#megaAccordion">
 
                                             <ul class="list-unstyled ps-3">
@@ -399,25 +316,18 @@ body {
                                                 <li>Residential</li>
                                                 <li>Investment Guide</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
-
                                 </ul>
                             </div>
-
                             <div class="col-md-3">
                                 <ul class="list-unstyled" id="Accordion">
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#statesDrop"
                                             style="cursor:pointer;">
-
                                             <span>States</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
 
                                         <div class="collapse mt-2" id="statesDrop" data-bs-parent="#megaAccordion">
@@ -429,24 +339,16 @@ body {
                                                 <li>Tamil Nadu</li>
                                                 <li>Karnataka</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
-
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#businessDrop"
                                             style="cursor:pointer;">
-
                                             <span>Business</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="businessDrop" data-bs-parent="#Accordion">
-
                                             <ul class="list-unstyled ps-3">
                                                 <li>Markets</li>
                                                 <li>Industry</li>
@@ -454,24 +356,17 @@ body {
                                                 <li>Startups</li>
                                                 <li>Finance</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
 
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#educationDrop"
                                             style="cursor:pointer;">
-
                                             <span>Education</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="educationDrop" data-bs-parent="#Accordion">
-
                                             <ul class="list-unstyled ps-3">
                                                 <li>Schools</li>
                                                 <li>Colleges</li>
@@ -479,24 +374,16 @@ body {
                                                 <li>Results</li>
                                                 <li>Scholarships</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
-
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#childrenDrop"
                                             style="cursor:pointer;">
-
                                             <span>Children</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="childrenDrop" data-bs-parent="#Accordion">
-
                                             <ul class="list-unstyled ps-3">
                                                 <li>Stories</li>
                                                 <li>Learning</li>
@@ -504,22 +391,15 @@ body {
                                                 <li>Kids News</li>
                                                 <li>Fun Zone</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
-
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#agricultureDrop"
                                             style="cursor:pointer;">
-
                                             <span>Agriculture</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="agricultureDrop" data-bs-parent="#Accordion">
 
                                             <ul class="list-unstyled ps-3">
@@ -529,30 +409,21 @@ body {
                                                 <li>Market Prices</li>
                                                 <li>Farmer Stories</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
-
                                 </ul>
                             </div>
 
                             <div class="col-md-3">
                                 <ul class="list-unstyled" id="AccordionTwo">
-
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#citiesDrop"
                                             style="cursor:pointer;">
-
                                             <span>Cities</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="citiesDrop" data-bs-parent="#AccordionTwo">
-
                                             <ul class="list-unstyled ps-3">
                                                 <li>Delhi</li>
                                                 <li>Mumbai</li>
@@ -560,24 +431,16 @@ body {
                                                 <li>Bengaluru</li>
                                                 <li>Jaipur</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
-
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#sportDrop"
                                             style="cursor:pointer;">
-
                                             <span>Sport</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="sportDrop" data-bs-parent="#AccordionTwo">
-
                                             <ul class="list-unstyled ps-3">
                                                 <li>Cricket</li>
                                                 <li>Football</li>
@@ -585,24 +448,16 @@ body {
                                                 <li>Hockey</li>
                                                 <li>Olympics</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
-
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#healthDrop"
                                             style="cursor:pointer;">
-
                                             <span>Health</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="healthDrop" data-bs-parent="#AccordionTwo">
-
                                             <ul class="list-unstyled ps-3">
                                                 <li>Medical News</li>
                                                 <li>Fitness</li>
@@ -610,23 +465,16 @@ body {
                                                 <li>Mental Health</li>
                                                 <li>Wellness</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#electionsDrop"
                                             style="cursor:pointer;">
-
                                             <span>Elections</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
-
                                         <div class="collapse mt-2" id="electionsDrop" data-bs-parent="#AccordionTwo">
-
                                             <ul class="list-unstyled ps-3">
                                                 <li>Lok Sabha</li>
                                                 <li>State Elections</li>
@@ -634,24 +482,18 @@ body {
                                                 <li>Results</li>
                                                 <li>Analysis</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
 
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#brandhubDrop"
                                             style="cursor:pointer;">
-
                                             <span>Brandhub</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
 
                                         <div class="collapse mt-2" id="brandhubDrop" data-bs-parent="#AccordionTwo">
-
                                             <ul class="list-unstyled ps-3">
                                                 <li>Sponsored Content</li>
                                                 <li>Partner Stories</li>
@@ -659,26 +501,19 @@ body {
                                                 <li>Promotions</li>
                                                 <li>Events</li>
                                             </ul>
-
                                         </div>
-
                                     </li>
-
                                 </ul>
                             </div>
 
                             <div class="col-md-3">
                                 <ul class="list-unstyled" id="AccordionThree">
-
                                     <li class="mb-2">
-
                                         <div class="d-flex justify-content-between align-items-center"
                                             data-bs-toggle="collapse" data-bs-target="#entertainmentDrop"
                                             style="cursor:pointer;">
-
                                             <span>Entertainment</span>
                                             <i class="bi bi-chevron-down"></i>
-
                                         </div>
 
                                         <div class="collapse mt-2" id="entertainmentDrop"
@@ -853,7 +688,7 @@ body {
 
                         <!-- RIGHT: Text -->
                         <div class="text-danger fw-semibold">
-                            SevenUnique Best Places to Work →
+                            Aaj Ki Newz Best Places to Work →
                         </div>
 
                     </div>
@@ -871,7 +706,7 @@ body {
                 <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal"></button>
 
                 <div class="text-center mb-4">
-                    <h2 class="fw-bold">SEVENUNIQUE</h2>
+                    <h2 class="fw-bold">Aaj Ki Newz</h2>
                 </div>
 
                 <h5 class="text-center fw-bold mb-4">Select your role to login</h5>
@@ -908,75 +743,66 @@ body {
 
 
                 <p class="small text-muted text-center mt-4">
-                    If you have an account with <strong>Seven Unique News</strong>, 
-                    <strong>Seven Unique Blog</strong>, or our <strong>Community Forum</strong>, 
+                    If you have an account with <strong>Aaj Ki Newz</strong>, 
+                    <strong>Aaj Ki Newz</strong>, or our <strong>Community Forum</strong>, 
                     you can use the same credentials to log in here.
                 </p>
             </div>
         </div>
     </div>
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content p-4">
 
-
-<div class="modal fade" id="searchModal" tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content p-4">
-
-            <!-- Close Button -->
-            <div class="d-flex justify-content-end">
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-
-            <!-- Search Title -->
-            <h4 class="fw-bold text-center mb-4">
-                Search Articles
-            </h4>
-
-            <!-- Search Form -->
-            <form action="/india-news" method="GET">
-                <div class="input-group">
-                    <input type="text"
-                           name="query"
-                           class="form-control"
-                           placeholder="Type what you want to search..."
-                           required>
-
-                    <button class="btn btn-dark" type="submit">
-                        Search
-                    </button>
+                <!-- Close Button -->
+                <div class="d-flex justify-content-end">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                 </div>
-            </form>
 
+                <!-- Search Title -->
+                <h4 class="fw-bold text-center mb-4">
+                    Search Articles
+                </h4>
+
+                <!-- Search Form -->
+                <form action="/india-news" method="GET">
+                    <div class="input-group">
+                        <input type="text"
+                            name="query"
+                            class="form-control"
+                            placeholder="Type what you want to search..."
+                            required>
+
+                        <button class="btn btn-dark" type="submit">
+                            Search
+                        </button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-
-
-
     <script>
-    const menu = document.getElementById('mainNav');
-    const megaMenu = document.getElementById('fullMenu');
-    const toggler = document.querySelector('.navbar-toggler');
+        const menu = document.getElementById('mainNav');
+        const megaMenu = document.getElementById('fullMenu');
+        const toggler = document.querySelector('.navbar-toggler');
 
-    // Handle main nav menu
-    menu.addEventListener('show.bs.collapse', function() {
-        document.body.classList.add('menu-open');
-    });
+        // Handle main nav menu
+        menu.addEventListener('show.bs.collapse', function() {
+            document.body.classList.add('menu-open');
+        });
 
-    menu.addEventListener('hidden.bs.collapse', function() {
-        document.body.classList.remove('menu-open');
-    });
+        menu.addEventListener('hidden.bs.collapse', function() {
+            document.body.classList.remove('menu-open');
+        });
 
-    // Handle mega menu - also add menu-open to prevent background scroll
-    megaMenu.addEventListener('show.bs.collapse', function() {
-        document.body.classList.add('menu-open');
-    });
+        // Handle mega menu - also add menu-open to prevent background scroll
+        megaMenu.addEventListener('show.bs.collapse', function() {
+            document.body.classList.add('menu-open');
+        });
 
-    megaMenu.addEventListener('hidden.bs.collapse', function() {
-        document.body.classList.remove('menu-open');
-    });
+        megaMenu.addEventListener('hidden.bs.collapse', function() {
+            document.body.classList.remove('menu-open');
+        });
     </script>
-
-
 </body>
-
 </html>

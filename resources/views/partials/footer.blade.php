@@ -62,7 +62,7 @@
                 <div class="col-12 col-md-6 mb-3 mb-md-0">
                     <a href="{{ url('/') }}" class="text-decoration-none text-dark"
                         style="font-family:'Merriweather', serif; font-size:40px;">
-                        SEVENUNIQUE
+                        Aajkinewz
                     </a>
                 </div>
 
@@ -88,7 +88,7 @@
                 <div class="col-lg-8">
                     <div class="row">
                         <div class="col-md-3 mb-4">
-                            <h6 class="fw-bold border-top border-5 text-dark border-dark pt-3 pb-2">Seven Unique</h6>
+                            <h6 class="fw-bold border-top border-5 text-dark border-dark pt-3 pb-2">Aaj Ki Newz</h6>
                             <ul class="list-unstyled footer-links">
                                 <li><a href="#">About Us</a></li>
                                 <li><a href="#">Code of Editorial Values</a></li>
@@ -128,7 +128,7 @@
                     <div class="row">
                         <div class="col-md-6 mb-4">
                             <h6 class="fw-bold  border-top border-5 text-dark border-dark pt-3 pb-2">
-                                Trending on SevenUnique
+                                Trending On Aaj Ki Newz
                             </h6>
 
                             <ul class="list-unstyled footer-links">
@@ -285,7 +285,7 @@
 
                     <!-- COPYRIGHT -->
                     <div class="small text-muted">
-                        Copyright © 2026, SevenUnique Publishing Pvt Ltd. or its affiliated companies.
+                        Copyright © 2026, Aajkinewz Publishing Pvt Ltd. or its affiliated companies.
                         All rights reserved.
                     </div>
 
