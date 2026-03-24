@@ -56,7 +56,82 @@
             <div class="article-content ms-auto">
                 {!! $post->content !!}
             </div>
+            <div class="qa-section mt-5 border-top pt-4">
+                <h3 class="fw-bold mb-4">Questions & Answers</h3>
 
+                @if(session('success'))
+                    <div class="alert alert-success">{{ session('success') }}</div>
+                @endif
+
+                {{-- Questions List --}}
+                <div class="mb-5">
+                    @forelse($post->questions()->whereNull('parent_id')->latest()->get() as $q)
+                        <div class="mb-4 border-bottom pb-3">
+                            <div class="d-flex align-items-start">
+                                <div class="flex-grow-1">
+                                    <h6 class="fw-bold mb-1 text-primary">Q: {{ $q->content }}</h6>
+                                    <p class="small text-muted mb-2">Asked by <strong>{{ $q->user_name }}</strong> • {{ $q->created_at->diffForHumans() }}</p>
+                                    
+                                    {{-- Reply Button --}}
+                                    <button class="btn btn-sm btn-outline-secondary py-0 mb-3" type="button" data-bs-toggle="collapse" data-bs-target="#replyForm{{ $q->id }}">
+                                        Reply
+                                    </button>
+
+                                    {{-- Reply Form (Hidden by default) --}}
+                                    <div class="collapse mb-3" id="replyForm{{ $q->id }}">
+                                        <form action="{{ route('questions.store') }}" method="POST" class="bg-light p-3 rounded">
+                                            @csrf
+                                            <input type="hidden" name="post_id" value="{{ $post->id }}">
+                                            <input type="hidden" name="parent_id" value="{{ $q->id }}">
+                                            <div class="row g-2">
+                                                <div class="col-md-4">
+                                                    <input type="text" name="user_name" class="form-control form-control-sm" placeholder="Your Name" required>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <textarea name="content" class="form-control form-control-sm" rows="1" placeholder="Write a reply..." required></textarea>
+                                                </div>
+                                                <div class="col-12 text-end">
+                                                    <button type="submit" class="btn btn-danger btn-sm">Post Reply</button>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+
+                                    {{-- Display Replies --}}
+                                    <div class="replies ms-4 ps-3 border-start">
+                                        @foreach($q->replies as $reply)
+                                            <div class="mb-2 p-2 rounded bg-white shadow-sm border">
+                                                <p class="mb-1" style="font-size: 0.95rem;">{{ $reply->content }}</p>
+                                                <p class="mb-0" style="font-size: 0.8rem; color: #666;">
+                                                    By <strong>{{ $reply->user_name }}</strong> • {{ $reply->created_at->diffForHumans() }}
+                                                </p>
+                                            </div>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    @empty
+                        <p class="text-muted italic">No questions yet. Be the first to ask!</p>
+                    @endforelse
+                </div>
+
+                {{-- Main Question Form --}}
+                <div class="card p-4 border-0 bg-dark text-white">
+                    <h5 class="mb-3">Have a Question?</h5>
+                    <form action="{{ route('questions.store') }}" method="POST">
+                        @csrf
+                        <input type="hidden" name="post_id" value="{{ $post->id }}">
+                        <div class="mb-3">
+                            <input type="text" name="user_name" class="form-control" placeholder="Your Name" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea name="content" rows="3" class="form-control" placeholder="Type your question here..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-danger px-4 rounded-pill">Submit Question</button>
+                    </form>
+                </div>
+            </div>
         </div>
 
 

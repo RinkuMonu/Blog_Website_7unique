@@ -103,6 +103,16 @@ ease;
                     </a>
                 </li>
 
+                <li class="nav-item">
+                    <a class="d-flex align-items-center {{ request()->is($prefix.'/questions*') ? 'active' : '' }}" href="{{ route($prefix.'.questions.index') }}">
+                        <div class="menu-icon-wrapper">
+                            <i data-feather="help-circle" class="menu-icon ms-1"></i>
+                        </div>
+                        <span class="menu-title text-truncate">Q & A</span>
+                        <span class="menu-badge badge bg-light-danger">Hot</span>
+                    </a>
+                </li>
+
                 <li class="navigation-header">
                     <span class="navigation-header-text">User Management</span>
                     <i data-feather="more-horizontal" class="navigation-header-icon"></i>

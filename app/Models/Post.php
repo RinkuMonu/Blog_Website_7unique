@@ -36,4 +36,7 @@ class Post extends Model
             $post->slug = Str::slug($post->title);
         });
     }
+    public function questions() {
+       return $this->hasMany(Question::class);
+    }
 }
