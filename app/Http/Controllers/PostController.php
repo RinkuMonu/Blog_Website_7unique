@@ -182,6 +182,10 @@ class PostController extends Controller
         $viewPath = 'admin.news.index' ;
         return view($viewPath, compact('posts'));
     }
+    public function showPost($id) {
+        $post = Post::with(['category', 'subcategory'])->findOrFail($id);
+        return response()->json($post);
+    }
     public function create() {
         $categories = Category::all();
         $subcategories = Subcategory::all(); 

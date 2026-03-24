@@ -1,7 +1,8 @@
 @extends('admin.layouts.main')
 
 @section('content')
-<div class="page-content app-content content "> <div class="container-fluid">
+<div class="page-content app-content content "> 
+    <div class="container-fluid">
         
         <div class="row">
             <div class="col-12">

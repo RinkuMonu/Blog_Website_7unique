@@ -7,11 +7,13 @@ use App\Http\Controllers\SubcategoryController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\User\AuthController as UserAuthController;
+use App\Http\Controllers\QuestionController;
 // --- 1. DEFAULT LOGIN ROUTE (Sabse upar taaki Middleware ise pehchan le) ---
 // Route::get('login', [UserAuthController::class, 'loginGet'])->name('user.login');
 
 // --- 2. Public / Home Routes ---
 Route::get('/',[PostController::class,'home'])->name('home');
+Route::post('/questions/store', [QuestionController::class, 'store'])->name('questions.store');
 // Route::get('/{slug}/{subslug?}',[PostController::class,'slugWiseData']);
 // Route::get('/{slug}/{postTitle}',[PostController::class,'postDetails'])->name('post.details');
 
@@ -83,6 +85,7 @@ Route::middleware(['auth'])->group(function () {
             // Post Management
             Route::prefix('posts')->name('posts.')->group(function () {
                 Route::get('/', [PostController::class, 'getPost'])->name('index');
+                Route::get('/{id}/show', [PostController::class, 'showPost'])->name('show');
                 Route::get('/create', [PostController::class, 'create'])->name('create');
                 Route::post('/store', [PostController::class, 'store'])->name('store');
                 Route::get('/edit/{id}', [PostController::class, 'edit'])->name('edit');
@@ -90,6 +93,8 @@ Route::middleware(['auth'])->group(function () {
                 Route::delete('/delete/{id}', [PostController::class, 'destroy'])->name('destroy');
                 Route::post('/toggle-trending/{id}', [PostController::class, 'toggleTrending'])->name('trending');
             });
+            Route::get('/questions', [QuestionController::class, 'adminIndex'])->name('questions.index');
+            Route::delete('/questions/{id}', [QuestionController::class, 'destroy'])->name('questions.destroy');
         });
     }
 });
